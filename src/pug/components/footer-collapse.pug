@@ -1,0 +1,15 @@
+mixin footer-collapse(heading, items, cls, active)
+
+  .footer-collapse(class=cls)
+    .footer-collapse__title #{heading}
+      +icon('chevron-down', 'footer-collapse__title-icon')
+    .footer-collapse__body
+      .footer-collapse_nav
+        .footer-collapse__list
+          each item, index in items
+            if index == 2 && active
+              .footer-collapse__item.active
+                a(href="#").footer-collapse__link #{item}
+            else
+              .footer-collapse__item
+                a(href="#").footer-collapse__link #{item}

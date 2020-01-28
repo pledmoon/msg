@@ -1,0 +1,553 @@
+/*
+ * ==================
+ * = Main Nav START =
+ * ==================
+ */
+// ---------------------- toggle
+.toggle-navbar {
+  $self: &;
+
+  width: 3rem;
+  height: 2rem;
+  border: none;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+
+  @media (min-width: $md) {
+    display: none;
+  }
+
+  &::before {
+    content: "";
+    height: .3rem;
+    width: 100%; 
+    left: 0;
+    transform: translateY(-50%);
+    top: 50%;
+    position: absolute;
+    background: $primary-color;
+  }
+
+  &__line {
+    display: block;
+    position: absolute;
+    height: .3rem;
+    background: $primary-color;
+    transition: all .5s ease-in-out;
+    left: 0;
+    width: 100%;
+
+    &:nth-child(1) {
+      top: 0;
+    }
+
+    &:nth-child(2) {
+      bottom: 0;
+    }
+  }
+
+  &.is-active {
+    &::before {
+      display: none;
+    }
+
+    #{$self}__line:nth-child(1),
+    #{$self}__line:nth-child(2) {
+      left: 50%;
+      top: 50%;
+    }
+
+    #{$self}__line:nth-child(1) {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    #{$self}__line:nth-child(2) {
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+  }
+}
+// ---------------------- toggle
+
+// ---------------------- core
+.main-nav {
+  $self: &;
+
+  border-top: 1px solid #e6e6e6;
+  border-bottom: 1px solid #e6e6e6;
+  
+  /* --- Desktop Navbar --- */
+  @media (min-width: $md) {
+    // Base Navbar START
+    // -----------------------------------------
+    // --- First-Level
+    &__container {
+      display: flex;
+      position: relative;
+      line-height: 1.2;
+    }
+
+    &__item {
+      font-size: 1.6rem;
+      position: relative;
+      flex: auto;
+      text-align: center;
+      font-weight: 500;
+      border-right: 1px solid #e6e6e6;
+
+      &:first-child {
+        border-left: 1px solid #e6e6e6;
+      }
+
+      &:hover #{$self}__link {
+        background: #e6e6e6;
+
+        &::after {
+          width: 100%;
+        }
+      }
+
+      &--attention {
+        #{$self}__link {
+          color: #ff4b39;
+        }
+      }
+    }
+
+    &__link {
+      color: $black;
+      padding: 1.5rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      transition: all .3s;
+      position: relative;
+
+      &::after {
+        content: "";
+        width: 0;
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        background: $primary-color;
+        height: .3rem;
+        transition: all .3s;
+      }
+
+      .icon {
+        display: none;
+      }
+    }
+    // --- /First-Level
+
+    // --- Second-Level
+    &__secondary-container {
+      top: 100%;
+      background: $second-level-bg-color;
+      border: 1px solid $gray--medium;
+      width: 100%;
+      z-index: $dropdownZIndex;
+      min-width: 20rem;
+
+      @include hide-element;
+    }
+
+    &__secondary-item {
+      font-size: $second-level-font-size;
+      text-align: left;
+      position: relative;
+
+      &:hover #{$self}__secondary-link {
+        background: darken($second-level-bg-color, 5%);
+      }
+
+      &-icon {
+        width: 1rem;
+        height: 1rem;
+        fill: $second-level-text-color;
+        transition: all .3s;
+        position: absolute;
+        right: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+
+    &__secondary-link {
+      color: $second-level-text-color;
+      display: block;
+      padding: 1rem 1.5rem;
+    }
+    // --- /Second-Level
+
+    // --- Tertiary-Level
+    &__tertiary-container {
+      position: absolute;
+      left: -9999px;
+      top: 0;
+      background: $tertiary-level-bg-color;
+      opacity: 0;
+      visibility: hidden;
+      border: 1px solid $gray--medium;
+      min-width: 20rem;
+    }
+
+    &__tertiary-item {
+      font-size: $second-level-font-size;
+
+      &:hover #{$self}__tertiary-link {
+        background: darken($tertiary-level-bg-color, 5%);
+      }
+    }
+
+    &__tertiary-link {
+      color: $tertiary-level-text-color;
+      display: block;
+      padding: 1rem 1.5rem;
+    }
+    // --- /Tertiary-Level
+
+    // --- Interactive
+    &__item:hover #{$self}__secondary-container {
+      left: 0;
+      visibility: visible;
+      animation: .3s fadeInUp;
+      opacity: 1;
+    }
+
+    &__secondary-item:hover #{$self}__tertiary-container {
+      left: 100%;
+      visibility: visible;
+      animation: .3s fadeInLeft;
+      opacity: 1;
+    }
+
+    /* to-rigt position */
+    #{$self}__item--to-right:hover #{$self}__secondary-container {
+      left: auto;
+      right: 0;
+    }
+
+    #{$self}__item--to-right #{$self}__secondary-item:hover #{$self}__tertiary-container {
+      left: auto;
+      right: 100%;
+    }
+    /* to-rigt position */
+    // --- /Interactive
+    // Base Navbar END
+    // -----------------------------------------
+
+    // Columns Navbar START
+    // -----------------------------------------
+    &__item--cols {
+      position: static;
+    }
+    
+    // --- First Level
+    &__cols-list {
+      right: 0;
+      background: $first-level-bg-color;
+      top: 100%;
+      z-index: $dropdownZIndex;
+      text-align: left;
+      border: 1px solid $gray--medium;
+      transition: opacity .3s;
+
+      @include hide-element;
+    }
+
+    &__cols-item {
+      width: $main-nav-catalog-max-width;
+      border-right: 1px solid $gray--medium;
+
+      &:not(:first-child) {
+        border-top: 1px solid $gray--light;
+      }
+
+      &:hover #{$self}__cols-link {
+        background: $gray--light;
+      }
+    }
+
+    &__cols-link {
+      display: block;
+      padding: 1.5rem 1rem;
+      color: $black;
+      position: relative;
+    }
+
+    &__item-cols-icon {
+      width: 1rem;
+      height: 1rem;
+      fill: $first-level-text-color;
+      transition: all .3s;
+      position: absolute;
+      right: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    // --- /First Level
+
+    // --- Second Level
+    &__cols-sublist {
+      right: 0;
+      top: 0;
+      padding: 1rem 1rem 1rem 22rem;
+      width: 100%;
+      min-height: 100%;
+      z-index: -1;
+      columns: 20rem 4;
+      transition: opacity .3s ease-in-out;
+      background: $second-level-bg-color;
+
+      @include hide-element;
+
+      #{$self}__item--cols:hover #{$self}__cols-item:first-child & {
+        visibility: visible;
+        opacity: 1;
+        left: 0;
+      }
+    }
+
+    &__cols-subitem {}
+    
+    &__cols-sublink {
+      display: inline-block;
+      vertical-align: top;
+      padding: 1rem;
+      color: $second-level-text-color;
+      transition: all .3s;
+      border-radius: 5px;
+
+      &:hover {
+        background: darken($second-level-bg-color, 5%);
+      }
+    }
+    // --- /Second Level
+
+    // --- Interactive
+    &__item--cols:hover &__cols-list {
+      left: 0;
+      opacity: 1;
+      visibility: visible;
+    }
+
+    &__cols-item:hover &__cols-sublist {
+      left: 0;
+      opacity: 1;
+      visibility: visible;
+    }
+    // --- /Interactive
+    // Columns Navbar END
+    // -----------------------------------------
+
+    &__item > ul .icon {
+      transform: translateY(-50%) rotate(-90deg);
+    }
+  }
+  /* --- /Desktop Navbar --- */
+
+  /* --- Mobile Navbar --- */
+  @media (max-width: $md--mw) {
+    position: absolute;
+    left: -150%;
+    top: 0;
+    transition: left .3s ease-in-out;
+    z-index: $overlayAboveZIndex;
+    background: $white;
+    border-bottom: none;
+
+    .is-navbar-opened & {
+      left: -15px;
+      right: -15px;
+    }
+    
+    // --- First-Level
+    &__container {
+      /*height: 100%;
+      overflow-y: auto;
+      overflow-x: hidden;*/
+      border-bottom: 3px solid $primary-color;
+    }
+
+    &__item {
+      font-size: 1.6rem;
+      border-top: 1px dotted #e6e6e6;
+    }
+
+    &__link {
+      display: block;
+      padding: 1rem 1.5rem 1rem 3rem;
+      color: $black;
+      position: relative;
+
+      &::before {
+        content: "";
+        width: 1px;
+        height: 1.5rem;
+        background: $primary-color;
+        left: 1.5rem;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+    // --- /First-Level
+
+    // --- Second-Level
+    &__secondary-container,
+    &__cols-list {
+      display: none;
+    }
+
+    &__secondary-item,
+    &__cols-item {}
+
+    &__secondary-link,
+    &__catalog-link,
+    &__rows-link,
+    &__cols-link {
+      background: $first-level-bg-color;
+      display: block;
+      padding: 1rem 1rem 1rem 3rem;
+      color: $first-level-text-color;
+      position: relative;
+    }
+
+    &__secondary-item-icon,
+    &__item-cols-icon {
+      width: 1rem;
+      height: 1rem;
+      position: absolute;
+      right: 1.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    // --- /Second-Level
+
+    // --- Third-Level
+    &__tertiary-container,
+    &__cols-sublist {
+      display: none;
+    }
+
+    &__tertiary-item,
+    &__cols-subitem {}
+
+    &__tertiary-link,
+    &__cols-sublink {
+      background: $second-level-bg-color;
+      display: block;
+      padding: 1rem 1rem 1rem 4rem;
+      color: $second-level-text-color;
+      position: relative;
+    }
+
+    &__subcatalog-item-icon {
+      width: 1rem;
+      height: 1rem;
+      position: absolute;
+      right: 1.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    // --- /Third-Level
+    
+    // --- Fourth Level
+    &__tertcatalog-list {
+      display: none;
+    }
+
+    &__tertcatalog-item {}
+
+    &__tertcatalog-link {
+      background: $tertiary-level-bg-color;
+      display: block;
+      padding: 1rem 1rem 1rem 6rem;
+      color: $tertiary-level-text-color;
+      position: relative;
+    }
+    // --- /Fourth Level
+
+    // --- Interactive
+    .is-opened > ul {
+      display: block;
+    }
+    // --- /Interactive
+
+    &__dropdown-banner {
+      display: none;
+    }
+    
+    // --- Misc
+    &-trigger {
+      border: none;
+      background: none;
+
+      &-icon {
+        fill: $dark;
+      }
+    }
+
+    &__close-nav {
+      display: block;
+      width: 100%;
+      padding: 1rem 1.5rem;
+      position: relative;
+      background: transparent;
+      border: none;
+
+      font-size: 1.8rem;
+      font-weight: 300;
+
+      &-icon {
+        width: 1.5rem;
+        height: 1.5rem;
+        fill: $dark--medium;
+        float: right;
+      }
+    }
+
+    /* Icon-Trigger */
+    .main-nav__container .icon {
+      width: 4rem;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      height: 100%;
+      padding: 1.5rem;
+      position: absolute;
+
+      &::before {
+        content: "+";
+        font-size: 2rem;
+        color: $primary-color;
+        
+        @include absolute-center;
+      }
+    }
+
+    .is-opened > a > .icon {
+      &::before {
+        content: "-";
+        color: #ccc;
+      }
+    }
+    /* Icon-Trigger */
+    // -- /Misc
+  }
+  /* --- /Mobile Navbar --- */
+}
+// ---------------------- core
+
+/*body.is-navbar-opened {
+  overflow: hidden;
+}*/
+
+/**
+ * ================
+ * = Main Nav END =
+ * ================
+*/

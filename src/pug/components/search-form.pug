@@ -1,0 +1,6 @@
+mixin search-form(mod)
+  +b.FORM.search-form(name="search-form" action="/" method="GET" class=mod)
+    +e.field
+      +e.INPUT.input(name="user-query" placeholder="Поиск…")
+      +e.BUTTON.submit(type="submit" name="send-data")
+        +icon('magnifying-glass', 'search-form__submit-icon')

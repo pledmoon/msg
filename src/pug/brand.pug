@@ -1,0 +1,323 @@
+extends templates/main
+
+include layouts/section
+include components/category
+include components/news
+include components/product
+include components/footer-collapse
+include components/logo
+include components/soc
+include components/brands-filter
+include components/ul-list
+include components/brand
+
+block variables
+  - const pageTitle = 'Страница бренда';
+  - const pageClass = 'brand-page';
+  - const userState = 'logout';
+  - const breadcrumbs = 'true';
+
+block content
+
+  .container-fluid
+
+    // brand-intro-section
+    +section('', false, 'brand-intro-section')
+      .brand-intro-section__brand
+        .brand-intro-section__logo
+          .brand-intro-section__img-wrap
+            img.brand-intro-section__img.img-responsive(src="assets/images/media/brands/ableton-logo.png" alt="brand")
+        .brand-intro-section__about
+          .brand-intro-section__about-main
+            .brand-intro-section__heading Аbleton
+            p.brand-intro-section__desc Основным направлением деятельности компании является разработка музыкального программного обеспечения для музыкантов, диджеев и любителей электронной музыки. Live, Push and Link - уникальное программное и аппаратное обеспечение для создания и исполнения музыки. 
+          a.brand-intro-section__url(href="#") www.ableton.com
+    // brand-intro-section
+
+    // brand-catalog-section
+    +section('Товары Ableton', false, 'catalog-main-section')
+      .row
+        .col-sm-6.col-md-4.col-lg-6
+
+          +product({
+            name: "Native Instruments Traktor S4 MK3",
+            imgPath: "assets/images/media/products/midi-model-1.png",
+            price: "12,399 MDL",
+            rate: "100%",
+            rateAmount: 26,
+            btnBuy: true,
+            wish: true,
+            brand: 'assets/images/media/brands/product-sm-brand-1.png'
+          }, 'product--wide')
+
+        .col-sm-6.col-md-4.col-lg-3
+
+          +product({
+            name: "Denon DJ SC5000 Prime",
+            imgPath: "assets/images/media/products/midi-model-2.png",
+            price: "18,819 MDL",
+            rate: "100%",
+            rateAmount: 7,
+            btnBuy: true,
+            wish: true,
+            brand: 'assets/images/media/brands/product-sm-brand-2.png'
+          }, '')
+
+        .col-sm-6.col-md-4.col-lg-3
+      
+          +product({
+            name: "Numark Party Mix Pro",
+            imgPath: "assets/images/media/products/midi-model-3.png",
+            price: "3,222 MDL",
+            rate: "87%",
+            rateAmount: 1,
+            btnBuy: true,
+            wish: true,
+            brand: 'assets/images/media/brands/product-sm-brand-3.png'
+          }, '')
+
+        .col-sm-6.col-md-4.col-lg-3
+      
+          +product({
+            name: "Numark Party Mix Pro",
+            imgPath: "assets/images/media/products/midi-model-3.png",
+            price: "19,111 MDL",
+            rate: "35%",
+            rateAmount: 30,
+            btnBuy: true,
+            wish: true,
+            brand: 'assets/images/media/brands/product-sm-brand-1.png'
+          }, '')
+
+        .col-sm-6.col-md-4.col-lg-3
+      
+          +product({
+            name: "Numark Party Mix Pro",
+            imgPath: "assets/images/media/products/midi-model-4.png",
+            price: "9,111 MDL",
+            rate: "35%",
+            rateAmount: 30,
+            btnBuy: true,
+            wish: true,
+            brand: 'assets/images/media/brands/product-sm-brand-3.png'
+          }, '')
+
+        .col-sm-6.col-md-4.col-lg-6
+
+          +product({
+            name: "Hagstrom H-II Tremar White Gloss",
+            imgPath: "assets/images/media/products/product-1.png",
+            price: "5,599 MDL",
+            rate: "100%",
+            rateAmount: 145,
+            btnBuy: true,
+            wish: true
+          }, 'product--wide')
+
+        .col-sm-6.col-md-4.col-lg-3
+      
+          +product({
+            name: "Hercules DJ Control Inpulse 200",
+            imgPath: "assets/images/media/products/midi-model-5.png",
+            price: "9,111 MDL",
+            rate: "90%",
+            rateAmount: 1,
+            btnBuy: true,
+            wish: true,
+            brand: 'assets/images/media/brands/product-sm-brand-4.png'
+          }, '')
+
+        .col-sm-6.col-md-4.col-lg-3
+      
+          +product({
+            name: "Roland DJ-707M",
+            imgPath: "assets/images/media/products/midi-model-6.png",
+            price: "12,899 MDL",
+            rate: "70%",
+            rateAmount: 3,
+            btnBuy: true,
+            wish: true,
+            brand: 'assets/images/media/brands/product-sm-brand-5.png'
+          }, '')
+
+        .col-sm-6.col-md-4.col-lg-3
+      
+          +product({
+            name: "Numark NV II",
+            imgPath: "assets/images/media/products/midi-model-8.png",
+            price: "9,111 MDL",
+            rate: "20%",
+            rateAmount: 30,
+            btnBuy: true,
+            wish: true,
+            brand: 'assets/images/media/brands/product-sm-brand-3.png'
+          }, '')
+
+        .col-sm-6.col-md-4.col-lg-3
+      
+          +product({
+            name: "Native Instruments Traktor Kontrol Z1",
+            imgPath: "assets/images/media/products/midi-model-9.png",
+            price: "2,249 MDL",
+            rate: "65%",
+            rateAmount: 13,
+            btnBuy: true,
+            wish: true,
+            brand: 'assets/images/media/brands/product-sm-brand-1.png'
+          }, '')
+
+        .col-sm-6.col-md-4.col-lg-3
+      
+          +product({
+            name: "Native Instruments Traktor Kontrol Z1 Bag",
+            imgPath: "assets/images/media/products/midi-model-10.png",
+            price: "3,069 MDL",
+            rate: "100%",
+            rateAmount: 3,
+            btnBuy: true,
+            wish: true,
+            brand: 'assets/images/media/brands/product-sm-brand-2.png'
+          }, '')
+
+        .col-sm-6.col-md-4.col-lg-3
+      
+          +product({
+            name: "Native Instruments Traktor Kontrol Z1",
+            imgPath: "assets/images/media/products/midi-model-11.png",
+            price: "8,089 MDL",
+            rate: "85%",
+            rateAmount: 55,
+            btnBuy: true,
+            wish: true,
+            brand: 'assets/images/media/brands/product-sm-brand-1.png'
+          }, '')
+
+        .col-sm-6.col-md-4.col-lg-3
+      
+          +product({
+            name: "Allen & Heath Xone K2",
+            imgPath: "assets/images/media/products/midi-model-12.png",
+            price: "3,799 MDL",
+            rate: "85%",
+            rateAmount: 116,
+            btnBuy: true,
+            wish: true,
+            brand: 'assets/images/media/brands/product-sm-brand-3.png'
+          }, '')
+
+        .col-sm-6.col-md-4.col-lg-3
+      
+          +product({
+            name: "Native Instruments Traktor Kontrol X1/Z1 ",
+            imgPath: "assets/images/media/products/midi-model-13.png",
+            price: "3,069 MDL",
+            rate: "0%",
+            rateAmount: 0,
+            btnBuy: true,
+            wish: true,
+            brand: 'assets/images/media/brands/product-sm-brand-4.png'
+          }, '')
+
+        .col-sm-6.col-md-4.col-lg-3
+      
+          +product({
+            name: "Native Instruments Traktor S4 MK3",
+            imgPath: "assets/images/media/products/midi-model-14.png",
+            price: "12,444 MDL",
+            rate: "90%",
+            rateAmount: 55,
+            btnBuy: true,
+            wish: true,
+            brand: 'assets/images/media/brands/product-sm-brand-3.png'
+          }, '')
+
+        .col-sm-6.col-md-4.col-lg-3
+      
+          +product({
+            name: "Hercules DJ Control Inpulse 200",
+            imgPath: "assets/images/media/products/midi-model-5.png",
+            price: "9,111 MDL",
+            rate: "90%",
+            rateAmount: 1,
+            btnBuy: true,
+            wish: true,
+            brand: 'assets/images/media/brands/product-sm-brand-2.png'
+          }, '')
+
+        .col-sm-6.col-md-4.col-lg-3
+      
+          +product({
+            name: "Roland DJ-707M",
+            imgPath: "assets/images/media/products/midi-model-7.png",
+            price: "12,899 MDL",
+            rate: "90%",
+            rateAmount: 3,
+            btnBuy: true,
+            wish: true,
+            brand: 'assets/images/media/brands/product-sm-brand-2.png'
+          }, '')
+    // brand-catalog-section
+
+    // showed-product-section
+    +section('Просмотренные товары', false, 'section--gray showed-products-section')
+      .showed-products-section__row
+        .showed-products-section__col
+          +b.ARTICLE.product-preview--row
+            +e.header
+              +e.A.img-wrap(href="#")
+                +e.IMG.img(src="assets/images/media/products/product-8.png" alt="")
+            +e.main
+              +e.heading
+                +e.A.heading-link(href="#") Epiphone Slash AFD LP Performance Pack
+              +e.price 4,599 MDL
+          
+        .showed-products-section__col
+          +b.ARTICLE.product-preview--row
+            +e.header
+              +e.A.img-wrap(href="#")
+                +e.IMG.img(src="assets/images/media/products/product-7.png" alt="")
+            +e.main
+              +e.heading
+                +e.A.heading-link(href="#") Gretsch G5422T Electromatic BK
+              +e.price 13,333 MDL
+          
+        .showed-products-section__col
+          +b.ARTICLE.product-preview--row
+            +e.header
+              +e.A.img-wrap(href="#")
+                +e.IMG.img(src="assets/images/media/products/product-9.png" alt="")
+            +e.main
+              +e.heading
+                +e.A.heading-link(href="#") Adam TSV
+              +e.price 2,579 MDL
+          
+        .showed-products-section__col
+          +b.ARTICLE.product-preview--row
+            +e.header
+              +e.A.img-wrap(href="#")
+                +e.IMG.img(src="assets/images/media/products/product-10.png" alt="")
+            +e.main
+              +e.heading
+                +e.A.heading-link(href="#") Technics SL-1210 MK 7
+              +e.price 14,609 MDL
+
+        .showed-products-section__col
+          +b.ARTICLE.product-preview--row
+            +e.header
+              +e.A.img-wrap(href="#")
+                +e.IMG.img(src="assets/images/media/products/product-11.png" alt="")
+            +e.main
+              +e.heading
+                +e.A.heading-link(href="#") Rode NT1-A Complete Vocal Recording
+              +e.price 2,499 MDL
+          
+        .showed-products-section__col
+          +b.ARTICLE.product-preview--row
+            +e.header
+              +e.A.img-wrap(href="#")
+                +e.IMG.img(src="assets/images/media/products/product-12.png" alt="")
+            +e.main
+              +e.heading
+                +e.A.heading-link(href="#") pCompact Bb-trumpet red
+              +e.price 1,279 MDL
+    // /showed-product-section

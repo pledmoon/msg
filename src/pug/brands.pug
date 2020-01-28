@@ -1,0 +1,155 @@
+extends templates/main
+
+include layouts/section
+include components/category
+include components/news
+include components/product
+include components/footer-collapse
+include components/logo
+include components/soc
+include components/brands-filter
+include components/ul-list
+include components/brand
+
+block variables
+  - const pageTitle = 'Страница брендов';
+  - const pageClass = 'brands-page';
+  - const userState = 'logout';
+  - const breadcrumbs = 'true';
+
+block content
+
+  .container-fluid
+    
+    // brands-section
+    +section("Каталог по производителям", false, "brands-section")
+      p.promo-desc-intro Лорем ипсум долор сит амет, не вел уллум лудус, цетерос форенсибус ан сит. Про ет новум принципес. Ан ерант инвидунт мел. Вел цибо луптатум ид, солет волуптуа те еам. Еа хис инермис репрехендунт, ат ерудити долорес нец, нец адхуц солум ех. Пауло оффициис цонцептам цу хис. Юсто лудус вивендо пер еи.
+
+      +brands-filter("brands-section__brands-filter", "Все бренды", "Звуковое оборудование", "Световое оборудование", "DJ оборудование", "Музыкальные инструменты", "Сценическое оборудование", "Aкустические материалы", "Видео и кинопроекция")
+
+      .abc-index
+        +ul-list('abc-index', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'R', 'S', 'T', 'U', 'V', 'W', 'Z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9')
+        +ul-list('abc-index', 'а', 'б', 'в', 'г', 'д', 'е', 'ё', 'ж', 'з', 'и', 'й', 'к', 'л', 'м', 'н', 'о', 'п', 'р', 'с', 'т', 'у', 'ф', 'х', 'ц', 'ч', 'ш', 'щ', 'ъ', 'ы', 'ь', 'э', 'ю', 'я')
+      
+      article.brands-list
+        header.brands-list__header
+          .brands-list__heading A
+        .brands-list__body
+          .brands-list__brand
+            +brand({
+              name: 'Ableton',
+              imgPath: 'assets/images/media/brands/ableton.png'
+            })
+          .brands-list__brand
+            +brand({
+              name: 'Acme',
+              imgPath: 'assets/images/media/brands/acme.png'
+            })
+          .brands-list__brand
+            +brand({
+              name: 'Ahead',
+              imgPath: 'assets/images/media/brands/ahead.png'
+            })
+          .brands-list__brand
+            +brand({
+              name: 'Albert Weber',
+              imgPath: 'assets/images/media/brands/albert-veber.png'
+            })
+          .brands-list__brand
+            +brand({
+              name: 'Allen & Heath',
+              imgPath: 'assets/images/media/brands/allen.png'
+            })
+          .brands-list__brand
+            +brand({
+              name: 'Alvarez',
+              imgPath: 'assets/images/media/brands/alvarez.png'
+            })
+          .brands-list__brand
+            +brand({
+              name: 'Ampeq',
+              imgPath: 'assets/images/media/brands/ampeq.png'
+            })
+          .brands-list__brand
+            +brand({
+              name: 'Aphex',
+              imgPath: 'assets/images/media/brands/aphex.png'
+            })
+
+      article.brands-list
+        header.brands-list__header
+          .brands-list__heading B
+        .brands-list__body
+          .brands-list__brand
+            +brand({
+              name: 'Beyerdynamic',
+              imgPath: 'assets/images/media/brands/beyerdynamic.png'
+            })
+          .brands-list__brand
+            +brand({
+              name: 'Blue Microphones',
+              imgPath: 'assets/images/media/brands/blue.png'
+            })
+
+      article.brands-list
+        header.brands-list__header
+          .brands-list__heading C
+        .brands-list__body
+          .brands-list__brand
+            +brand({
+              name: 'Cherub Technology',
+              imgPath: 'assets/images/media/brands/cherub.png'
+            })
+          .brands-list__brand
+            +brand({
+              name: 'Clarity',
+              imgPath: 'assets/images/media/brands/clarity.png'
+            })
+          .brands-list__brand
+            +brand({
+              name: 'Clayton',
+              imgPath: 'assets/images/media/brands/clayton.png'
+            })
+          .brands-list__brand
+            +brand({
+              name: 'Crate',
+              imgPath: 'assets/images/media/brands/crate.png'
+            })
+          .brands-list__brand
+            +brand({
+              name: 'Cympad',
+              imgPath: 'assets/images/media/brands/cympad.png'
+            })
+
+      article.brands-list
+        header.brands-list__header
+          .brands-list__heading D
+        .brands-list__body
+          .brands-list__brand
+            +brand({
+              name: 'Denon DJ',
+              imgPath: 'assets/images/media/brands/denon.png'
+            })
+          .brands-list__brand
+            +brand({
+              name: 'Blue Microphones',
+              imgPath: 'assets/images/media/brands/bm.png'
+            })
+          .brands-list__brand
+            +brand({
+              name: 'Dolby Digital',
+              imgPath: 'assets/images/media/brands/dd.png'
+            })
+          .brands-list__brand
+            +brand({
+              name: 'Dunlop',
+              imgPath: 'assets/images/media/brands/dunlop.png'
+            })
+    // brands-section
+    
+    // conclusion-section
+    +section("Заголовок и описание", false, "section--gray conclude-section")
+      p Еним ессент хас еа, еа при харум маиорум. Меа ех сонет поссит минимум, при ин лаборе ириуре алияуид. Харум веритус ин сит, при но цонсул семпер промпта, ат луптатум яуаестио сцрибентур еам. Ех нец еиус муциус репудиаре, еум аудиам мандамус ехплицари но. Ест ет солум тациматес урбанитас, ад ест цорпора пертинациа.
+      p Вис одио татион иудицабит но. Ех етиам неморе меа. Еос ан виде аугуе волуптатум, иус еиус чоро малуиссет ет. Ин иуварет нусяуам еос, менандри диссентиунт ан еам. Трацтатос омиттантур ет нам, ан при доценди яуаерендум, аугуе лаборе перицула ин еос.
+      p Те яуи маиорум номинави, не цум тота суммо регионе. Ет мутат модус вис. Сит не порро дицтас. Цум ин диам утрояуе, елитр адмодум улламцорпер вел но, еам еу омнис посидониум. Унум анимал сеа ех. Сед ин нибх веритус елояуентиам, про елит дисцере сигниферумяуе ет.
+    // /conclusion-section

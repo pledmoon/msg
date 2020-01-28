@@ -1,0 +1,43 @@
+.brands-filter {
+  background: #fafafa;
+  padding: 3rem 0 1rem;
+  columns: 4 25rem;
+
+  &__item {
+    font-weight: 600;
+    font-size: 1.4rem;
+    margin: 0 0 2rem;
+
+    -webkit-column-break-inside: avoid;
+    page-break-inside: avoid;
+    break-inside: avoid;
+
+    &.active > a {
+      cursor: default;
+      color: $primary-color;
+    }
+  }
+
+  &__link {
+    color: $black;
+    transition: all .3s;
+    position: relative;
+    padding-left: 1.5rem;
+    display: inline-block;
+
+    &::before {
+      content: "";
+      width: 2px;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      background: $primary-color;
+      transform: translateY(-50%);
+    }
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+}

@@ -1,0 +1,11 @@
+mixin contact-line(data, mod)
+
+  +b.contact-line(class=mod)
+    +icon(data.icon, 'contact-line__icon')
+    +e.title #{data.title}
+    +e.info 
+      each info, ix in data.info
+        if data.info[ix].href
+          +e.A.info-link(href=data.info[ix].href) #{data.info[ix].text}
+        else
+          +e.SPAN.info-text(href=data.info[ix].href) #{data.info[ix].text}

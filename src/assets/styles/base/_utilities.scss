@@ -1,0 +1,39 @@
+/* Aka Helpers
+------------------------------------------ */
+.img-responsive {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mb-small {
+  margin-bottom: 2rem;
+}
+.mb-medium {
+  margin-bottom: 2rem;
+
+  @media (min-width: $md) {
+    margin-bottom: 3rem;
+  }
+  
+  @media (min-width: $lg) {
+    margin-bottom: 4rem;
+  }
+}
+.mb-big {
+  margin-bottom: 8rem;
+}
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  display: block;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+/* Misc Global Classes
+------------------------------------------ */

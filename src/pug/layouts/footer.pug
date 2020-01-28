@@ -1,0 +1,152 @@
+include ../components/footer-collapse
+include ../components/logo
+include ../components/soc
+
+mixin footer()
+  // brands-carousel
+  .brands-carousel-wrap
+
+    .swiper-container.brands-carousel.js-brands-carousel
+
+      .swiper-wrapper
+
+        .swiper-slide
+          a.brand(href="#")
+            figure.brand__main
+              .brand__img-wrap
+                img.brand__img.img-responsive.swiper-lazy(src="http://pluspng.com/img-png/loader-png-loading-icon-256.png" data-src="assets/images/media/brands/acme.png" alt="")
+                .swiper-lazy-preloader.swiper-lazy-preloader-white
+
+        .swiper-slide
+          a.brand(href="#")
+            figure.brand__main
+              .brand__img-wrap
+                img.brand__img.img-responsive.swiper-lazy(src="http://pluspng.com/img-png/loader-png-loading-icon-256.png" data-src="assets/images/media/brands/yamaha.png" alt="")
+                .swiper-lazy-preloader.swiper-lazy-preloader-white
+
+        .swiper-slide
+          a.brand(href="#")
+            figure.brand__main
+              .brand__img-wrap
+                img.brand__img.img-responsive.swiper-lazy(src="http://pluspng.com/img-png/loader-png-loading-icon-256.png" data-src="assets/images/media/brands/clarity.png" alt="")
+                .swiper-lazy-preloader.swiper-lazy-preloader-white
+
+        .swiper-slide
+          a.brand(href="#")
+            figure.brand__main
+              .brand__img-wrap
+                img.brand__img.img-responsive.swiper-lazy(src="http://pluspng.com/img-png/loader-png-loading-icon-256.png" data-src="assets/images/media/brands/clayton.png" alt="")
+                .swiper-lazy-preloader.swiper-lazy-preloader-white
+
+        .swiper-slide
+          a.brand(href="#")
+            figure.brand__main
+              .brand__img-wrap
+                img.brand__img.img-responsive.swiper-lazy(src="http://pluspng.com/img-png/loader-png-loading-icon-256.png" data-src="assets/images/media/brands/alvarez-logo.png" alt="")
+                .swiper-lazy-preloader.swiper-lazy-preloader-white
+
+        .swiper-slide
+          a.brand(href="#")
+            figure.brand__main
+              .brand__img-wrap
+                img.brand__img.img-responsive.swiper-lazy(src="http://pluspng.com/img-png/loader-png-loading-icon-256.png" data-src="assets/images/media/brands/blue.png" alt="")
+                .swiper-lazy-preloader.swiper-lazy-preloader-white
+
+        .swiper-slide
+          a.brand(href="#")
+            figure.brand__main
+              .brand__img-wrap
+                img.brand__img.img-responsive.swiper-lazy(src="http://pluspng.com/img-png/loader-png-loading-icon-256.png" data-src="assets/images/media/brands/native-instrument.png" alt="")
+                .swiper-lazy-preloader.swiper-lazy-preloader-white
+  // /brands-carousel
+
+  // subscribe
+  .subscribe
+    .container-fluid
+      .subscribe__body
+        form.subscribe-form.subscribe__form(action="/" method="POST" name="subscribe-form")
+          .subscribe-form__header
+            .subscribe-form__title Будь в курсе
+            .subscribe-form__note Узнайте первым об акциях и новинках
+          .subscribe-form__field
+            input.subscribe-form__input(type="email" name="user-email" placeholder="Ваш E-mail")
+            input.subscribe-form__btn.btn.btn--main(type="submit" value="Подписаться" name="send-data")
+        +soc('subscribe__soc')
+  // /subscribe
+
+  footer.footer.js-footer-collapse
+    .container-fluid
+      .row
+        .col-md-4
+          .footer-collapse
+            .footer-collapse__title Контакты
+              +icon('chevron-down', 'footer-collapse__title-icon')
+            .footer-collapse__body
+              address.footer__contact-lines
+                +contact-line({
+                  icon: 'placeholder',
+                  info: [
+                    {
+                      text: 'Молдова, Кишинев, ул. Сармизегетуза 32'
+                    }
+                  ]
+                })
+
+                +contact-line({
+                  icon: 'phone-call',
+                  title: 'Клиент сервис:',
+                  info: [
+                    {
+                      href: 'tel:+37379022033',
+                      text: '+373 79 022 033; '
+                    },
+                    {
+                      href: 'tel:+373221223',
+                      text: '+373 22 12 23 46'
+                    }
+                  ]
+                })
+                
+                +contact-line({
+                  icon: 'mail',
+                  info: [
+                    {
+                      href: 'mailto:office@lineproduction.md',
+                      text: 'office@lineproduction.md'
+                    }
+                  ]
+                })
+
+        .col-md-4
+          +footer-collapse('Информация', 
+                          ['Эксплуатация', 
+                          'Анонимность',
+                          'Доставка',
+                          'Возврат товара',
+                          'Возврат средств',
+                          'Гарантия',
+                          'Отмена заказа',
+                          'Кредит',
+                          'Оплата',
+                          'Политика “Куки”'], 'footer-collapse--columns', true)
+
+        .col-md-2
+          +footer-collapse('О компании', 
+                          ['Line Production', 
+                          'Почему мы?', 
+                          'Новостной блог', 
+                          'Контакты'])
+
+        .col-md-2
+          +footer-collapse('Мой кабинет', 
+                          ['Вход в систему', 
+                          'Регистрация', 
+                          'Мои заказы', 
+                          'Вишлист', 
+                          'Корзина'])
+      .footer__summary
+        +logo(true, 'footer__logo')
+        small.footer__copy Copyright &copy; 2019. All rights reserved.
+        .footer__dev
+          a.footer__dev-link(href="#")
+            img.footer__dev-img(src="assets/images/dev.png" alt="IT Works")

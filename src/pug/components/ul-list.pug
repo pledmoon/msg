@@ -1,0 +1,6 @@
+mixin ul-list(blockClass, ...items)
+
+  ul(class=blockClass + "__list")
+    each item in items
+      li(class=blockClass + "__item")
+        a(class=blockClass + "__link" href="#")= item

@@ -1,0 +1,87 @@
+include ../components/contact-line
+include ../components/search-form
+include ../components/header-utility
+include ../components/dropdown-products-list
+include ../components/select
+include ../components/breadcrumbs
+
+mixin header()
+
+  +b.HEADER.header
+    .container-fluid
+      +e.main
+        +logo(logoIndex, 'header__logo')
+
+        +contact-line({
+          icon: 'customer-service',
+          title: 'Клиент сервис:',
+          info: [
+            {
+              href: 'tel:+37379022033',
+              text: '+373 79 022 033'
+            }
+          ]
+        }, 'header__contact-line')
+
+        +e.search-bar
+
+          +b.BUTTON.toggle-navbar(type="button")
+            +e.SPAN.line
+            +e.SPAN.line
+
+          +search-form('header__search-form')
+        
+        // header-utilities
+        .header__utilities
+
+          +header-utility({
+            icon: 'user'
+          })
+
+          +header-utility({
+            icon: 'heart'
+          })
+
+          +header-utility({
+            icon: 'shopping-cart',
+            quantity: 11
+          })
+            //- +dropdown-products-list()
+        // /header-utilities
+
+  .navbar-section
+
+    .container-fluid
+
+      .navbar-section__main
+
+        .navbar-section__navbar
+          include ../components/main-nav
+
+        .navbar-section__lang
+          +select([
+            {
+              value: 'ru',
+              optionText: 'Ru'
+            },
+            {
+              value: 'ro',
+              optionText: 'Ro'
+            },
+            {
+              value: 'en',
+              optionText: 'Eng'
+            },
+            {
+              value: 'ua',
+              optionText: 'Ua'
+            },
+            {
+              value: 'md',
+              optionText: 'Md'
+            }
+          ], 'select-lang header__select-lang', 'js-select-region')
+  
+  if breadcrumbs
+    .container-fluid
+      +breadcrumbs(["Главная", "Каталог по назначению", "Диджейское оборудование", "MIDI контроллеры"])

@@ -1,0 +1,7 @@
+mixin brand(data)
+  
+  +b.A.brand-item(href="#")
+    +e.FIGURE.main
+      +e.img-wrap
+        +e.IMG.img.img-responsive(src=data.imgPath)
+      +e.FIGCAPTION.figcaption= data.name

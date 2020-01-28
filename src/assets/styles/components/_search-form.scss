@@ -1,0 +1,30 @@
+.search-form {
+  &__field {
+    font-size: 1.4rem;
+    position: relative;
+  }
+
+  &__input {
+    border: 1px solid #4e4e4e;
+    background: #131313;
+    color: $white;
+    padding-right: 3.5rem;
+  }
+  
+  &__submit {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0 1rem;
+
+    &-icon {
+      fill: $primary-color;
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+}

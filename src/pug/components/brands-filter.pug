@@ -1,0 +1,10 @@
+mixin brands-filter(mod, ...items)
+
+  +b.UL.brands-filter(class=mod)
+    each item, ix in items
+      if ix == 0
+        +e.LI.item.active
+          +e.A.link(href="#")= item
+      else
+        +e.LI.item
+          +e.A.link(href="#")= item

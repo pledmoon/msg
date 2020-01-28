@@ -1,0 +1,144 @@
+.tabs
+
+  .tabs__header
+    
+    .table-responsive
+      ul.tabs__list
+        li.tabs__item
+          a.tabs__link.is-active(href="#recommended") Рекомендуемые
+        li.tabs__item
+          a.tabs__link(href="#popular") Популярные
+        li.tabs__item
+          a.tabs__link(href="#new") Новинки
+        li.tabs__item
+          a.tabs__link(href="#sales") Распродажи
+        li.tabs__item
+          a.tabs__link(href="#hits") В тренде
+
+  .tabs__panes
+
+    .tabs__tab-pane.is-active
+
+      .row
+
+        .col-sm-6.col-md-4.col-lg-6
+
+          +product({
+            name: "Hagstrom H-II Tremar White Gloss",
+            imgPath: "assets/images/media/products/product-1.png",
+            price: "5,599 MDL",
+            rate: "63%",
+            rateAmount: 145
+          }, 'product--wide')
+
+        .col-sm-6.col-md-4.col-lg-3
+
+          +product({
+            name: "Shure SM 7",
+            imgPath: "assets/images/media/products/product-2.png",
+            price: "5,899 MDL",
+            rate: "20%"
+          }, '')
+
+        .col-sm-6.col-md-4.col-lg-3
+      
+          +product({
+            name: "Presonus Eris E4.5",
+            imgPath: "assets/images/media/products/product-3.png",
+            price: "2,888 MDL",
+            rate: "33%",
+            rateAmount: 145
+          }, '')
+
+        .col-sm-6.col-md-4.col-lg-3
+      
+          +product({
+            name: "Akai MPK mini Mk2",
+            imgPath: "assets/images/media/products/product-4.png",
+            price: "1,395 MDL",
+            rate: "80%",
+            rateAmount: 15
+          }, '')
+      
+        .col-sm-6.col-md-4.col-lg-3
+
+          +product({
+            name: "Focusrite Scarlett Solo 3rd",
+            imgPath: "assets/images/media/products/product-5.png",
+            price: "1,599 MDL",
+            rate: "100%",
+            rateAmount: 57
+          }, '')
+
+        .col-sm-6.col-md-4.col-lg-6
+
+          +product({
+            name: "tc electronic PolyTune Clip Black Tuner",
+            imgPath: "assets/images/media/products/product-6.png",
+            price: "2,888 MDL",
+            rate: "10%",
+            rateAmount: 3
+          }, 'product--wide')
+
+    .tabs__tab-pane
+
+      .row
+        .col-sm-6.col-md-4.col-lg-3
+      
+          +product({
+            name: "Akai MPK mini Mk2",
+            imgPath: "assets/images/media/products/product-4.png",
+            price: "1,395 MDL",
+            rate: "80%",
+            rateAmount: 15
+          }, '')
+      
+        .col-sm-6.col-md-4.col-lg-3
+
+          +product({
+            name: "Focusrite Scarlett Solo 3rd",
+            imgPath: "assets/images/media/products/product-5.png",
+            price: "1,599 MDL",
+            rate: "100%",
+            rateAmount: 57
+          }, '')
+
+        .col-sm-6.col-md-4.col-lg-6
+
+          +product({
+            name: "tc electronic PolyTune Clip Black Tuner",
+            imgPath: "assets/images/media/products/product-6.png",
+            price: "2,888 MDL",
+            rate: "10%",
+            rateAmount: 3
+          }, 'product--wide')
+
+    .tabs__tab-pane
+
+      .row
+        .col-sm-6.col-md-4.col-lg-6
+
+          +product({
+            name: "tc electronic PolyTune Clip Black Tuner",
+            imgPath: "assets/images/media/products/product-6.png",
+            price: "2,888 MDL",
+            rate: "10%",
+            rateAmount: 3
+          }, 'product--wide')
+
+        .col-sm-6.col-md-4.col-lg-6
+
+          +product({
+            name: "Hagstrom H-II Tremar White Gloss",
+            imgPath: "assets/images/media/products/product-1.png",
+            price: "5,599 MDL",
+            rate: "63%",
+            rateAmount: 145
+          }, 'product--wide')
+
+
+    .tabs__tab-pane
+      p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas sequi dignissimos cumque possimus deleniti provident dolorum nisi culpa iste asperiores officiis, ducimus, natus commodi mollitia perspiciatis eum est autem rem. Autem quas beatae a debitis, voluptatem soluta. Quaerat maxime ipsa necessitatibus, dolorum consectetur officia, alias eveniet placeat dicta saepe temporibus?
+ 
+    .tabs__tab-pane
+      p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas sequi dignissimos cumque possimus deleniti provident dolorum nisi culpa iste asperiores officiis, ducimus, natus commodi mollitia perspiciatis eum est autem rem. Autem quas beatae a debitis, voluptatem soluta. Quaerat maxime ipsa necessitatibus, dolorum consectetur officia, alias eveniet placeat dicta saepe temporibus?

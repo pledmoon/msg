@@ -1,0 +1,155 @@
+.header-utility {
+  $self: &;
+
+  align-self: stretch;
+  transition: all .3s;
+  
+  @media (min-width: $md) {
+    &:not(:first-child) #{$self}__main::before {
+      content: "";
+      height: 2rem;
+      border-left: 1px dotted #999;
+      position: absolute;
+      left: -1px;
+    }
+  }
+
+  &:hover {
+    #{$self}__main::after {
+      width: 76%;
+    }
+
+    #{$self}__icon {
+      fill: $white;
+    }
+  }
+
+  &__main {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    position: relative;
+
+    &::after {
+      content: "";
+      width: 0;
+      position: absolute;
+      bottom: 0;
+      left: 12%;
+      background: $primary-color;
+      height: .3rem;
+      transition: all .3s;
+    }
+  }
+
+  &__link {
+    padding: 2rem 2rem;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    white-space: nowrap;
+
+    &-helper {
+      position: relative;
+    }
+  }
+
+  &__icon {
+    fill: #999;
+    width: 2.5rem;
+    height: 2.5rem;
+    transition: all .3s;
+
+    @media (min-width: $md) {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+  }
+
+  &__count {
+    color: $dark--medium;
+    font-size: 1.6rem;
+    white-space: nowrap;
+    color: $primary-color;
+    font-weight: 600;
+    vertical-align: middle;
+    margin-left: .7rem;
+  }
+
+  &__dropdown {
+    background: $white;
+    top: 100%;
+    min-width: 38rem;
+    // padding: 1.5rem;
+    z-index: $dropdownZIndex;
+    box-shadow: 0 0 20px rgba($black, .2);
+    border-bottom: 3px solid $primary-color;
+
+    @include hide-element;
+
+    &-header {
+      padding: 1.5rem 2rem;
+    }
+
+    &-body {
+      max-height: 33.5rem;
+      overflow-y: auto;
+      padding: 1.5rem 2.5rem;
+    }
+
+    &-footer {
+      background: #fafafa;
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+
+      &-btn {
+
+      }
+    }
+
+    /* interactive */
+    #{$self}__main.is-opened & {
+      visibility: visible;
+      left: auto;
+      right: 0;
+      opacity: 1;
+      animation: .2s fadeInUp;
+      animation-fill-mode: forwards;
+    }
+    /* interactive */
+  }
+
+  &__dropdown-title {
+    font-size: 2.4rem;
+    padding-right: 2rem;
+    font-weight: 400;
+    padding-bottom: 1.5rem;
+    text-transform: uppercase;
+    position: relative;
+
+    &::after {
+      content: "";
+      width: 6rem;
+      height: .3rem;
+      background: $primary-color;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+    }
+  }
+
+  &__dropdown-close {
+    position: absolute;
+    right: 1.5rem;
+    top: 1.5rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    cursor: pointer;
+  }
+
+  &__close-icon {
+    width: 100%;
+    height: 100%;
+    vertical-align: top;
+  }
+}

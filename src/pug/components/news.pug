@@ -1,0 +1,9 @@
+mixin news(data, mod)
+  +b.A(href="#" class=mod).news
+    +e.DIV.img-wrap
+      +e.IMG.img.img-responsive(src=data.imgPath alt="news")
+    +e.DIV.desc
+      +e.TIME(datetime="2019-12-28").date #{data.date}
+      +e.heading #{data.heading}
+      if (data.excerpt)
+        +e.P.excerpt #{data.excerpt}

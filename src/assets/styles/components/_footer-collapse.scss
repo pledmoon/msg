@@ -1,0 +1,120 @@
+/* footer-collapse */
+.footer-collapse {
+  $self: &;
+
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
+
+  @media (min-width: $md) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  &__title {
+    color: $white;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    position: relative;
+    padding: 2.5rem 0;
+    border-bottom: 1px solid #333333;
+    
+    &::after {
+      content: "+";
+      width: 1.6rem;
+      height: 1.6rem;
+      line-height: 1.6rem;
+      font-size: 2.4rem;
+      position: absolute;
+      right: 1.5rem;
+      top: 50%;
+      text-align: center;
+      transform: translateY(-50%);
+      color: $primary-color;
+    }
+
+    @media (min-width: $md) {
+      margin: 0 0 3rem;
+      padding: 0 0 2rem;
+      border: none;
+
+      &::after {
+        content: "";
+        width: 6.5rem;
+        height: 3px;
+        top: 100%;
+        position: absolute;
+        left: 0;
+        background: $primary-color;
+      }
+    }
+
+    #{$self}.is-toggled & {
+      border-bottom: none;
+
+      &::after {
+        content: "-";
+        color: $white;
+      }
+    }
+  }
+
+  &__body {
+    display: none;
+
+    @media (min-width: $md) {
+      display: block;
+    }
+    
+    @media (max-width: $md--mw) {
+      #{$self}.is-toggled & {
+        display: block;
+
+        border-bottom: 1px solid #484848;
+        padding: 0 15px 2.2rem;
+      }
+    }
+  }
+
+  &__nav {}
+
+  &__list {
+    line-height: 1.35;
+  }
+
+  &__item {
+    margin-top: .8rem;
+    position: relative;
+    font-size: 1.4rem;
+    padding-left: 1rem;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &::before {
+      content: '.';
+      position: absolute;
+      left: 0;
+      top: 0;
+      line-height: 1;
+      color: $primary-color;
+      transform: translateY(-.3rem);
+    }
+  }
+
+  &__link {
+    color: $white;
+    transition: all .3s;
+
+    &:hover {
+      color: $primary-color;
+      text-decoration: none;
+    }
+  }
+
+  &--columns {
+    #{$self}__list {
+      columns: 10rem 2;
+    }
+  }
+}

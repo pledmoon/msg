@@ -1,0 +1,24 @@
+mixin header-utility(data)
+
+  .header-utility
+    .header-utility__main
+
+      a.header-utility__link(href="#")
+        .header-utility__link-helper
+          +icon(data.icon, 'header-utility__icon')
+          if data.quantity
+            span.header-utility__count #{data.quantity}
+      
+
+      block
+      .header-utility__dropdown
+        .header-utility__dropdown-header
+          .header-utility__dropdown-title Заголовок
+          .header-utility__dropdown-close
+            +icon('close', 'header-utility__close-icon')
+
+        .header-utility__dropdown-body.js-custom-scroll
+          p lorem ipsum dolor sit avet
+        
+        .header-utility__dropdown-footer
+          a.header-utility__dropdown-footer-btn.btn.btn--reverse(href="#") Кнопка

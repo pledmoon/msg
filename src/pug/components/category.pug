@@ -1,0 +1,8 @@
+mixin category(data)
+
+  each category in data
+    +b.A(href="#").category
+      +e.FIGURE.main
+        +e.img-wrap
+          +e.IMG(src=category.imgPath alt="Category").img.img-responsive
+        +e.FIGCAPTION.name= category.heading

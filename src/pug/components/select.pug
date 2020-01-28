@@ -1,0 +1,17 @@
+mixin select(data, mod, type)
+
+  if type == 'default'
+    .select-default(class=mod)
+      select.js-select-default
+        each option in data
+          option(value=option.value) #{option.optionText}
+  else if type == 'autocomplete'
+    .select-autocomplete(class=mod)
+      select.js-select-default
+        each option in data
+          option(value=option.value) #{option.optionText}
+  else
+    div.select-default(class=mod)
+      select(class=type)
+        each option in data
+          option(value=option.value) #{option.optionText}

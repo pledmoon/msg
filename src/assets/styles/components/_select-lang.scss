@@ -1,0 +1,70 @@
+/* Select Lang */
+.select-lang {
+  max-width: 9rem;
+  max-height: 3.4rem;
+  white-space: nowrap;
+  display: inline-block;
+
+  .choices {
+    border: none;
+    background: transparent;
+
+    &.is-open {
+      background: transparent;
+    }
+  }
+
+  .choices__item--choice {
+    padding-left: 1rem !important;
+  }
+
+  .choices__inner {
+    font-size: 1.4rem;
+  }
+
+  .country-icon {
+    margin-right: .5rem;
+    margin-top: .5rem;
+    width: 2rem;
+    height: 1rem;
+    float: left;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border: 1px solid $gray--medium;
+  }
+
+  .flag-icon {
+    margin-right: 10px;
+    margin-top: .5rem;
+    width: 2rem;
+    height: 1rem;
+    float: left;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border: 1px solid $gray--medium;
+  }
+
+  .md {
+    background-image: url("../images/md.png");
+  }
+
+  .ru {
+    background-image: url("../images/ru.png");
+  }
+
+  .ro {
+    background-image: url("../images/ro.png");
+  }
+
+  .ua {
+    background-image: url("../images/ua.png");
+  }
+
+  .en {
+    background-image: url("../images/en.png");
+  }
+}
+/* Select Lang */
