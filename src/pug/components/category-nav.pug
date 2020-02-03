@@ -1,0 +1,10 @@
+mixin category-nav(data)
+
+  +b.category-nav.d-none.d-md-block
+    +e.heading.h3 Рубрики
+    +e.NAV.nav
+      +e.UL.list
+        each item in data
+          +e.LI.item
+            +e.A.link(href="#") #{item.name}
+              +e.SPAN.amount (#{item.value})

@@ -1,0 +1,49 @@
+.category-nav {
+  border-right: 1px dotted #e7e7e7;
+  padding-right: 1.5rem;
+
+  &__heading {}
+
+  &__nav {}
+
+  &__list {}
+
+  &__item {
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 1.25;
+
+    &:not(:last-child) {
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  &__link {
+    color: $black;
+    transition: all .3s;
+    display: block;
+    padding-left: 1.5rem;
+    position: relative;
+
+    &::before {
+      content: "";
+      width: 2px;
+      height: 1.3rem;
+      position: absolute;
+      left: 0;
+      top: 1px;
+      background: $primary-color;
+    }
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+
+  &__amount {
+    color: $gray;
+    font-size: 1.2rem;
+    padding-left: .5rem;
+    font-weight: 400;
+  }
+}

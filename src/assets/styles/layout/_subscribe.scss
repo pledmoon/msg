@@ -1,0 +1,127 @@
+.subscribe {
+  background: #212121;
+  padding: 1.5rem 0;
+
+  .container-fluid {
+    background: inherit;
+
+    @media (min-width: $md) {
+      padding: 0 3rem;
+    }
+  }
+
+  &__body {
+    @media (min-width: $md) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  &__form {
+    margin-bottom: 1.5rem;
+
+    @media (min-width: $md) {
+      flex-grow: 1;
+      margin-bottom: 0;
+    }
+  }
+  
+  &__soc {
+    white-space: nowrap;
+    text-align: center;
+
+    @media (min-width: $md) {
+      text-align: left;
+    }
+  }
+}
+
+.subscribe-form {
+  color: $white;
+
+  @media (min-width: $md) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__header {
+    margin-bottom: 1.5rem;
+    text-align: center;
+
+    @media (min-width: $md) {
+      margin-bottom: 0;
+      text-align: left;
+    }
+  }
+
+  &__title {
+    text-transform: uppercase;
+    position: relative;
+    padding-bottom: 2rem;
+
+    &::after {
+      content: "";
+      width: 2.5rem;
+      height: .2rem;
+      background: $primary-color;
+      position: absolute;
+      left: 50%;
+      bottom: 1rem;
+      transform: translateX(-50%);
+    }
+
+    @media (min-width: $md) {
+      display: inline-block;
+      vertical-align: middle;
+      padding-bottom: 0;
+      padding-right: 2rem;
+      margin-right: 2rem;
+
+      &::after {
+        content: "";
+        width: .2rem;
+        height: 2.5rem;
+        background: $primary-color;
+        position: absolute;
+        right: 0;
+        bottom: auto;
+        left: auto;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+  }
+  
+  &__note {
+    font-size: 1.4rem;
+    vertical-align: middle;
+    display: inline-block;
+    max-width: 29rem;
+  }
+  
+  &__field {
+    display: flex;
+    flex-grow: 1;
+    padding: 0 1.5rem;
+
+    @media (min-width: $md) {
+      padding: 0 2.5rem;
+    }
+  }
+  
+  &__input {
+    flex-grow: 1;
+    background: #212121;
+    border-color: #4e4e4e;
+    color: $white;
+  }
+
+  &__btn {
+    flex-shrink: 0;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+}

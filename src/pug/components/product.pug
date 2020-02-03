@@ -4,35 +4,37 @@ mixin product(data, mod)
     if data.wish
 
     +e.header
-      +e.A(href="#").img-wrapper
-        +e.IMG(src=data.imgPath alt="product").img
+      +e.header-body
+        +e.A(href="#").img-wrapper
+          +e.IMG(src=data.imgPath alt="product").img
     +e.main
-      +e.preview
-        +e.heading
-          +e.heading-link(href="#")= data.name
-        +e.rate
-          +e.rate-wrap
-            +e.SPAN.rate-stars-active(style="width: " + data.rate)
-              +e.I.rate-icon.fas.fa-star
-              +e.I.rate-icon.fas.fa-star
-              +e.I.rate-icon.fas.fa-star
-              +e.I.rate-icon.fas.fa-star
-              +e.I.rate-icon.fas.fa-star
-            +e.SPAN.rate-stars-inactive
-              +e.I.rate-icon.fa.fa-star
-              +e.I.rate-icon.fa.fa-star
-              +e.I.rate-icon.fa.fa-star
-              +e.I.rate-icon.fa.fa-star
-              +e.I.rate-icon.fa.fa-star
-          +e.SPAN.rate-amount - 
-            if data.rateAmount
-              =data.rateAmount
-            else 
-              | 233
-      +e.price= data.price
-      //- if data.btnBuy
-      //-   +e.A.add.btn.btn--main(href="#") Добавить в корзину
-      //-     +icon('shopping-cart', 'product__add-icon')
+      +e.main-body
+        +e.preview
+          +e.heading
+            +e.heading-link(href="#")= data.name
+          +e.rate
+            +e.rate-wrap
+              +e.SPAN.rate-stars-active(style="width: " + data.rate)
+                +e.I.rate-icon.fas.fa-star
+                +e.I.rate-icon.fas.fa-star
+                +e.I.rate-icon.fas.fa-star
+                +e.I.rate-icon.fas.fa-star
+                +e.I.rate-icon.fas.fa-star
+              +e.SPAN.rate-stars-inactive
+                +e.I.rate-icon.fa.fa-star
+                +e.I.rate-icon.fa.fa-star
+                +e.I.rate-icon.fa.fa-star
+                +e.I.rate-icon.fa.fa-star
+                +e.I.rate-icon.fa.fa-star
+            +e.SPAN.rate-amount - 
+              if data.rateAmount
+                =data.rateAmount
+              else 
+                | 233
+        +e.price= data.price
+        if data.btnBuy
+          +e.A.add.btn.btn--main(href="#") Добавить в корзину
+            +icon('shopping-cart', 'product__add-icon')
     if data.brand
       +e.A.brand(href="#")
         +e.IMG.brand-img(src=data.brand alt="brand")

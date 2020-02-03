@@ -9,8 +9,8 @@
     position: relative;
     padding-right: 2.8rem;
     background: $white;
-    border: 1px solid $gray;
-    border-radius: 3px;
+    border: 1px solid $gray--medium;
+    // border-radius: 3px;
 
     &.is-open {
       box-shadow: 0 0 15px rgba($black, 0.1);

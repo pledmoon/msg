@@ -58,3 +58,35 @@
     }
   }
 }
+
+.brand {
+  $self: &;
+
+  max-width: 17rem;
+  margin: 0 auto;
+  display: block;
+  height: 100%;
+
+  &:hover {
+    #{$self}__img {
+      filter: grayscale(0%);
+      opacity: 1;
+    }
+  }
+
+  &__main {}
+
+  &__img-wrap {
+    height: 6rem;
+    position: relative;
+  }
+
+  &__img {
+    max-height: 100%;
+    filter: grayscale(100%);
+    transition: all .5s ease-in-out;
+    // opacity: .5;
+
+    @include absolute-center;
+  }
+}

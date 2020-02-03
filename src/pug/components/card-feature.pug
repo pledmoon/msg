@@ -1,0 +1,14 @@
+mixin card-feature(data)
+  +b.FIGURE.card-feature
+    +e.img-wrap
+      if data.icon
+        +icon(data.icon, 'card-feature__icon')
+      if data.src
+        +e.IMG.icon(src=data.src alt="delivery")
+    +e.FIGCAPTION.details
+      +e.heading #{data.name}
+        if data.tooltip
+          +e.I.tooltip.fas.fa-info(data-tippy-content=data.tooltip)
+      if data.phone
+        +e.A.phone(href="+37379022033") +373 79 022 033
+      +e.desc #{data.desc}

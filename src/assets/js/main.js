@@ -371,78 +371,432 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   /* Choices Countries */
 
-  /* Choices Statuses */
-  const statuses = document.querySelector('.js-select-statuses');
+  /* Choices Sets */
+  const setSelect = document.querySelector('.js-select-set');
 
-  if ( statuses ) {
-    let statusChoice = new Choices(statuses, {
-      delimiter: ',',
-      searchEnabled: false,
-      itemSelectText: '',
+  if (setSelect) {
+
+    let setChoices = new Choices('.js-select-set', {
 
       callbackOnCreateTemplates: function(strToEl) {
+
         let classNames = this.config.classNames;
         let itemSelectText = this.config.itemSelectText;
 
         return {
-          choice: function(classNames, data) {
-            let placeholder = "";
-            if (data.placeholder) {
-              placeholder = classNames.placeholder;
-            }
 
+          item: function(classNames, data) {
             return strToEl(
-                '\
-                  <div\
-                    class="' +
-                        String(classNames.item) +
-                        ' ' +
-                        String(classNames.itemChoice) +
-                        ' ' +
-                        String(placeholder) +
-                        ' ' +
-                        String(
-                          data.disabled
-                            ? classNames.itemDisabled
-                            : classNames.itemSelectable,
-                        ) +
-                        '"\
-                    data-select-text="' +
-                        String(itemSelectText) +
-                        '"\
-                    data-choice \
-                    ' +
-                        String(
-                          data.disabled
-                            ? 'data-choice-disabled aria-disabled="true"'
-                            : 'data-choice-selectable',
-                        ) +
-                        '\
-                    data-id="' +
-                        String(data.id) +
-                        '"\
-                    data-value="' +
-                        String(data.value) +
-                        '"\
-                    ' +
-                        String(
-                          data.groupId > 0 ? 'role="treeitem"' : 'role="option"',
-                        ) +
-                        '\
-                    >\
-                    <span class="item-' + data.id + '"></span> ' +
-                        String(data.label) +
-                        '\
+              '\
+                <div\
+                  class="' +
+                      String(classNames.item) +
+                      ' ' +
+                      String(
+                        data.highlighted
+                          ? classNames.highlightedState
+                          : classNames.itemSelectable,
+                      ) +
+                      '"\
+                  data-item\
+                  data-id="' +
+                      String(data.id) +
+                      '"\
+                  data-value="' +
+                      String(data.value) +
+                      '"\
+                  ' +
+                      String(data.active ? 'aria-selected="true"' : '') +
+                      '\
+                  ' +
+                      String(data.disabled ? 'aria-disabled="true"' : '') +
+                      '\
+                  >\
+                  <span class="extra-price ' + data.value +  '">+ 300 MDL</span> ' +
+                      String(data.label) +
+                      '\
                 </div>\
               ',
             );
           },
+
+          choice: function(classNames, data) {
+            return strToEl(
+              '\
+                <div\
+                  class="' +
+                      String(classNames.item) +
+                      ' ' +
+                      String(classNames.itemChoice) +
+                      ' ' +
+                      String(
+                        data.disabled
+                          ? classNames.itemDisabled
+                          : classNames.itemSelectable,
+                      ) +
+                      '"\
+                  data-select-text="' +
+                      String(itemSelectText) +
+                      '"\
+                  data-choice \
+                  ' +
+                      String(
+                        data.disabled
+                          ? 'data-choice-disabled aria-disabled="true"'
+                          : 'data-choice-selectable',
+                      ) +
+                      '\
+                  data-id="' +
+                      String(data.id) +
+                      '"\
+                  data-value="' +
+                      String(data.value) +
+                      '"\
+                  ' +
+                      String(
+                        data.groupId > 0 ? 'role="treeitem"' : 'role="option"',
+                      ) +
+                      '\
+                  >\
+                  <span class="extra-price ' + data.value + '"></span> ' +
+                      String(data.label) +
+                      '\
+                </div>\
+              ',
+            );
+          },
+
         };
-      }
+
+      },
+
+      itemSelectText: '',
+      searchEnabled: false,
+      shouldSort: false,
     });
   }
-  /* Choices Statuses */
+  /* Choices Sets */
+
+  /* Choices Colors */
+  const colorsSelect = document.querySelector('.js-select-color');
+
+  if (colorsSelect) {
+
+    let colorChoices = new Choices('.js-select-color', {
+
+      callbackOnCreateTemplates: function(strToEl) {
+
+        let classNames = this.config.classNames;
+        let itemSelectText = this.config.itemSelectText;
+
+        return {
+
+          item: function(classNames, data) {
+            return strToEl(
+              '\
+                <div\
+                  class="' +
+                      String(classNames.item) +
+                      ' ' +
+                      String(
+                        data.highlighted
+                          ? classNames.highlightedState
+                          : classNames.itemSelectable,
+                      ) +
+                      '"\
+                  data-item\
+                  data-id="' +
+                      String(data.id) +
+                      '"\
+                  data-value="' +
+                      String(data.value) +
+                      '"\
+                  ' +
+                      String(data.active ? 'aria-selected="true"' : '') +
+                      '\
+                  ' +
+                      String(data.disabled ? 'aria-disabled="true"' : '') +
+                      '\
+                  >\
+                  <span class="color-icon ' + data.value +  '"></span> ' +
+                      String(data.label) +
+                      '\
+                </div>\
+              ',
+            );
+          },
+
+          choice: function(classNames, data) {
+            return strToEl(
+              '\
+                <div\
+                  class="' +
+                      String(classNames.item) +
+                      ' ' +
+                      String(classNames.itemChoice) +
+                      ' ' +
+                      String(
+                        data.disabled
+                          ? classNames.itemDisabled
+                          : classNames.itemSelectable,
+                      ) +
+                      '"\
+                  data-select-text="' +
+                      String(itemSelectText) +
+                      '"\
+                  data-choice \
+                  ' +
+                      String(
+                        data.disabled
+                          ? 'data-choice-disabled aria-disabled="true"'
+                          : 'data-choice-selectable',
+                      ) +
+                      '\
+                  data-id="' +
+                      String(data.id) +
+                      '"\
+                  data-value="' +
+                      String(data.value) +
+                      '"\
+                  ' +
+                      String(
+                        data.groupId > 0 ? 'role="treeitem"' : 'role="option"',
+                      ) +
+                      '\
+                  >\
+                  <span class="color-icon ' + data.value + '"></span> ' +
+                      String(data.label) +
+                      '\
+                </div>\
+              ',
+            );
+          },
+
+        };
+
+      },
+
+      itemSelectText: '',
+      searchEnabled: false,
+      shouldSort: false,
+    });
+  }
+  /* Choices  Colors */
   /* ------------ Choices Selects ------------ */
+
+    /* ------------ Filter ------------ */
+  /* Filter-Slider */
+  let priceRange = document.getElementById('price-range');
+  let inputNumberA = document.getElementById('input-number-a');
+  let inputNumberB = document.getElementById('input-number-b');
+  let inputs = [inputNumberA, inputNumberB];
+
+  if (priceRange) {
+    noUiSlider.create(priceRange, {
+      start: [4500, 17000],
+      connect: true,
+      // tooltips: true,
+      range: {
+        'min': 300,
+        'max': 22000
+      },
+      format:{
+        to: function(e) {
+          return Math.round(e)
+        },
+        from:function(e) {
+          return Number(e)
+        }
+      }
+    });
+
+    priceRange.noUiSlider.on('update', function(values, handle) {
+      inputs[handle].value = values[handle];
+    });
+
+    inputNumberA.addEventListener('change', function() {
+      priceRange.noUiSlider.set([this.value, null]);
+    });
+
+    inputNumberB.addEventListener('change', function() {
+      priceRange.noUiSlider.set([null, this.value]);
+    });
+  }
+  /* Filter-Slider */
+
+  /* Show more */
+  let filterHeadings = document.querySelectorAll('.filter__title');
+
+  filterHeadings.forEach(function(item) {
+    item.addEventListener('click', function(e) {
+      let parent = e.target.closest('.filter__section');
+
+      parent.classList.toggle('is-hidden');
+    });
+  });
+
+  let filterMoreToggles = document.querySelectorAll('.filter__more-options');
+
+  filterMoreToggles.forEach(function(item) {
+    item.addEventListener('click', function(e) {
+      let parent = e.target.closest('.filter__section');
+      let textNode = this.children[0];
+      
+      if ( parent.classList.contains('is-fields-on') ) {
+        parent.classList.remove('is-fields-on');
+        textNode.innerHTML = 'Показать все';
+      } else {
+        parent.classList.add('is-fields-on');
+        textNode.innerHTML = 'Скрыть';
+      }
+
+      e.preventDefault();
+    });
+  });
+  /* Show more */
+
+  /* Filter-Mobile */
+  let filterToggle = document.querySelector('.filter-toggle');
+
+  if (filterToggle) {
+
+    filterToggle.addEventListener('click', function(e) {
+      let body = document.body;
+
+      if ( !body.classList.contains('is-filter-opened') ) {
+        addOverlay();
+        body.classList.add('is-filter-opened');
+        body.style.paddingRight = scrollWidth() + 'px';
+
+        setTimeout(function() {
+          document.addEventListener('click', clickOutsideFilter);
+        });
+      }
+
+      e.preventDefault();
+
+    });
+
+  }
+
+  let filterClose = document.querySelector('.filter__close');
+
+  if (filterClose) {
+
+    filterClose.addEventListener('click', function(e) {
+      let target = e.target.closest('.filter');
+
+      if ( !target ) return;
+
+      removeOverlay();
+      document.body.classList.remove('is-filter-opened');
+      document.body.style.paddingRight = '';
+
+      document.removeEventListener('click', clickOutsideFilter);
+    });
+
+  }
+
+  function clickOutsideFilter(e) {
+    let target = e.target.closest('.filter');
+
+    if (target) return;
+
+    removeOverlay();
+    document.body.classList.remove('is-filter-opened');
+    document.body.style.paddingRight = '';
+
+    document.removeEventListener('click', clickOutsideFilter);
+  }
+  /* Filter-Mobile */
+
+  /* Filter-Toggle-Section */
+  document.addEventListener('click', function(e) {
+    let target = e.target.closest('.filter__title');
+
+    if (!target) return;
+
+    target.closest('.filter__section').classList.toggle('is-opened');
+  });
+  /* Filter-Toggle-Section */
+  /* ------------ Filter ------------ */
+
+  /* ------------ Product-Main ------------ */
+  let galleryThumbs = new Swiper('.js-thumbs-list', {
+    direction: 'vertical',
+    slidesPerView: 5,
+    spaceBetween: 5,
+    watchSlidesVisibility: true,
+    watchSlidesProgress: true,
+
+    navigation: {
+        prevEl: '.product-main-promo__th-prev',
+        nextEl: '.product-main-promo__th-next'
+    }
+  });
+
+  let galleryMain = new Swiper('.js-promo-main', {
+      spaceBetween: 10,
+      // effect: 'coverflow',
+
+      pagination: {
+        el: '.product-main-promo__pagination',
+        clickable: true
+      },
+
+      breakpoints: {
+          768: {
+            pagination: false
+          }
+      },
+
+      thumbs: {
+          swiper: galleryThumbs
+      }
+  });
+
+  lightGallery(document.querySelector('.js-promo-main'), {
+    selector: ".product-main-promo__img-wrap"
+  });
+
+  lightGallery(document.querySelector('.js-lgallery'));
+
+  lightGallery(document.querySelector('.meating-carousel'), {
+    selector: ".meating-promo"
+  });
+
+  /* Drift Zoom */
+  if ( window.matchMedia('(min-width: 992px)').matches ) {
+
+    let driftPaneContainer = document.querySelector(".product-main-promo__zoom-pane");
+    let driftInstance = null;
+
+    initDriftZoom(document.querySelector(".js-promo-main .swiper-slide-active img"), driftPaneContainer);
+
+    galleryMain.on('slideChange', function() {
+      setTimeout(function() {
+
+        driftInstance.destroy();
+        initDriftZoom(document.querySelector(".js-promo-main .swiper-slide-active img"), driftPaneContainer);
+      
+      });
+    });
+
+    function initDriftZoom(driftTriggerElement, driftPaneContainer) {
+      if ( !driftTriggerElement ) return;
+      
+      driftInstance = new Drift(driftTriggerElement, {
+        paneContainer: driftPaneContainer,
+        hoverBoundingBox: true,
+        zoomFactor: 4,
+        inlinePane: false,
+        handleTouch: false
+      });
+    }
+
+  }
+  /* Drift Zoom */
+  /* ------------ Product-Main ------------ */
 });
 
 svg4everybody({});

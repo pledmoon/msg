@@ -1,0 +1,31 @@
+.header-controls.d-none.d-md-flex
+
+  .header-control.header-control__sort
+    label.header-control__title(for="sort-by") Сортировка
+    select.js-select-default#sort-by
+      option(value="sort-1") По рейтингу
+      option(value="sort-2") По цене
+      option(value="sort-3") В наличии
+      option(value="sort-4") Популярные
+
+  .header-control.header-control__show
+    label.header-control__title(for="show-by-select") На странице
+    select.js-select-default#show-by-select
+      option(value="type-1") 1-24
+      option(value="type-2") 24-48
+      option(value="type-3") 48-72
+
+  .header-control
+    include ../components/view-modes
+
+.header-controls.d-md-none
+
+  .header-control
+    a.filter-toggle(href="#") 
+      +icon('funnel', 'filter-toggle__icon')
+      span.filter-toggle__text Фильтры
+
+  .header-control
+    a.sort-by(href="#") 
+      +icon('sort', 'sort-by__icon')
+      span.filter-toggle__text Сортировка

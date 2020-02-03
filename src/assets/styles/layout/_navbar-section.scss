@@ -1,0 +1,23 @@
+.navbar-section {
+  background: $white;
+
+  .container-fluid {
+    background: transparent;
+  }
+
+  &__main {
+    display: flex;
+    position: relative;
+  }
+
+  &__navbar {
+    // position: relative;
+    flex-grow: 1;
+
+    @media (min-width: $md) {
+      margin-right: 2rem;
+    }
+  }
+
+  &__lang {}
+}

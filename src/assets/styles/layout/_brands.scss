@@ -1,0 +1,203 @@
+/* BRANDS */
+.conclude-section {
+  .section__body {
+    max-width: 91rem;
+    margin: 0 auto;
+  }
+
+  .section__body > *:not(:last-child) {
+    margin-bottom: 1.5rem;
+  }
+
+  p {
+    font-size: 1.4rem;
+    color: #9a9a9a;
+  }
+}
+
+.abc-index {
+  text-align: center;
+
+  &__list:not(:first-child) {
+    margin-top: 1rem;
+  }
+
+  &__item {
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    margin: 0 .5rem;
+  }
+
+  &__link {
+    color: #cdcdcd;
+    transition: all .3s;
+
+    &:hover {
+      color: $primary-color;
+      font-weight: 500;
+    }
+  }
+}
+
+.brands-section {
+  .section__body > *:not(:last-child) {
+    margin-bottom: 4.5rem;
+  }
+
+  &__brands-filter {
+    margin-left: -30px;
+    margin-right: -30px;
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+.brands-list {
+  &__header {
+    border-bottom: 1px dotted #e6e6e6;
+    margin-bottom: 2.5rem;
+  }
+
+  &__heading {
+    font-size: 3rem;
+    color: $primary-color;
+    text-transform: uppercase;
+    font-weight: 500;
+    text-align: center;
+    width: 4.5rem;
+    height: 4.5rem;
+    line-height: 4rem;
+    border: 2px solid $primary-color;
+    position: relative;
+    top: 1px;
+
+    &::after {
+      content: "+";
+      width: 2rem;
+      height: 2rem;
+      position: absolute;
+      right: -1rem;
+      bottom: -1rem;
+      color: $primary-color;
+      background: $white;
+      line-height: 2rem;
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -1.3rem;
+  }
+
+  &__brand {
+    flex-basis: 50%;
+    max-width: 50%;
+    padding: 1.3rem;
+
+    @media (min-width: $sm) {
+      flex-basis: 33.333%;
+      max-width: 33.333%;
+    }
+
+    @media (min-width: $md) {
+      flex-basis: 20%;
+      max-width: 20%;
+    }
+
+    @media (min-width: $lg) {
+      flex-basis: 16.666%;
+      max-width: 16.666%;
+    }
+  }
+}
+
+.promo-desc-intro {
+  font-size: 1.4rem;
+  text-align: center;
+  max-width: 90rem;
+  margin: 0 auto;
+}
+
+.brand-intro-section {
+  border-bottom: 1px dotted #e7e7e7;
+
+  &__brand {
+    max-width: 98rem;
+    margin: 0 auto;
+
+    @media (min-width: $md) {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__logo {
+    display: none;
+
+    @media (min-width: $md) {
+      max-width: 30%;
+      flex-basis: 30%;
+      // padding-right: 5rem;
+      display: block;
+    }
+  }
+
+  &__about {
+    @media (min-width: $md) {
+      max-width: 70%;
+      flex-basis: 70%;
+      padding-left: 5rem;
+    }
+  }
+
+  &__img-wrap {
+    height: 13.5rem;
+    max-width: 16rem;
+    position: relative;
+    margin: 0 auto;
+  }
+
+  &__img {
+    position: absolute;
+    max-height: 100%;
+
+    @include absolute-center;
+  }
+
+  &__about-main {
+    position: relative;
+
+    &::before {
+      content: "";
+      width: 0;
+      height: 100%;
+      position: absolute;
+      left: -5rem;
+      top: 0;
+      border-left: 1px dotted #e6e6e6;
+    }
+  }
+
+  &__heading {
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    font-size: 1.6rem;
+  }
+
+  &__desc {
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+  }
+
+  &__url {
+    font-size: 1.4rem;
+    color: $primary-color;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+/* BRANDS */

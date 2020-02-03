@@ -1,0 +1,122 @@
+.product-preview {
+  $self: &;
+
+  display: flex;
+  align-items: center;
+  padding: 3rem 2.5rem;
+  background: $white;
+  transition: all .3s;
+
+  &:not(:first-child) {
+    border-top: 1px solid #e7e7e7;
+  }
+
+  &:hover {
+    box-shadow: 0 0 2rem rgba($black, 0.08);
+
+    #{$self}__heading-link {
+      color: $primary-color;
+    }
+
+    #{$self}__header::after {
+      background-color: $primary-color;
+    }
+  }
+
+  &__header {
+    max-width: 12rem;
+    flex-basis: 12rem;
+    flex-shrink: 0;
+    position: relative;
+    padding-right: 2rem;
+
+    &::after {
+      content: "";
+      height: 6.5rem;
+      width: .3rem;
+      background: #e7e7e7;
+      right: 0;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: all .3s;
+    }
+  }
+
+  &__main {
+    flex-grow: 1;
+    padding-left: 2rem;
+  }
+
+  &__img-wrap {
+    width: 9rem;
+    height: 9rem;
+    display: block;
+    position: relative;
+  }
+  
+  &__img {
+    max-width: 100%;
+    max-height: 100%;
+
+    @include absolute-center;
+  }
+
+  &__heading {
+    margin-bottom: 1.5rem;
+  }
+  
+  &__heading-link {
+    color: #303030;
+    transition: all .3s;
+  }
+  
+  &__price {
+    font-size: 1.8rem;
+    color: $black;
+    font-weight: 500;
+  }
+
+  &--row {
+    padding: 1.5rem;
+    display: block;
+    text-align: center;
+    border: 1px solid $gray--medium;
+
+    #{$self}__header {
+      margin: 0 auto 2rem;
+      padding-right: 0;
+      padding-bottom: 2rem;
+
+      &::after {
+        content: "";
+        height: .3rem;
+        width: 6.5rem;
+        right: auto;
+        top: 100%;
+        left: 50%;
+        transform: translate(-50%, .3rem);
+      }
+    }
+
+    #{$self}__main {
+      padding: 0;
+    }
+
+    #{$self}__heading {
+      height: 5rem;
+      margin-bottom: .5rem;
+      line-height: 1.2;
+      overflow: hidden;
+      font-size: 1.4rem;
+    }
+
+    #{$self}__img-wrap {
+      margin: 0 auto;
+    }
+
+    #{$self}__price {
+      font-size: 1.6rem;
+    }
+  }
+}

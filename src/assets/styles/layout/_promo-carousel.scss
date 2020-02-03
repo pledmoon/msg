@@ -1,0 +1,208 @@
+.promo-carousel-wrap {
+  position: relative;
+
+  .promo-carousel__prev,
+  .promo-carousel__next {
+    opacity: .5;
+    transition: all .3s;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    cursor: pointer;
+    outline: none;
+    cursor: pointer;
+    display: none;
+
+    @media (min-width: $md) {
+      display: block;
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+
+    &-icon {
+      width: 6rem;
+      height: 6rem;
+      fill: $white;
+
+      @media (min-width: $xlg) {
+        width: 8rem;
+        height: 8rem;
+      }
+
+      @media (min-width: $xlg) {
+        width: 12rem;
+        height: 12rem;
+      }
+    }
+  }
+
+  .promo-carousel__prev {
+    left: 2rem;
+  }
+
+  .promo-carousel__next {
+    right: 2rem;
+  }
+
+  .promo-carousel__pagination {
+    padding: 1.5rem 1.5rem;
+    width: 100%;
+    text-align: center;
+    max-width: $layout-max-width;
+    border-bottom: 1px dotted #4f4f4f;
+
+    @media (min-width: $md) {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 0;
+      z-index: 2;
+      padding: 2.5rem 7rem;
+      text-align: right;
+      border: none;
+    }
+  }
+}
+
+.promo-slide {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+
+  &__desc {
+    padding: 3rem 0;
+
+    position: relative;
+
+    @media (min-width: $sm) {
+      width: 50%;
+      padding: 4rem 0;
+    }
+
+    &::after {
+      content: "";
+      width: 90%;
+      background: #1e2025;
+      height: 100%;
+      position: absolute;
+      left: 0%;
+      top: 0;
+      bottom: 0;
+      transform: skewX(25deg);
+      // border-left: 1rem solid $primary-color;
+      // border-right: 1rem solid $primary-color;
+      z-index: 2;
+      // transform-origin: 0 0;
+    }
+
+    &::before {
+      content: "";
+      background: linear-gradient(to right bottom, 
+        transparent 0%, 
+        transparent 10%, 
+        $primary-color 10%, 
+        $primary-color 90%, 
+        transparent 90%
+      );
+      position: absolute;
+      left: -1rem;
+      top: 0;
+      bottom: 0;
+      transform: skewX(25deg);
+      width: calc(90% + 2rem);
+      z-index: 1;
+    }
+  }
+
+  .container-fluid {
+    background: transparent;
+  }
+
+  &__product {
+    position: relative;
+    z-index: 3;
+  }
+  
+  &__img-wrap {
+    min-height: 20rem;
+    position: relative;
+    display: flex;
+    height: 1px;
+
+    @media (min-width: $md) {
+      min-height: 34.5rem;
+    }
+  }
+  
+  &__img {
+    margin: auto;
+    max-height: 100%;
+  }
+
+  &__info {
+    text-align: right;
+    // padding: 6rem 0 3rem;
+    padding: 0 0 0 5rem;
+    min-height: 15.5rem;
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+  }
+
+  &__brand {
+    margin: 0 0 0 auto;
+    max-height: 3rem;
+
+    @media (min-width: $md) {
+      max-height: 5rem;
+    }
+  }
+
+  &__info-heading {
+    font-weight: 600;
+    color: $white;
+    font-size: 2.8rem;
+    margin-top: 1rem;
+    line-height: 1.1;
+
+    @media (min-width: $md) {
+      font-size: 4rem;
+    }
+  }
+
+  &__info-desc {
+    font-size: 1.4rem;
+    color: #9a9a9a;
+
+    @media (min-width: $md) {
+      font-size: 1.6rem;
+    }
+  }
+}
+
+.swiper-slide {
+  .promo-slide__img-wrap {
+    opacity: 0;
+  }
+
+  .promo-slide__info {
+    opacity: 0;
+  }
+}
+
+.swiper-slide-active {
+  .promo-slide__img-wrap {
+    animation: fadeInUp 1s forwards;
+  }
+
+  .promo-slide__info {
+    animation: fadeInUp 1s .5s forwards;
+  }
+}

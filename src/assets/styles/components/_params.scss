@@ -1,0 +1,44 @@
+.params {
+  font-size: 1.6rem;
+  line-height: 1.3;
+
+  &__wrap {
+    @media (min-width: $sm) {
+      display: flex;
+      align-items: flex-start;
+    }
+
+    &:not(:first-child) {
+      margin-top: 1.5rem;
+    }
+  }
+
+  &__property {
+    color: #9a9a9a;
+
+    @media (min-width: $sm) {
+      flex-basis: 24rem;
+      max-width: 24rem;
+      position: relative;
+      overflow: hidden;
+      flex-shrink: 0;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        transform: translate(1rem, -.5rem);
+        border-bottom: 1px dotted #e6e6e6;
+      }
+    }
+  }
+  
+  &__value {
+    color: $black;
+
+    @media (min-width: $sm) {
+      padding-left: 1rem;
+    }
+  }
+}

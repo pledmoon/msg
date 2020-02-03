@@ -3,7 +3,6 @@ include ../components/search-form
 include ../components/header-utility
 include ../components/dropdown-products-list
 include ../components/select
-include ../components/breadcrumbs
 
 mixin header()
 
@@ -46,19 +45,14 @@ mixin header()
             icon: 'shopping-cart',
             quantity: 11
           })
-            //- +dropdown-products-list()
+            .header-utility__dropdown
+              .header-utility__dropdown-body.js-custom-scroll
+                +dropdown-products-list()
+              .header-utility__dropdown-footer
+                a.header-utility__dropdown-footer-btn.btn.btn--reverse(href="#") Перейти в корзину
         // /header-utilities
 
-  .navbar-section
-
-    .container-fluid
-
-      .navbar-section__main
-
-        .navbar-section__navbar
-          include ../components/main-nav
-
-        .navbar-section__lang
+        .navbar-section__lang.d-md-none
           +select([
             {
               value: 'ru',
@@ -80,8 +74,37 @@ mixin header()
               value: 'md',
               optionText: 'Md'
             }
-          ], 'select-lang header__select-lang', 'js-select-region')
-  
-  if breadcrumbs
+          ], 'select-lang header__select-lang', 'custom', 'js-select-region')
+
+  .navbar-section
+
     .container-fluid
-      +breadcrumbs(["Главная", "Каталог по назначению", "Диджейское оборудование", "MIDI контроллеры"])
+
+      .navbar-section__main
+
+        .navbar-section__navbar
+          include ../components/main-nav
+
+        .navbar-section__lang.d-none.d-md-block
+          +select([
+            {
+              value: 'ru',
+              optionText: 'Ru'
+            },
+            {
+              value: 'ro',
+              optionText: 'Ro'
+            },
+            {
+              value: 'en',
+              optionText: 'Eng'
+            },
+            {
+              value: 'ua',
+              optionText: 'Ua'
+            },
+            {
+              value: 'md',
+              optionText: 'Md'
+            }
+          ], 'select-lang header__select-lang', 'custom', 'js-select-region')

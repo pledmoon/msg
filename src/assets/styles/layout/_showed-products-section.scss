@@ -1,0 +1,55 @@
+.showed-products-section {
+  $self: &;
+
+  padding: 2.5rem;
+
+  @media (min-width: $md) {
+    padding: 3.5rem;
+  }
+
+  &__row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -1.5rem;
+  }
+
+  &__col {
+    flex-basis: 50%;
+    max-width: 50%;
+    padding: 1.5rem;
+
+    @media (min-width: $sm) {
+      flex-basis: 33.333%;
+      max-width: 33.333%;
+    }
+
+    @media (min-width: $md) {
+      flex-basis: 20%;
+      max-width: 20%;
+    }
+
+    @media (min-width: $lg) {
+      flex-basis: 16.666%;
+      max-width: 16.666%;
+    }
+  }
+
+  &--horizontal-scroll {
+    .js-custom-scroll {
+      overflow-x: auto;
+      overflow-y: hidden;
+    }
+
+    #{$self}__row {
+      flex-wrap: nowrap;
+      margin: 0;
+    }
+
+    #{$self}__col {
+      flex-basis: 16.666%;
+      max-width: 16.666%;
+      min-width: 16.666rem;
+      flex-shrink: 0;
+    }
+  }
+}

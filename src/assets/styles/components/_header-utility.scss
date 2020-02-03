@@ -92,7 +92,7 @@
     }
 
     &-body {
-      max-height: 33.5rem;
+      max-height: 32rem;
       overflow-y: auto;
       padding: 1.5rem 2.5rem;
     }
@@ -103,7 +103,9 @@
       text-align: center;
 
       &-btn {
-
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        line-height: 1.3;
       }
     }
 

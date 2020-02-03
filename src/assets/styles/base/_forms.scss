@@ -7,7 +7,7 @@ input {
   padding: 1rem 1.5rem;
   border: none;
   width: 100%;
-  border: 1px solid $gray;
+  border: 1px solid $gray--medium;
   // border-radius: 3px;
   outline: none;
   font-family: $font-base-stack;
@@ -35,17 +35,13 @@ label {
     font-size: 1.4rem;
     cursor: pointer;
     color: $font-base-color;
-    height: 100%;
-    padding: 0 1.5rem 0 2.5rem;
+    padding: 0 0 0 2.5rem;
     position: relative;
     margin: 0;
     user-select: none;
-    display: flex;
-    align-items: center;
-    line-height: 1.6rem;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    line-height: 1.2;
+    font-weight: 500;
+    display: block;
     
     min-width: 1.6rem;
     min-height: 1.6rem;
@@ -54,17 +50,10 @@ label {
       content: "";
       width: 1.6rem;
       height: 1.6rem;
-      border: 1px solid $gray;
-      border-radius: 3px;
+      border: 1px solid #e7e7e7;
       position: absolute;
       left: 0;
-      top: 50%;
-      transform: translateY(-50%);
-      color: $white;
-      text-align: center;
-      line-height: 1.6rem;
-      font-family: fa;
-      font-size: 1.2rem;
+      top: 0;
     }
   }
 
@@ -72,12 +61,19 @@ label {
     @include hide-element;
   }
 
-  &__input:checked + .checkbox-label__main::before {
-    content: "\f00c";
-    width: 1.6rem;
-    height: 1.6rem;
-    background: $primary-color;
-    border-color: $primary-color;
+  &__input:checked + .checkbox-label__main::after {
+    content: "";
+    width: .8rem;
+    height: .8rem;
+    background-color: $primary-color;
+    position: absolute;
+    left: .4rem;
+    top: .4rem;
+  }
+
+  &__amount {
+    color: $gray;
+    font-size: 1.2rem;
   }
 }
 /* Checkbox */
@@ -89,29 +85,25 @@ label {
     cursor: pointer;
     color: $font-base-color;
     height: 100%;
-    padding: 0 1.5rem 0 2.5rem;
+    padding: 0 0 0 2.5rem;
     position: relative;
     margin: 0;
     user-select: none;
-    display: flex;
-    align-items: center;
-    line-height: 1.6rem;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    line-height: 1.2;
+    font-weight: 500;
+    display: block;
+    
+    min-width: 1.6rem;
+    min-height: 1.6rem;
 
     &::before {
       content: "";
       width: 1.6rem;
       height: 1.6rem;
-      border: 1px solid $gray;
-      border-radius: 3px;
+      border: 1px solid #e7e7e7;
       position: absolute;
       left: 0;
-      top: 50%;
-      transform: translateY(-50%);
-      text-align: center;
-      line-height: 1.6rem;
+      top: 0;
       border-radius: 50%;
       background: $white;
     }
@@ -124,6 +116,11 @@ label {
   &__input:checked + .radio-label__main::before {
     border-width: .5rem;
     border-color: $primary-color;
+  }
+
+  &__amount {
+    color: $gray;
+    font-size: 1.2rem;
   }
 }
 /* Radio */

@@ -1,0 +1,263 @@
+.filter {
+  $self: &;
+
+  border-right: 1px dotted #e7e7e7;
+  padding-right: 1.5rem;
+
+  &__main {}
+
+  &__section {
+    padding: 2rem 0;
+    font-size: 1.4rem;
+    border-bottom: 1px solid $gray--medium;
+
+    &:first-child {
+      border-top: none;
+      padding-top: 0;
+    }
+
+    &.is-opened #{$self}__body {
+      display: block;
+    }
+
+    &.is-opened #{$self}__more-options {
+      display: inline-block;
+    }
+
+    &.is-fields-on {
+      .is-field-off {
+        display: block;
+      }
+    }
+  }
+
+  &__title {
+    font-size: 1.4rem;
+    // margin-bottom: 1.5rem;
+    cursor: pointer;
+
+    color: #303030;
+    font-size: 1.6rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    position: relative;
+    padding-right: 2rem;
+    
+    #{$self}__section.is-opened &::before {
+      content: "-";
+      color: #e7e7e7;
+      font-size: 3rem;
+    }
+
+    &::before {
+      content: "+";
+      line-height: 1;
+      color: $primary-color;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      font-size: 2.4rem;
+      transform: translateY(-50%);
+    }
+  }
+
+  &__body {
+    display: none;
+    margin-top: 2rem;
+    
+    &.js-custom-scroll {
+      max-height: 14rem;
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+  }
+
+  &__option {
+    overflow: hidden;
+
+    &:not(:first-child) {
+      padding: 1.5rem 0 0;
+    }
+
+    &.is-field-off {
+      display: none;
+    }
+  }
+
+  &__more-options {
+    color: $primary-color;
+    font-size: 1.2rem;
+    margin-left: 2.5rem;
+    margin-top: 1.5rem;
+    display: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &-amount {}
+  }
+
+  &__footer {
+    padding: 2rem 0;
+  }
+
+  &__btns {
+    display: flex;
+    margin: 0 -.5rem;
+  }
+
+  &__btn-reset,
+  &__btn-accept {
+    margin: 0 .5rem;
+    max-width: 50%;
+    flex-basis: 50%;
+    white-space: nowrap;
+    position: relative;
+    padding: .6rem .5rem;
+    font-size: 1.4rem;
+  }
+
+  &__btn-icon {
+    fill: $dark--medium;
+    width: 1.25rem;
+    height: 1.25rem;
+    margin: 0 .5rem;
+    transform: translateY(-2px);
+  }
+
+  .price-range {
+    // margin-bottom: 1.25rem;
+    margin: 0 1rem 1.25rem .5rem;
+
+    &__slider {
+      margin: 0 .5rem 0 .5rem;
+    }
+  }
+  
+  .product__rate-wrap {
+    margin-right: .5rem;
+    font-size: 0;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    top: -2px;
+  }
+
+  .product__rate-icon {
+    font-size: 1.2rem;
+    margin: 0 .1rem;
+  }
+
+  /* Mobile */
+  @media (max-width: $md--mw) {
+    position: fixed;
+    background: #fff;
+    z-index: $overlayAboveZIndex;
+    left: -100%;
+    top: 0;
+    bottom: 0;
+    width: 32rem;
+    transition: all .3s;
+    opacity: 0;
+    visibility: hidden;
+    margin-bottom: 0;
+    border-bottom: 3px solid $primary-color;
+
+    .is-filter-opened & {
+      left: 0;
+      visibility: visible;
+      opacity: 1;
+    }
+
+    &__heading {
+      padding: 1.5rem 1.5rem;
+      margin: 0;
+      border-bottom: 1px solid $gray--medium;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      background: #fafafa;
+      text-align: left;
+      z-index: $dropdownZIndex;
+
+      &-text {
+        font-size: 1.4rem;
+        text-transform: uppercase;
+        color: #333;
+        line-height: 1.1;
+        font-weight: 500;
+        vertical-align: middle;
+        display: inline-block;
+      }
+
+      &-icon {
+        fill: $primary-color;
+        width: 2rem;
+        height: 2rem;
+        margin: 0 1rem 0 0;
+      }
+    }
+
+    &__close {
+      position: absolute;
+      right: 1.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+      border: none;
+      background: none;
+      width: 1.5rem;
+      cursor: pointer;
+      height: 1.5rem;
+
+      &-icon {
+        fill: #1a1a1a;
+        width: 100%;
+        height: 100%;
+        vertical-align: top;
+        position: relative;
+        top: -2px;
+      }
+    }
+
+    &__main {
+      height: 100%;
+      overflow-x: hidden;
+      overflow-y: auto;
+      padding-bottom: 8rem;
+      padding-top: 7rem;
+    }
+
+    &__section {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+
+      &:first-child {
+        border-top: none;
+      }
+    }
+
+    &__footer {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 2rem 1.5rem;
+      background: #fafafa;
+      border-top: 1px solid $gray--medium;
+      height: 8rem;
+      z-index: $dropdownZIndex;
+    }
+
+    &__btns {
+      height: 100%;
+      align-items: center;
+    }
+  }
+  /* Mobile */
+}
+
+.is-filter-opened {
+  overflow: hidden;
+}

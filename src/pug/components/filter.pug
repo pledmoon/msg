@@ -1,0 +1,277 @@
+// filter
+.filter
+
+  .filter__heading.d-md-none 
+    +icon('funnel', 'filter__heading-icon')
+    span.filter__heading-text Фильтры
+    button.filter__close.d-md-none
+      +icon('close', 'filter__close-icon')
+
+  .filter__main
+
+    .filter__section.is-opened
+      .filter__title Производитель
+      .filter__body.js-custom-scroll
+
+        .filter__option.checkbox-label
+          input.checkbox-label__input(type="checkbox" name="Native Instru­ments" id="opt-ni")
+          label.checkbox-label__main(for="opt-ni") Native Instru­ments #[span.checkbox-label__amount (22)]
+
+        .filter__option.checkbox-label
+          input.checkbox-label__input(type="checkbox" name="Denon" id="opt-denon")
+          label.checkbox-label__main(for="opt-denon") Denon #[span.checkbox-label__amount (12)]
+
+        .filter__option.checkbox-label
+          input.checkbox-label__input(type="checkbox" name="Numark" id="opt-numark")
+          label.checkbox-label__main(for="opt-numark") Numark #[span.checkbox-label__amount (10)]
+
+        .filter__option.checkbox-label
+          input.checkbox-label__input(type="checkbox" name="Hercules" id="opt-hercules")
+          label.checkbox-label__main(for="opt-hercules") Hercules #[span.checkbox-label__amount (9)]
+
+        .filter__option.checkbox-label
+          input.checkbox-label__input(type="checkbox" name="Alvarez" id="opt-alvarez")
+          label.checkbox-label__main(for="opt-alvarez") Alvarez #[span.checkbox-label__amount (135)]
+
+        .filter__option.checkbox-label.is-field-off
+          input.checkbox-label__input(type="checkbox" name="Blue Microphones" id="opt-bm")
+          label.checkbox-label__main(for="opt-bm") Blue Microphones #[span.checkbox-label__amount (79)]
+
+        .filter__option.checkbox-label.is-field-off
+          input.checkbox-label__input(type="checkbox" name="Dunlop" id="opt-dunlop")
+          label.checkbox-label__main(for="opt-dunlop") Dunlop #[span.checkbox-label__amount (4)]
+
+        .filter__option.checkbox-label.is-field-off
+          input.checkbox-label__input(type="checkbox" name="Cherub Technology" id="opt-ct")
+          label.checkbox-label__main(for="opt-ct") Cherub Technology #[span.checkbox-label__amount (76)]
+
+        .filter__option.checkbox-label.is-field-off
+          input.checkbox-label__input(type="checkbox" name="Clayton" id="opt-clayton")
+          label.checkbox-label__main(for="opt-clayton") Clayton #[span.checkbox-label__amount (11)]
+
+        .filter__option.checkbox-label.is-field-off
+          input.checkbox-label__input(type="checkbox" name="Beyerdynamic" id="opt-beyerdynamic")
+          label.checkbox-label__main(for="opt-beyerdynamic") Beyerdynamic #[span.checkbox-label__amount (66)]
+
+        .filter__option.checkbox-label.is-field-off
+          input.checkbox-label__input(type="checkbox" name="Cympad" id="opt-cympad")
+          label.checkbox-label__main(for="opt-cympad") Cympad #[span.checkbox-label__amount (6)]
+
+        .filter__option.checkbox-label.is-field-off
+          input.checkbox-label__input(type="checkbox" name="Fender" id="opt-fender")
+          label.checkbox-label__main(for="opt-fender") Fender #[span.checkbox-label__amount (8)]
+
+      a.filter__more-options(href="#") #[span.filter__more-options-amount Показать еще] (7)
+
+    .filter__section.is-opened
+      .filter__title Рейтинг
+      .filter__body
+
+        .filter__option.checkbox-label
+          input.checkbox-label__input(type="checkbox" name="five-stars" id="opt-five-stars")
+          label.checkbox-label__main(for="opt-five-stars")
+            span.product__rate
+              span.product__rate-wrap
+                span.product__rate-stars-active(style="width: 100%")
+                  i.product__rate-icon.fas.fa-star
+                  i.product__rate-icon.fas.fa-star
+                  i.product__rate-icon.fas.fa-star
+                  i.product__rate-icon.fas.fa-star
+                  i.product__rate-icon.fas.fa-star
+                span.product__rate-stars-inactive
+                  i.product__rate-icon.fa.fa-star
+                  i.product__rate-icon.fa.fa-star
+                  i.product__rate-icon.fa.fa-star
+                  i.product__rate-icon.fa.fa-star
+                  i.product__rate-icon.fa.fa-star
+
+              span.checkbox-label__amount (24)
+
+        .filter__option.checkbox-label
+          input.checkbox-label__input(type="checkbox" name="four-stars" id="opt-four-stars")
+          label.checkbox-label__main(for="opt-four-stars")
+            span.product__rate
+              span.product__rate-wrap
+                span.product__rate-stars-active(style="width: 80%")
+                  i.product__rate-icon.fas.fa-star
+                  i.product__rate-icon.fas.fa-star
+                  i.product__rate-icon.fas.fa-star
+                  i.product__rate-icon.fas.fa-star
+                  i.product__rate-icon.fas.fa-star
+                span.product__rate-stars-inactive
+                  i.product__rate-icon.fa.fa-star
+                  i.product__rate-icon.fa.fa-star
+                  i.product__rate-icon.fa.fa-star
+                  i.product__rate-icon.fa.fa-star
+                  i.product__rate-icon.fa.fa-star
+
+              span.checkbox-label__amount (20)
+
+        .filter__option.checkbox-label
+          input.checkbox-label__input(type="checkbox" name="three-stars" id="opt-three-stars")
+          label.checkbox-label__main(for="opt-three-stars")
+            span.product__rate
+              span.product__rate-wrap
+                span.product__rate-stars-active(style="width: 60%")
+                  i.product__rate-icon.fas.fa-star
+                  i.product__rate-icon.fas.fa-star
+                  i.product__rate-icon.fas.fa-star
+                  i.product__rate-icon.fas.fa-star
+                  i.product__rate-icon.fas.fa-star
+                span.product__rate-stars-inactive
+                  i.product__rate-icon.fa.fa-star
+                  i.product__rate-icon.fa.fa-star
+                  i.product__rate-icon.fa.fa-star
+                  i.product__rate-icon.fa.fa-star
+                  i.product__rate-icon.fa.fa-star
+
+              span.checkbox-label__amount (1)
+
+        .filter__option.checkbox-label
+          input.checkbox-label__input(type="checkbox" name="two-stars" id="opt-two-stars")
+          label.checkbox-label__main(for="opt-two-stars")
+            span.product__rate
+              span.product__rate-wrap
+                span.product__rate-stars-active(style="width: 40%")
+                  i.product__rate-icon.fas.fa-star
+                  i.product__rate-icon.fas.fa-star
+                  i.product__rate-icon.fas.fa-star
+                  i.product__rate-icon.fas.fa-star
+                  i.product__rate-icon.fas.fa-star
+                span.product__rate-stars-inactive
+                  i.product__rate-icon.fa.fa-star
+                  i.product__rate-icon.fa.fa-star
+                  i.product__rate-icon.fa.fa-star
+                  i.product__rate-icon.fa.fa-star
+                  i.product__rate-icon.fa.fa-star
+
+              span.checkbox-label__amount (0)
+
+        .filter__option.checkbox-label
+          input.checkbox-label__input(type="checkbox" name="one-star" id="opt-one-star")
+          label.checkbox-label__main(for="opt-one-star")
+            span.product__rate
+              span.product__rate-wrap
+                span.product__rate-stars-active(style="width: 20%")
+                  i.product__rate-icon.fas.fa-star
+                  i.product__rate-icon.fas.fa-star
+                  i.product__rate-icon.fas.fa-star
+                  i.product__rate-icon.fas.fa-star
+                  i.product__rate-icon.fas.fa-star
+                span.product__rate-stars-inactive
+                  i.product__rate-icon.fa.fa-star
+                  i.product__rate-icon.fa.fa-star
+                  i.product__rate-icon.fa.fa-star
+                  i.product__rate-icon.fa.fa-star
+                  i.product__rate-icon.fa.fa-star
+
+              span.checkbox-label__amount (0)
+
+    .filter__section.is-opened
+      .filter__title Цена (MDL)
+      .filter__body
+
+        include ui-slider
+
+        .filter__option.checkbox-label
+          input.checkbox-label__input(type="checkbox" name="price-range-1" id="price-range-1")
+          label.checkbox-label__main(for="price-range-1") 793 – 3075 MDL #[span.checkbox-label__amount (23)]
+
+        .filter__option.checkbox-label
+          input.checkbox-label__input(type="checkbox" name="price-range-2" id="price-range-2")
+          label.checkbox-label__main(for="price-range-2") 3133 – 4429 MDL #[span.checkbox-label__amount (16)]
+
+        .filter__option.checkbox-label
+          input.checkbox-label__input(type="checkbox" name="price-range-3" id="price-range-3")
+          label.checkbox-label__main(for="price-range-3") 4525 – 9631 MDL #[span.checkbox-label__amount (15)]
+
+        .filter__option.checkbox-label
+          input.checkbox-label__input(type="checkbox" name="price-range-4" id="price-range-4")
+          label.checkbox-label__main(for="price-range-4") 9650 – 17367 MDL #[span.checkbox-label__amount (13)]
+
+        .filter__option.checkbox-label
+          input.checkbox-label__input(type="checkbox" name="price-range-5" id="price-range-5")
+          label.checkbox-label__main(for="price-range-5") &gt; 18566 MDL #[span.checkbox-label__amount (11)]
+
+    .filter__section.is-opened
+      .filter__title Тип
+      .filter__body
+
+        .filter__option.checkbox-label
+          input.checkbox-label__input(type="checkbox" name="type-1" id="opt-type-1")
+          label.checkbox-label__main(for="opt-type-1") Все в одном  #[span.checkbox-label__amount (52)]
+
+        .filter__option.checkbox-label
+          input.checkbox-label__input(type="checkbox" name="type-2" id="opt-type-2")
+          label.checkbox-label__main(for="opt-type-2") Эффектор  #[span.checkbox-label__amount (9)]
+
+        .filter__option.checkbox-label
+          input.checkbox-label__input(type="checkbox" name="type-3" id="opt-type-3")
+          label.checkbox-label__main(for="opt-type-3") Семплер #[span.checkbox-label__amount (8)]
+
+        .filter__option.checkbox-label
+          input.checkbox-label__input(type="checkbox" name="type-4" id="opt-type-4")
+          label.checkbox-label__main(for="opt-type-4") Миксер #[span.checkbox-label__amount (8)]
+
+        .filter__option.checkbox-label
+          input.checkbox-label__input(type="checkbox" name="type-5" id="opt-type-5")
+          label.checkbox-label__main(for="opt-type-5") Плейер #[span.checkbox-label__amount (4)]
+
+    .filter__section
+      .filter__title ПО в комплекте
+      .filter__body
+
+        .filter__option.radio-label
+          input.radio-label__input(type="radio" value="soft-radio-1" name="soft-type" id="soft-radio-1")
+          label.radio-label__main(for="soft-radio-1") Да #[span.radio-label__amount (4)]
+
+        .filter__option.radio-label
+          input.radio-label__input(type="radio" value="soft-radio-2" name="soft-type" id="soft-radio-2")
+          label.radio-label__main(for="soft-radio-2") Нет #[span.radio-label__amount (7)]
+
+        .filter__option.radio-label
+          input.radio-label__input(type="radio" value="soft-radio-3" name="soft-type" id="soft-radio-3")
+          label.radio-label__main(for="soft-radio-3") Не важно #[span.radio-label__amount (11)]
+
+    .filter__section
+      .filter__title Характеристики
+      .filter__body.js-custom-scroll
+
+        .filter__option.checkbox-label
+          input.checkbox-label__input(type="checkbox" name="char-1" id="opt-char-1")
+          label.checkbox-label__main(for="opt-char-1") Характеристика-1
+
+        .filter__option.checkbox-label
+          input.checkbox-label__input(type="checkbox" name="char-2" id="opt-char-2")
+          label.checkbox-label__main(for="opt-char-2") Характеристика-2
+
+        .filter__option.checkbox-label
+          input.checkbox-label__input(type="checkbox" name="char-3" id="opt-char-3")
+          label.checkbox-label__main(for="opt-char-3") Характеристика-3
+
+        .filter__option.checkbox-label
+          input.checkbox-label__input(type="checkbox" name="char-4" id="opt-char-4")
+          label.checkbox-label__main(for="opt-char-4") Характеристика-4
+
+        .filter__option.checkbox-label
+          input.checkbox-label__input(type="checkbox" name="char-5" id="opt-char-5")
+          label.checkbox-label__main(for="opt-char-5") Характеристика-5
+
+        .filter__option.checkbox-label.is-field-off
+          input.checkbox-label__input(type="checkbox" name="char-6" id="opt-char-6")
+          label.checkbox-label__main(for="opt-char-6") Характеристика-6
+
+        .filter__option.checkbox-label.is-field-off
+          input.checkbox-label__input(type="checkbox" name="char-7" id="opt-char-7")
+          label.checkbox-label__main(for="opt-char-7") Характеристика-7
+
+      a.filter__more-options(href="#") #[span.filter__more-options-amount Показать еще] (2)
+    
+    .filter__footer
+
+      .filter__btns
+          a.filter__btn-accept.btn.btn--ghost(href="#") 
+            +icon('trash-alt', 'filter__btn-icon')
+            | Очистить
+          a.filter__btn-reset.btn.btn--reverse(href="#") Применить
+// /filter

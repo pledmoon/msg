@@ -63,6 +63,29 @@
 
     .product {
       border: none;
+
+      &:hover {
+        .product__main {
+          background: $white;
+        }
+      }
     }
+
+    .product-preview {
+      border: none;
+    }
+  }
+}
+
+.catalog-main-section,
+.recommended-products-section {
+  padding-bottom: 1rem;
+
+  @media (min-width: $md) {
+    padding-bottom: 2rem;
+  }
+
+  .section__body > .row [class*="col-"] {
+    padding-bottom: 3rem;
   }
 }

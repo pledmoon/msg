@@ -1,0 +1,6 @@
+mixin params(data)
+  +b.DL.params
+    each param in data
+      +e.wrap
+        +e.DT.property= param.property
+        +e.DD.value= param.value

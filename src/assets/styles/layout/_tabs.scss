@@ -1,0 +1,148 @@
+.tabs {
+  $self: &;
+
+  /* Tabs Items */
+  &__header {
+    text-align: center;
+  }
+
+  &__list {
+    display: inline-flex;
+    list-style: none;
+    margin: 0;
+    white-space: nowrap;
+  }
+
+  &__item {
+    font-size: 1.4rem;
+    position: relative;
+
+    &:not(:first-child)::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      height: 2rem;
+      top: 50%;
+      transform: translateY(-50%);
+      border-left: 1px solid #9a9a9a;
+    }
+  }
+
+  &__link {
+    display: block;
+    padding: 1.5rem 2rem;
+    cursor: pointer;
+    transition: all .3s;
+    color: #9a9a9a;
+
+    &:hover {
+      color: $black;
+      text-decoration: none;
+
+      &::before {
+        background: $white;
+      }
+    }
+
+    &.is-active {
+      cursor: default;
+      color: $black;
+      font-weight: 500;
+    }
+  }
+  /* Tabs Items */
+
+  /* Tabs Body */
+  &__panes {}
+
+  &__tab-pane {
+    padding: 3rem 0;
+    display: none;
+
+    &.is-active {
+      display: block;
+    }
+  }
+  /* Tabs Body */
+
+  &--product {
+    #{$self}__header {
+      text-align: left;
+      background: #fafafa;
+      margin: 0 -3rem;
+    }
+
+    #{$self}__item {
+      font-size: 1.6rem;
+
+      &:first-child #{$self}__link {
+        padding-left: 3rem;
+
+        &::after {
+          left: 3rem;
+          width: calc(100% - 5rem);
+        }
+      }
+
+      &::before {
+        border-left-color: #e6e6e6;
+      }
+    }
+
+    #{$self}__link {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+      position: relative;
+
+      &::after {
+        content: "";
+        width: calc(100% - 4rem);
+        position: absolute;
+        bottom: 1.5rem;
+        left: 2rem;
+        height: .3rem;
+      }
+
+      &.is-active {
+        font-weight: 600;
+        background: $white;
+
+        &::after {
+          background: $primary-color;
+        }
+
+        &::before {
+          width: 2px;
+          content: "";
+          position: absolute;
+          left: 100%;
+          background: $white;
+          height: 100%;
+          top: 0;
+          z-index: 2;
+        }
+      }
+    }
+
+    #{$self}__tab-pane {
+      padding-bottom: 5rem;
+    }
+  }
+}
+
+
+.products-promo-section {
+  [class*="col-"] { 
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+  /*[class*="col-"]:not(:nth-child(-n+3)) {
+    padding-top: 3rem;
+  }*/
+
+  .tabs__tab-pane {
+    padding-bottom: 0;
+    padding-top: 2rem;
+  }
+}

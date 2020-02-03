@@ -1,7 +1,7 @@
 .product {
   $self: &;
 
-  padding: 2.5rem;
+  // padding: 2.5rem;
   transition: all .3s;
   background: $white;
   max-width: 35rem;
@@ -14,40 +14,60 @@
   &:hover {
     box-shadow: 0 0 2rem rgba($black, .15);
 
-    #{$self}__img-wrapper::after {
+    #{$self}__main {
+      background: #fafafa;
+    }
+
+    #{$self}__header-body::after {
       background: $primary-color;
     }
 
     #{$self}__heading-link {
       color: $primary-color;
     }
+
+    #{$self}__add {
+      opacity: 1;
+      visibility: visible;
+    }
   }
 
-  &__header {}
+  &__header {
+    &-body {
+      position: relative;
+      padding: 2.5rem 2.5rem 0;
 
-  &__main {}
+      &::after {
+        content: "";
+        width: 6.5rem;
+        height: .3rem;
+        background: #e7e7e7;
+        bottom: -2.6rem;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: all .3s;
+        z-index: 2;
+      }
+    }
+  }
+
+  &__main {
+    position: relative;
+    padding: 2.5rem 2.5rem 2.5rem;
+    transition: all .3s;
+  }
 
   &__img-wrapper {
     height: 20rem;
-    position: relative;
     display: block;
-    margin-bottom: 5rem;
-
-    &::after {
-      content: "";
-      width: 6.5rem;
-      height: .3rem;
-      background: #e7e7e7;
-      bottom: -3rem;
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      transition: all .3s;
-    }
+    margin-bottom: 2.5rem;
+    position: relative;
   }
 
   &__img {
     max-height: 100%;
+    max-width: 100%;
 
     @include absolute-center;
   }
@@ -119,6 +139,16 @@
 
   &__add {
     font-size: 1.4rem;
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 3;
+    padding-top: 1.7rem;
+    padding-bottom: 1.7rem;
+    top: 100%;
+    visibility: hidden;
+    opacity: 0;
+    transition: all .4s ease-in-out;
 
     &-icon {
       fill: $white;
@@ -154,7 +184,7 @@
     left: 1.5rem;
     top: 1.5rem;
     height: 2.5rem;
-    width: 6rem;
+    width: 3.5rem;
     text-align: left;
 
     &-img {
@@ -167,7 +197,7 @@
     @media (min-width: $lg) {
       max-width: 100%;
       display: flex;
-      align-items: center;
+      // align-items: center;
 
       #{$self}__header,
       #{$self}__main {
@@ -175,22 +205,44 @@
         max-width: 50%;
       }
 
-      #{$self}__img-wrapper {
-        margin-bottom: 0;
-        height: 30rem;
+      #{$self}__header {
+        align-self: center;
+        padding-top: 0;
 
-        &::after {
-          content: "";
-          width: .3rem;
-          height: 6.5rem;
-          left: 100%;
-          top: 50%;
-          transform: translateY(-50%);
+        &-body {
+          padding: 0 2.5rem;
+
+          &::after {
+            content: "";
+            width: .3rem;
+            height: 6.5rem;
+            left: 100%;
+            top: 50%;
+            transform: translateY(-50%);
+          }
         }
       }
 
-      #{$self}__add {
+      #{$self}__main {
+        padding: 0 2.5rem;
 
+        &-body {
+          // padding-left: 1rem;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          height: 100%;
+        }
+      }
+
+      #{$self}__img-wrapper {
+        margin-bottom: 0;
+        height: 30rem;
+      }
+
+      #{$self}__add {
+        top: auto;
+        bottom: 0;
       }
     }
   }

@@ -1,0 +1,340 @@
+extends templates/main
+
+include layouts/section
+include components/category
+include components/news
+include components/product
+include components/footer-collapse
+include components/logo
+include components/soc
+include components/card-feature
+include components/params
+
+block variables
+  - const pageTitle = 'Карта товара';
+  - const pageClass = 'card-page';
+  - const userState = 'logout';
+  - const breadcrumbs = ["Главная", "Каталог по назначению", "Диджейское оборудование", "MIDI контроллеры"];
+
+block content
+
+  .row.no-gutters
+    .col-md-7
+      include components/product-main-promo
+    .col-md-5
+      .product-details
+        .product-details__heading.main-heading Gretsch G5220 Electromatic Jet BT DCM
+        .product-details__meta
+        .product-details__offers
+          .product-details__offer
+            label.product-details__offer-label(for="prod-color") Цвет
+            +select([
+              {
+                value: 'color-1',
+                optionText: 'Орех'
+              },
+              {
+                value: 'color-2',
+                optionText: 'Красное дерево'
+              },
+              {
+                value: 'color-3',
+                optionText: 'Береза'
+              }
+            ], 'product-details__offer-select', 'custom', 'js-select-color')(id='prod-color')
+          .product-details__offer
+            label.product-details__offer-label(for="prod-set") Комплекты
+            +select([
+              {
+                value: 'set-1',
+                optionText: 'Гитара и Кейс',
+                customProperty: '300'
+              },
+              {
+                value: 'set-2',
+                optionText: '+Медиатор',
+                customProperty: '10'
+              },
+              {
+                value: 'set-3',
+                optionText: '+Струны',
+                customProperty: '65'
+              }
+            ], 'product-details__offer-select', 'custom', 'js-select-set')(id='prod-set')
+
+  // card-features
+  .card-features
+    .row
+      .col-sm-6.col-md-3
+        +card-feature({
+          name: "Бесплатная доставка",
+          src: "assets/images/delivery.png",
+          desc: "Во все регионы республики Молдова",
+          tooltip: "Какая-то подсказка"
+        })
+      .col-sm-6.col-md-3
+        +card-feature({
+          name: "Удобный способ оплаты",
+          icon: "payment-method",
+          desc: "Наличными курьеру или бансовкой картой"
+        })
+      .col-sm-6.col-md-3
+        +card-feature({
+          name: "Возврат товара",
+          icon: "goods",
+          desc: "Вернем деньги в течении 14 дней с момента покупки",
+          tooltip: "Какая-то подсказка"
+        })
+      .col-sm-6.col-md-3
+        +card-feature({
+          name: "Есть вопросы по товару?",
+          icon: "support",
+          desc: "Клиент сервис",
+          phone: true
+        })
+  // /card-features
+
+  // tabs
+  .tabs.tabs--product
+
+    .tabs__header
+      
+      .table-responsive
+        ul.tabs__list
+          li.tabs__item
+            a.tabs__link.is-active(href="#describe") Описание
+          li.tabs__item
+            a.tabs__link(href="#attributes") Атрибуты
+          li.tabs__item
+            a.tabs__link(href="#files") Файлы
+          li.tabs__item
+            a.tabs__link(href="#videos") Видео
+          li.tabs__item
+            a.tabs__link(href="#reviews") Отзывы (26)
+
+    .tabs__panes
+
+      .tabs__tab-pane.is-active
+        .row
+          .col-md-7
+            +params([
+              {
+                property: "Тип гитары",
+                value: "Акустическая гитара"
+              },
+              {
+                property: "Корпус",
+                value: "Кедр"
+              },
+              {
+                property: "Гриф",
+                value: "Красное дерево"
+              },
+              {
+                property: "Колки",
+                value: "Grover Sta-Tite (97 series) gold 14:1"
+              },
+              {
+                property: "Датчики",
+                value: "Hum-canceling neck pickup Fishman®, complimented with Fishman®, Acoustic Matrix Undersaddle pickup®"
+              },
+              {
+                property: "Струнодержатель",
+                value: "Bass balanced Ebony bridge"
+              },
+              {
+                property: "Доступные цвета",
+                value: "Орех, Красное дерево, Береза"
+              }
+            ])
+          .col-md-5.d-none.d-md-block
+            .banner
+              a.banner__wrap(href="#")
+                img.banner__img.img-responsive(src="assets/images/media/card-banner.png" alt="")
+
+      .tabs__tab-pane
+        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas sequi dignissimos cumque possimus deleniti provident dolorum nisi culpa iste asperiores officiis, ducimus, natus commodi mollitia perspiciatis eum est autem rem. Autem quas beatae a debitis, voluptatem soluta. Quaerat maxime ipsa necessitatibus, dolorum consectetur officia, alias eveniet placeat dicta saepe temporibus?
+
+      .tabs__tab-pane
+        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas sequi dignissimos cumque possimus deleniti provident dolorum nisi culpa iste asperiores officiis, ducimus, natus commodi mollitia perspiciatis eum est autem rem. Autem quas beatae a debitis, voluptatem soluta. Quaerat maxime ipsa necessitatibus, dolorum consectetur officia, alias eveniet placeat dicta saepe temporibus?
+
+      .tabs__tab-pane
+        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas sequi dignissimos cumque possimus deleniti provident dolorum nisi culpa iste asperiores officiis, ducimus, natus commodi mollitia perspiciatis eum est autem rem. Autem quas beatae a debitis, voluptatem soluta. Quaerat maxime ipsa necessitatibus, dolorum consectetur officia, alias eveniet placeat dicta saepe temporibus?
+   
+      .tabs__tab-pane
+        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas sequi dignissimos cumque possimus deleniti provident dolorum nisi culpa iste asperiores officiis, ducimus, natus commodi mollitia perspiciatis eum est autem rem. Autem quas beatae a debitis, voluptatem soluta. Quaerat maxime ipsa necessitatibus, dolorum consectetur officia, alias eveniet placeat dicta saepe temporibus?
+  // /tabs
+  
+  // recommended
+  +section('С товаром покупают', false, 'section--gray recommended-products-section')
+    .row
+
+      .col-sm-6.col-md-4.col-lg-3
+    
+        +product({
+          name: "Hercules DJ Control Inpulse 200",
+          imgPath: "assets/images/media/products/midi-model-5.png",
+          price: "9,111 MDL",
+          rate: "90%",
+          rateAmount: 1,
+          btnBuy: true,
+          wish: true,
+          brand: 'assets/images/media/brands/product-sm-brand-4.png'
+        }, '')
+
+      .col-sm-6.col-md-4.col-lg-3
+    
+        +product({
+          name: "Roland DJ-707M",
+          imgPath: "assets/images/media/products/midi-model-6.png",
+          price: "12,899 MDL",
+          rate: "70%",
+          rateAmount: 3,
+          btnBuy: true,
+          wish: true,
+          brand: 'assets/images/media/brands/product-sm-brand-5.png'
+        }, '')
+
+      .col-sm-6.col-md-4.col-lg-3
+    
+        +product({
+          name: "Numark NV II",
+          imgPath: "assets/images/media/products/midi-model-8.png",
+          price: "9,111 MDL",
+          rate: "20%",
+          rateAmount: 30,
+          btnBuy: true,
+          wish: true,
+          brand: 'assets/images/media/brands/product-sm-brand-3.png'
+        }, '')
+
+      .col-sm-6.col-md-4.col-lg-3
+    
+        +product({
+          name: "Native Instruments Traktor Kontrol Z1",
+          imgPath: "assets/images/media/products/midi-model-9.png",
+          price: "2,249 MDL",
+          rate: "65%",
+          rateAmount: 13,
+          btnBuy: true,
+          wish: true,
+          brand: 'assets/images/media/brands/product-sm-brand-1.png'
+        }, '')
+
+      .col-sm-6.col-md-4.col-lg-3
+    
+        +product({
+          name: "Native Instruments Traktor Kontrol Z1 Bag",
+          imgPath: "assets/images/media/products/midi-model-10.png",
+          price: "3,069 MDL",
+          rate: "100%",
+          rateAmount: 3,
+          btnBuy: true,
+          wish: true,
+          brand: 'assets/images/media/brands/product-sm-brand-2.png'
+        }, '')
+
+      .col-sm-6.col-md-4.col-lg-3
+    
+        +product({
+          name: "Native Instruments Traktor Kontrol Z1",
+          imgPath: "assets/images/media/products/midi-model-11.png",
+          price: "8,089 MDL",
+          rate: "85%",
+          rateAmount: 55,
+          btnBuy: true,
+          wish: true,
+          brand: 'assets/images/media/brands/product-sm-brand-1.png'
+        }, '')
+
+      .col-sm-6.col-md-4.col-lg-3
+    
+        +product({
+          name: "Allen & Heath Xone K2",
+          imgPath: "assets/images/media/products/midi-model-12.png",
+          price: "3,799 MDL",
+          rate: "85%",
+          rateAmount: 116,
+          btnBuy: true,
+          wish: true,
+          brand: 'assets/images/media/brands/product-sm-brand-3.png'
+        }, '')
+  
+      .col-sm-6.col-md-4.col-lg-3
+    
+        +product({
+          name: "Native Instruments Traktor S4 MK3",
+          imgPath: "assets/images/media/products/midi-model-14.png",
+          price: "12,444 MDL",
+          rate: "90%",
+          rateAmount: 55,
+          btnBuy: true,
+          wish: true,
+          brand: 'assets/images/media/brands/product-sm-brand-3.png'
+        }, '')
+  // recommended
+
+  // showed-product-section
+  +section('Просмотренные товары', false, 'showed-products-section showed-products-section--horizontal-scroll')
+    .js-custom-scroll
+      .showed-products-section__row
+        .showed-products-section__col
+          +b.ARTICLE.product-preview--row
+            +e.header
+              +e.A.img-wrap(href="#")
+                +e.IMG.img(src="assets/images/media/products/product-8.png" alt="")
+            +e.main
+              +e.heading
+                +e.A.heading-link(href="#") Epiphone Slash AFD LP Performance Pack
+              +e.price 4,599 MDL
+          
+        .showed-products-section__col
+          +b.ARTICLE.product-preview--row
+            +e.header
+              +e.A.img-wrap(href="#")
+                +e.IMG.img(src="assets/images/media/products/product-7.png" alt="")
+            +e.main
+              +e.heading
+                +e.A.heading-link(href="#") Gretsch G5422T Electromatic BK
+              +e.price 13,333 MDL
+          
+        .showed-products-section__col
+          +b.ARTICLE.product-preview--row
+            +e.header
+              +e.A.img-wrap(href="#")
+                +e.IMG.img(src="assets/images/media/products/product-9.png" alt="")
+            +e.main
+              +e.heading
+                +e.A.heading-link(href="#") Adam TSV
+              +e.price 2,579 MDL
+          
+        .showed-products-section__col
+          +b.ARTICLE.product-preview--row
+            +e.header
+              +e.A.img-wrap(href="#")
+                +e.IMG.img(src="assets/images/media/products/product-10.png" alt="")
+            +e.main
+              +e.heading
+                +e.A.heading-link(href="#") Technics SL-1210 MK 7
+              +e.price 14,609 MDL
+
+        .showed-products-section__col
+          +b.ARTICLE.product-preview--row
+            +e.header
+              +e.A.img-wrap(href="#")
+                +e.IMG.img(src="assets/images/media/products/product-11.png" alt="")
+            +e.main
+              +e.heading
+                +e.A.heading-link(href="#") Rode NT1-A Complete Vocal Recording
+              +e.price 2,499 MDL
+          
+        .showed-products-section__col
+          +b.ARTICLE.product-preview--row
+            +e.header
+              +e.A.img-wrap(href="#")
+                +e.IMG.img(src="assets/images/media/products/product-12.png" alt="")
+            +e.main
+              +e.heading
+                +e.A.heading-link(href="#") pCompact Bb-trumpet red
+              +e.price 1,279 MDL
+  // /showed-product-section
