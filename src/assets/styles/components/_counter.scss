@@ -1,0 +1,46 @@
+.counter {
+  position: relative;
+  height: 100%;
+
+  &__btn {
+    border: none;
+    background: none;
+    padding: 0;
+    outline: none;
+    position: absolute;
+    top: 1px;
+    bottom: 1px;
+    width: 2rem;
+    text-align: center;
+    cursor: pointer;
+    background: transparent;
+    transition: all .3s;
+    font-weight: bold;
+    font-size: 2.2rem;
+    color: #cdcdcd;
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+
+  &__field {
+    padding-left: 3rem;
+    padding-right: 3rem;
+    text-align: center;
+    border-color: #e7e7e7;
+    outline: none;
+    color: #1c3c50;
+    font-size: 1.8rem;
+    font-weight: 500;
+    height: 100%;
+  }
+
+  &--add {
+    right: .5rem;
+  }
+
+  &--remove {
+    left: .5rem;
+  }
+}

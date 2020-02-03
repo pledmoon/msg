@@ -797,6 +797,36 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   /* Drift Zoom */
   /* ------------ Product-Main ------------ */
+
+  /* ------------ Counter ------------ */
+  document.querySelectorAll('.counter--add').forEach(function(item) {
+
+    item.addEventListener('click', function(e) {
+      let input = this.closest('.counter').querySelector('input[type="tel"]');
+      let value = input.value;
+
+      if ( !parseInt(value) === value ) return;
+
+      input.value = parseInt(value) + 1;
+    });
+
+  });
+
+  document.querySelectorAll('.counter--remove').forEach(function(item) {
+
+    item.addEventListener('click', function(e) {
+      let input = this.closest('.counter').querySelector('input[type="tel"]');
+      let value = input.value;
+
+      if ( !parseInt(value) === value ) return;
+
+      if (value > 1) {
+        input.value = parseInt(value) - 1;
+      }
+    });
+
+  });
+  /* ------------ Counter ------------ */  
 });
 
 svg4everybody({});

@@ -1,0 +1,99 @@
+.fast-buy {
+  position: relative;
+  height: 4.2rem;
+
+  .fast-buy__number {
+    padding: 1rem 16rem 1rem 10.5rem;
+    font-size: 1.4rem;
+    height: 100%;
+  }
+
+  &__submit {
+    position: absolute;
+    right: 0;
+    height: 100%;
+    background: #cdcdcd;
+    font-size: 1.4rem;
+    color: $black;
+    font-weight: 600;
+    transition: all .3s;
+    max-width: 15rem;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+
+    &:hover {
+      background: $gray--medium;
+    }
+  }
+
+  .choices {
+    position: absolute;
+    left: 1px;
+    top: 1px;
+    padding-right: 1rem;
+    border-color: transparent;
+    color: #c0c0c0;
+    min-width: 9rem;
+    height: 100%;
+    background: transparent;
+    white-space: nowrap;
+
+    &::after {
+      display: none;
+    }
+
+    .choices__item--choice {
+      padding-left: 1rem;
+    }
+
+    .country-icon {
+      margin-right: 2.5rem;
+      display: inline-block;
+      vertical-align: middle;
+      width: 2rem;
+      height: 1rem;
+      position: relative;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      border: 1px solid $gray--medium;
+
+      &::after {
+        content: "\f078";
+        font-family: fa;
+        color: $primary-color;
+        left: 100% !important;
+        margin-left: 1rem;
+        margin-top: -1px;
+        line-height: 1;
+
+        @include absolute-vertical;
+      }
+    }
+
+    .flag-icon {
+      margin-right: 10px;
+      margin-top: .5rem;
+      width: 2rem;
+      height: 1rem;
+      float: left;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      border: 1px solid $gray--medium;
+    }
+
+    .md {
+      background-image: url("../images/md.png");
+    }
+
+    .ru {
+      background-image: url("../images/ru.png");
+    }
+
+    .ro {
+      background-image: url("../images/ro.png");
+    }
+  }
+}

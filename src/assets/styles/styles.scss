@@ -57,6 +57,10 @@
 @import "components/product-main-promo";
 @import "components/card-feature";
 @import "components/params";
+@import "components/fast-buy";
+@import "components/rate";
+@import "components/counter";
+@import "components/product-details";
 
 // 4.Layout
 @import "layout/header";
@@ -79,97 +83,3 @@
 // 7.Themes
 // @import 'themes/default';
 
-
-
-
-
-
-
-
-
-
-
-
-
-.product-details {
-  background: #fafafa;
-  padding: 4rem 2.5rem;
-  height: 100%;
-  margin-left: -3rem;
-  margin-right: -3rem;
-
-  @media (min-width: $md) {
-    margin-left: 0;
-  }
-
-  &__heading {}
-
-  &__meta {
-    border-bottom: 1px dotted #e6e6e6;
-    padding-bottom: 2rem;
-    margin-bottom: 2rem;
-  }
-
-  &__offers {
-    border-bottom: 1px dotted #e6e6e6;
-
-    @media (min-width: $md) {
-      padding-bottom: 2rem;
-      margin: 0 -1.5rem 2rem;
-      display: flex;
-    }
-  }
-
-  &__offer {
-    padding: 0 0 2rem;
-
-    @media (min-width: $md) {
-      flex-basis: 50%;
-      max-width: 50%;
-      padding: 0 1.5rem;
-    }
-
-    &-label {
-      font-weight: 600;
-      font-size: 1.4rem;
-      margin-bottom: .5rem;
-      display: inline-block;
-    }
-
-    .color-icon {
-      width: 1.5rem;
-      height: 1.5rem;
-      display: inline-block;
-      vertical-align: middle;
-      border-radius: 50%;
-      margin-right: .5rem;
-      position: relative;
-      top: -2px;
-
-      &.color-1 {
-        background: #dc8d4d;
-      }
-
-      &.color-2 {
-        background: #b30831;
-      }
-
-      &.color-3 {
-        background: #f1e186;
-      }
-    }
-
-    .extra-price {
-      color: #9a9a9a;
-      position: absolute;
-      right: 2.5rem;
-      font-size: 1.2rem;
-      top: 50%;
-      margin-top: 1px;
-      transform: translateY(-50%);
-    }
-  }
-
-  &__ {}
-  &__ {}
-}

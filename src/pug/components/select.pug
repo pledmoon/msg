@@ -10,10 +10,7 @@ mixin select(data, classes, type, initClass)
     div(class=classes)
       select(class=initClass)&attributes(attributes)
         each option in data
-          if option.customProperty
-            option(value=option.value) #{option.optionText}
-          else
-            option(value=option.value) #{option.optionText}
+          option(value=option.value) #{option.optionText}
 
   else
     div.select-default(class=classes)

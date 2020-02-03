@@ -15,8 +15,10 @@
   }
 
   &:hover {
-    #{$self}__main::after {
-      width: 76%;
+    @media (min-width: $md) {
+      #{$self}__main::after {
+        width: 76%;
+      }
     }
 
     #{$self}__icon {
@@ -28,7 +30,10 @@
     display: flex;
     height: 100%;
     align-items: center;
-    position: relative;
+
+    @media (min-width: $md) {
+      position: relative;
+    }
 
     &::after {
       content: "";
@@ -74,16 +79,24 @@
     font-weight: 600;
     vertical-align: middle;
     margin-left: .7rem;
+
+    @media (max-width: $sm--mw) {
+      position: absolute;
+      left: 100%;
+    }
   }
 
   &__dropdown {
     background: $white;
     top: 100%;
-    min-width: 38rem;
     // padding: 1.5rem;
     z-index: $dropdownZIndex;
     box-shadow: 0 0 20px rgba($black, .2);
     border-bottom: 3px solid $primary-color;
+
+    @media (min-width: $sm) {
+      min-width: 38rem;
+    }
 
     @include hide-element;
 
@@ -112,11 +125,17 @@
     /* interactive */
     #{$self}__main.is-opened & {
       visibility: visible;
-      left: auto;
+      left: 0;
       right: 0;
       opacity: 1;
       animation: .2s fadeInUp;
       animation-fill-mode: forwards;
+      margin-top: -6.5rem;
+
+      @media (min-width: $md) {
+        left: auto;
+        margin-top: 0;
+      }
     }
     /* interactive */
   }

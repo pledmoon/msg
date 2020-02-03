@@ -21,10 +21,51 @@ block content
   .row.no-gutters
     .col-md-7
       include components/product-main-promo
+
     .col-md-5
+
       .product-details
+
         .product-details__heading.main-heading Gretsch G5220 Electromatic Jet BT DCM
+
         .product-details__meta
+          .product-details__brand
+            a.product-details__brand-wrap(href="#")
+              img.product-details__brand-img.img-responsive(src="assets/images/media/brands/product-brand.png" alt="")
+          +b.rate.product-details__rate
+            +e.wrap
+              +e.SPAN.stars-active(style="width: 90%")
+                +e.I.icon.fas.fa-star
+                +e.I.icon.fas.fa-star
+                +e.I.icon.fas.fa-star
+                +e.I.icon.fas.fa-star
+                +e.I.icon.fas.fa-star
+              +e.SPAN.stars-inactive
+                +e.I.icon.fa.fa-star
+                +e.I.icon.fa.fa-star
+                +e.I.icon.fa.fa-star
+                +e.I.icon.fa.fa-star
+                +e.I.icon.fa.fa-star
+            +e.SPAN.amount - #[+e.SPAN.amount-value (23)]
+          .product-details__articul SKU:  #079415
+
+        .product-details__main-info
+          .product-details__cost
+            .product-details__old-price
+              span.product-details__old-price-value 7,221 MDL
+              span.product-details__price-difference - 13%
+            strong.product-details__main-price 6,969 MDL
+          .product-details__stock
+            .product-details__instock
+              +icon('boxes', 'product-details__instock-icon')
+              .product-details__instock-details
+                .product-details__instock-amount
+                  span.product-details__instock-amount-graph.product-details__instock-amount-graph--fill
+                  span.product-details__instock-amount-graph.product-details__instock-amount-graph--fill
+                  span.product-details__instock-amount-graph.product-details__instock-amount-graph--fill
+                  span.product-details__instock-amount-graph
+                .product-details__instock-txt В наличии
+
         .product-details__offers
           .product-details__offer
             label.product-details__offer-label(for="prod-color") Цвет
@@ -61,6 +102,38 @@ block content
                 customProperty: '65'
               }
             ], 'product-details__offer-select', 'custom', 'js-select-set')(id='prod-set')
+
+        .product-details__summary
+          .product-details__controls
+            .product-details__control.product-details__control--fav
+              .product-details__favourite
+                a.product-details__favourite-main(href="#")
+                  +icon('heart', 'product-details__favourite-icon')
+                span.product-details__favourite-info Добавили 1 человек
+            .product-details__control.product-details__control--counter
+              include components/counter
+            .product-details__control.product-details__control--add
+              a.product-details__add.btn.btn--main(href="#") Положить в корзину
+                +icon('shopping-cart', 'product-details__add-icon')
+          form.product-details__fast-buy.fast-buy(action="/" method="GET" name="fast-buy")
+            select.js-select-region
+              option(value="md") +373
+              option(value="ru") +7
+              option(value="ro") +40
+            input.fast-buy__number(type="tel" name="user-phone")
+            input.fast-buy__submit(type="submit" value="В один клик" name="send-data")
+          .product-details__credit
+            .product-details__credit-details 
+              .product-details__credit-desc от #[strong 1,599 MDL] / мес
+            .product-details__credit-details
+              a.product-details__credit-btn.btn.btn--reverse(href="#") Купить в кредит
+                +icon('time-is-money', 'product-details__credit-btn-icon')
+          .product-details__mob.d-sm-none
+            .row
+              .col-6
+                a.btn.btn--gray(href="#") В один клик
+              .col-6
+                a.btn.btn--reverse(href="#") В кредит
 
   // card-features
   .card-features
