@@ -1,0 +1,45 @@
+mixin product(data)
+
+  +b.ARTICLE.product-line(class=mod)
+
+    +e.preview
+
+      +e.A(href="#").img-wrapper
+        +e.IMG.img(src=data.imgPath alt="product")
+
+    +e.preview-main
+
+      +e.preview-inner
+
+        +e.meta
+          +e.brand
+            +e.A.wrap(href="#")
+              +e.IMG.brand-img(src=data.brand alt="brand")
+          +e.rate
+            +e.rate-wrap
+              +e.SPAN.rate-stars-active(style="width: " + data.rate)
+                +e.I.rate-icon.fas.fa-star
+                +e.I.rate-icon.fas.fa-star
+                +e.I.rate-icon.fas.fa-star
+                +e.I.rate-icon.fas.fa-star
+                +e.I.rate-icon.fas.fa-star
+              +e.SPAN.rate-stars-inactive
+                +e.I.rate-icon.fa.fa-star
+                +e.I.rate-icon.fa.fa-star
+                +e.I.rate-icon.fa.fa-star
+                +e.I.rate-icon.fa.fa-star
+                +e.I.rate-icon.fa.fa-star
+            +e.SPAN.rate-amount - 
+              if data.rateAmount
+                +e.SPAN.rate-amount-value (#{data.rateAmount})
+              else 
+                +e.SPAN.rate-amount-value (233)
+
+        +e.heading
+          +e.heading-link(href="#")= data.name
+
+      +e.price= data.price
+      +e.A.add.btn.btn--reverse(href="#") В корзину
+
+    +e.A.wish(href="#")
+      +icon('heart', 'product-line__wish-icon')

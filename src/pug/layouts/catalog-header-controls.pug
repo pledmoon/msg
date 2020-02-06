@@ -21,11 +21,34 @@
 .header-controls.d-md-none
 
   .header-control
-    a.filter-toggle(href="#") 
+    a.filter-toggle.js-filter-toggle(href="#") 
       +icon('funnel', 'filter-toggle__icon')
       span.filter-toggle__text Фильтры
 
   .header-control
-    a.sort-by(href="#") 
+    a.sort-by.js-sort-by-toggle(href="#") 
       +icon('sort', 'sort-by__icon')
       span.filter-toggle__text Сортировка
+
+    +b.sort-by-window.d-md-none
+      +e.header
+        +icon('sort', 'sort-by-window__icon')
+        +e.SPAN.text Сортировка
+        +e.close
+          +icon('close', 'sort-by-window__close-icon')
+      +e.body
+        +e.option.radio-label
+          input.radio-label__input(type="radio" value="sort-type-1" name="sort-type" id="sort-type-1")
+          label.radio-label__main(for="sort-type-1") По алфавиту
+        +e.option.radio-label
+          input.radio-label__input(type="radio" value="sort-type-2" name="sort-type" id="sort-type-2")
+          label.radio-label__main(for="sort-type-2") Подороже
+        +e.option.radio-label
+          input.radio-label__input(type="radio" value="sort-type-3" name="sort-type" id="sort-type-3")
+          label.radio-label__main(for="sort-type-3") Подешевле
+        +e.option.radio-label
+          input.radio-label__input(type="radio" value="sort-type-4" name="sort-type" id="sort-type-4")
+          label.radio-label__main(for="sort-type-4") Новинки
+        +e.option.radio-label
+          input.radio-label__input(type="radio" value="sort-type-5" name="sort-type" id="sort-type-5")
+          label.radio-label__main(for="sort-type-5") По рейтингу

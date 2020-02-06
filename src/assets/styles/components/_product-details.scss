@@ -171,9 +171,15 @@
     }
   }
 
+  &__offers-wrap {
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px dotted #cdcdcd;
+  }
+
   &__offers {
     @media (min-width: $md) {
-      margin: 0 -1.5rem 2rem;
+      margin: 0 -1.5rem;
       display: flex;
     }
   }
@@ -229,8 +235,6 @@
   }
 
   &__summary {
-    padding-top: 2rem;
-    border-top: 1px dotted #cdcdcd;
   }
 
   &__controls {

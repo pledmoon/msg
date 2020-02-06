@@ -6,6 +6,8 @@ mixin header-utility(data)
       a.header-utility__link(href="#")
         .header-utility__link-helper
           +icon(data.icon, 'header-utility__icon')
+          if data.auth
+            +icon('check', 'header-utility__auth-icon')
           if data.quantity
             span.header-utility__count #{data.quantity}
       

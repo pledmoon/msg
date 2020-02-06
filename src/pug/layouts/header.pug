@@ -34,16 +34,75 @@ mixin header()
         .header__utilities
 
           +header-utility({
-            icon: 'user'
+            icon: 'user',
+            auth: auth
           })
+            if auth
+              .header-utility__dropdown.header-utility__dropdown--sm
+                .header-utility__dropdown-body.no-padding
+                  +b.user-log-data
+                    +e.header
+                      +e.title Здравствуйте, #[+e.STRONG.username Alexandr!]
+                      +e.logout(href="#") Выйти
+                    .header-utility__dropdown-footer
+                      +e.body
+                        +e.UL.controls
+                          +e.LI.control
+                            +e.A.control-link(href="#") Сообщения #[+e.note (1)]
+                          +e.LI.control
+                            +e.A.control-link(href="#") История заказы
+                          +e.LI.control
+                            +e.A.control-link(href="#") Отзывы
+                          +e.LI.control
+                            +e.A.control-link(href="#") Настройки профиля
+            else
+              .header-utility__dropdown.header-utility__dropdown--lg
+                .header-utility__dropdown-body.no-padding
+                  +b.user-auth-data
+                    +e.main
+                      +e.auth
+                        +e.heading Логин
+                        +b.FORM.auth-dropdown(action="/" method="POST" name="user-auth")
+                          +e.field
+                            +e.helper
+                              +icon('mail', 'auth-dropdown__helper-icon')
+                            +e.INPUT.input(type="email" name="user-email" placeholder="E-mail или логин")
+                          +e.field
+                            +e.helper
+                              +icon('padlock', 'auth-dropdown__helper-icon')
+                            +e.INPUT.input(type="password" name="user-email" placeholder="Пароль")
+                          +e.field
+                            +e.checkbox.checkbox-label
+                              input.checkbox-label__input(type="checkbox" name="remember password" id="remember")
+                              label.checkbox-label__main(for="remember") #[span .] запомнить меня
+                          +e.footer
+                            +e.BUTTON.submit.btn.btn--reverse(type="submit") Войти
+                            +e.forgot-password
+                              +e.A.forgot-password-link(href="#") забыли пароль?
+                      +e.reg
+                        +e.heading Регистрация
+                        +e.P.desc Если вы являетесь зарегистрированным клиентом Line Pro, вы можете отслеживать свои посылки, просматривать продукты, управлять подарочными сертификатами или даже стать партнером Line Pro
+                        .text-center
+                          +e.reg-btn.btn.btn--reverse Зарегистрироваться
+                    +e.footer
+                      +e.social
+                        +e.social-text Войти через социальные сети
+                        +e.social-icons
+                          +soc
 
           +header-utility({
-            icon: 'heart'
+            icon: 'heart',
+            quantity: headerWishesAmount
           })
+            .header-utility__dropdown
+              .header-utility__dropdown-body.js-custom-scroll
+                +dropdown-products-list()
+              .header-utility__dropdown-footer
+                a.header-utility__dropdown-footer-btn.btn.btn--reverse(href="#") Перейти в избранные
 
           +header-utility({
             icon: 'shopping-cart',
-            quantity: 11
+            quantity: headerBasketAmount
           })
             .header-utility__dropdown
               .header-utility__dropdown-body.js-custom-scroll

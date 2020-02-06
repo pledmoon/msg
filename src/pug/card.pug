@@ -9,6 +9,7 @@ include components/logo
 include components/soc
 include components/card-feature
 include components/params
+include components/rate
 
 block variables
   - const pageTitle = 'Карта товара';
@@ -66,42 +67,43 @@ block content
                   span.product-details__instock-amount-graph
                 .product-details__instock-txt В наличии
 
-        .product-details__offers
-          .product-details__offer
-            label.product-details__offer-label(for="prod-color") Цвет
-            +select([
-              {
-                value: 'color-1',
-                optionText: 'Орех'
-              },
-              {
-                value: 'color-2',
-                optionText: 'Красное дерево'
-              },
-              {
-                value: 'color-3',
-                optionText: 'Береза'
-              }
-            ], 'product-details__offer-select', 'custom', 'js-select-color')(id='prod-color')
-          .product-details__offer
-            label.product-details__offer-label(for="prod-set") Комплекты
-            +select([
-              {
-                value: 'set-1',
-                optionText: 'Гитара и Кейс',
-                customProperty: '300'
-              },
-              {
-                value: 'set-2',
-                optionText: '+Медиатор',
-                customProperty: '10'
-              },
-              {
-                value: 'set-3',
-                optionText: '+Струны',
-                customProperty: '65'
-              }
-            ], 'product-details__offer-select', 'custom', 'js-select-set')(id='prod-set')
+        .product-details__offers-wrap
+          .product-details__offers
+            .product-details__offer
+              label.product-details__offer-label(for="prod-color") Цвет
+              +select([
+                {
+                  value: 'color-1',
+                  optionText: 'Орех'
+                },
+                {
+                  value: 'color-2',
+                  optionText: 'Красное дерево'
+                },
+                {
+                  value: 'color-3',
+                  optionText: 'Береза'
+                }
+              ], 'product-details__offer-select', 'custom', 'js-select-color')(id='prod-color')
+            .product-details__offer
+              label.product-details__offer-label(for="prod-set") Комплекты
+              +select([
+                {
+                  value: 'set-1',
+                  optionText: 'Гитара и Кейс',
+                  customProperty: '300'
+                },
+                {
+                  value: 'set-2',
+                  optionText: '+Медиатор',
+                  customProperty: '10'
+                },
+                {
+                  value: 'set-3',
+                  optionText: '+Струны',
+                  customProperty: '65'
+                }
+              ], 'product-details__offer-select', 'custom', 'js-select-set')(id='prod-set')
 
         .product-details__summary
           .product-details__controls
@@ -175,21 +177,32 @@ block content
       .table-responsive
         ul.tabs__list
           li.tabs__item
-            a.tabs__link.is-active(href="#describe") Описание
+            a.tabs__link(href="#describe") Описание
           li.tabs__item
-            a.tabs__link(href="#attributes") Атрибуты
+            a.tabs__link.is-active(href="#attributes") Атрибуты
           li.tabs__item
             a.tabs__link(href="#files") Файлы
           li.tabs__item
             a.tabs__link(href="#videos") Видео
           li.tabs__item
-            a.tabs__link(href="#reviews") Отзывы (26)
+            a.tabs__link(href="#reviews") Отзывы #[span (26)]
 
     .tabs__panes
 
+      .tabs__tab-pane
+        .row
+          .col-md-6
+            p Десятилетия опыта, накопленные на рынке профессионального звука, позволили компании Maxtronix создать уникальный дизайн, совершенную схемотехнику и надежные элементы активных акустических систем, результатом соединения которых и стало появление линейки Clarity.
+            p Clarity – это в первую очередь чистота, прозрачность и качество звука, необходимые любому пользователю в работе акустических систем. Эти критерии по умолчанию заложены в каждую модель Clarity, а надежность их работы проходит тяжелейшие заводские испытания и тестирования.
+            p Для вашего удобства Clarity предлагает множество вариантов мобильной акустики как для любительских, так и для профессиональных целей. 12 или 15 дюймовые громкоговорители, встроенная технология Bluetooth или FM тюнер, встроенная аккумуляторная батарея 7 или 10 А*ч, встроенные UHF радиомикрофоны и USB/SD проигрыватель, одиночное использование или комплект – просто выберите наиболее подходящий вам вариант.
+          .col-md-6.d-none.d-md-block
+            .banner
+              a.banner__wrap(href="#")
+                img.banner__img.img-responsive(src="assets/images/media/card-banner.png" alt="")
+
       .tabs__tab-pane.is-active
         .row
-          .col-md-7
+          .col-md-6
             +params([
               {
                 property: "Тип гитары",
@@ -220,22 +233,82 @@ block content
                 value: "Орех, Красное дерево, Береза"
               }
             ])
-          .col-md-5.d-none.d-md-block
+          .col-md-6.d-none.d-md-block
             .banner
               a.banner__wrap(href="#")
                 img.banner__img.img-responsive(src="assets/images/media/card-banner.png" alt="")
 
       .tabs__tab-pane
-        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas sequi dignissimos cumque possimus deleniti provident dolorum nisi culpa iste asperiores officiis, ducimus, natus commodi mollitia perspiciatis eum est autem rem. Autem quas beatae a debitis, voluptatem soluta. Quaerat maxime ipsa necessitatibus, dolorum consectetur officia, alias eveniet placeat dicta saepe temporibus?
+        
+        ul.files-list
+          li.files-list__file
+            div.files-list__heading Мануал пользователя
+            div.files-list__meta
+              span.files-list__format #[i.fa.fa-file-word] .docx
+              a.files-list__download.btn.btn--reverse(href="#" download) Скачать
+          li.files-list__file
+            div.files-list__heading Таблица нот на гитаре
+            div.files-list__meta
+              span.files-list__format #[i.fa.fa-file-excel] .xls
+              a.files-list__download.btn.btn--reverse(href="#" download) Скачать
+          li.files-list__file
+            div.files-list__heading Каталог товаров компании Gretsch за 2019 год
+            div.files-list__meta
+              span.files-list__format #[i.fa.fa-file-pdf] .pdf
+              a.files-list__download.btn.btn--reverse(href="#" download) Скачать
+          li.files-list__file
+            div.files-list__heading Драйвера для PC
+            div.files-list__meta
+              span.files-list__format #[i.fas.fa-cog] .exe
+              a.files-list__download.btn.btn--reverse(href="#" download) Скачать
 
       .tabs__tab-pane
-        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas sequi dignissimos cumque possimus deleniti provident dolorum nisi culpa iste asperiores officiis, ducimus, natus commodi mollitia perspiciatis eum est autem rem. Autem quas beatae a debitis, voluptatem soluta. Quaerat maxime ipsa necessitatibus, dolorum consectetur officia, alias eveniet placeat dicta saepe temporibus?
-
-      .tabs__tab-pane
-        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas sequi dignissimos cumque possimus deleniti provident dolorum nisi culpa iste asperiores officiis, ducimus, natus commodi mollitia perspiciatis eum est autem rem. Autem quas beatae a debitis, voluptatem soluta. Quaerat maxime ipsa necessitatibus, dolorum consectetur officia, alias eveniet placeat dicta saepe temporibus?
+        
+        .product-video
+          p.product-video__desc Десятилетия опыта, накопленные на рынке профессионального звука, позволили компании Maxtronix создать уникальный дизайн, совершенную схемотехнику и надежные элементы активных акустических систем, результатом соединения которых и стало появление линейки Clarity.
+          .product-video__iframe.iframe-wrap
+            .iframe-main
+              iframe(src="about:blank" data-src="https://www.youtube.com/embed/urK8zFwa-4c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
    
       .tabs__tab-pane
-        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas sequi dignissimos cumque possimus deleniti provident dolorum nisi culpa iste asperiores officiis, ducimus, natus commodi mollitia perspiciatis eum est autem rem. Autem quas beatae a debitis, voluptatem soluta. Quaerat maxime ipsa necessitatibus, dolorum consectetur officia, alias eveniet placeat dicta saepe temporibus?
+        .row
+          .col-md-6
+
+            +b.reviews
+              +e.HEADER.header
+                +e.overall
+                  +e.overall-title Средняя оценка
+                  +rate({
+                    rate: '80%',
+                    overall: '4,5'
+                  }, 'reviews__rate')
+                +e.A.add-review.btn.btn--reverse Оставить отзыв
+              +e.body
+                +b.review
+                  +e.HEADER.header
+                    +e.author
+                      +e.A.author-link(href="#") Александр
+                    +rate({
+                      rate: '100%',
+                      date: '07.06.2019'
+                    })
+
+                  +e.P.desc Ни разу не было никаких ошибок и перезагрузок, все приложения встают четко и прекрасно работают, камера на самом деле впечатлила детализацией после пятёрки. Кнопки действительно более шумные чем у пятерки, но думаю со временем ход кнопок станет более мягким и тихим. Пользуюсь неделю, купил навител, работает без инета, доволен как слон.
+                +b.review
+                  +e.HEADER.header
+                    +e.author
+                      +e.A.author-link(href="#") Ivan_chirilov
+                    +rate({
+                      rate: '20%',
+                      date: '07.06.2019'
+                    })
+
+                  +e.P.desc Ни разу не было никаких ошибок и перезагрузок, все приложения встают четко и прекрасно работают, камера на самом деле впечатлила детализацией после пятёрки. Кнопки действительно более шумные чем у пятерки, но думаю со временем ход кнопок станет более мягким и тихим. Пользуюсь неделю, купил навител, работает без инета, доволен как слон.
+
+          .col-md-6.d-none.d-md-block
+            .banner
+              a.banner__wrap(href="#")
+                img.banner__img.img-responsive(src="assets/images/media/card-banner.png" alt="")
   // /tabs
   
   // recommended

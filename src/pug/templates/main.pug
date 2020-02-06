@@ -17,100 +17,101 @@ html(lang="ru-RU")
     +head()
 
   body(class=pageClass)
+
+    block header
+      +header()
+
+    if promoCarousel
+      // promo-carousel
+      .promo-carousel-wrap
+
+        .swiper-container.promo-carousel.js-promo-carousel
+
+          .swiper-wrapper
+
+            .swiper-slide
+              +b.promo-slide(style="background-image: url('assets/images/media/slide-bg-1.jpg')")
+                .container-fluid
+                  +e.desc
+                    +e.FIGURE.product
+                      +e.A.img-wrap(href="#")
+                        +e.IMG.img.img-responsive(src="assets/images/media/product-slide-1.png" alt="")
+                      +e.FIGCAPTION.info
+                        +e.IMG.brand.img-responsive(src="assets/images/media/product-slide-logo.png" alt="")
+
+            .swiper-slide
+              +b.promo-slide(style="background-image: url('assets/images/media/slide-bg-1.jpg')")
+                .container-fluid
+                  +e.desc
+                    +e.FIGURE.product
+                      +e.A.img-wrap(href="#")
+                        +e.IMG.img.img-responsive(src="assets/images/media/product-slide-5.png" alt="")
+                      +e.FIGCAPTION.info
+                        +e.IMG.brand.img-responsive(src="http://pianistov.net/system/0007/9108/Fender_logo_200_small.png" alt="")
+                        +e.info-heading Fender CD-60
+                        +e.SMALL.info-desc Краткое описание товара
+
+            .swiper-slide
+              +b.promo-slide(style="background-image: url('assets/images/media/slide-bg-1.jpg')")
+                .container-fluid
+                  +e.desc
+                    +e.FIGURE.product
+                      +e.A.img-wrap(href="#")
+                        +e.IMG.img.img-responsive(src="assets/images/media/product-slide-3.png" alt="")
+                      +e.FIGCAPTION.info
+                        +e.info-heading Заголовок товара
+                        +e.SMALL.info-desc Краткое описание товара
+
+            .swiper-slide
+              +b.promo-slide(style="background-image: url('assets/images/media/slide-bg-2.jpeg')")
+                .container-fluid
+                  +e.desc
+                    +e.FIGURE.product
+                      +e.A.img-wrap(href="#")
+                        +e.IMG.img.img-responsive(src="assets/images/media/product-slide-4.png" alt="")
+                      +e.FIGCAPTION.info
+                        +e.IMG.brand.img-responsive(src="assets/images/media/product-slide-logo.png" alt="")
+
+          .promo-carousel__pagination
+
+          .promo-carousel__prev
+            +icon('left-chevron', 'promo-carousel__prev-icon')
+          .promo-carousel__next
+            +icon('right-chevron', 'promo-carousel__next-icon')
+      // /promo-carousel
+        
+      // promo-advantages
+      .advantages-section
+        .container-fluid
+          .row.justify-content-center
+            .col-sm-6.col-md-4
+              +b.FIGURE.advantage
+                +e.img-wrap
+                  +icon('microphone', 'advantage__icon')
+                +e.FIGCAPTION.desc
+                  +e.heading Широкий ассортимент
+                  +e.SPAN.note 10 000+ уникальных товаров
+            .col-sm-6.col-md-4
+              +b.FIGURE.advantage
+                +e.img-wrap
+                  +icon('treble-clef', 'advantage__icon')
+                +e.FIGCAPTION.desc
+                  +e.heading Официальный дилер
+                  +e.SPAN.note Более 50 мировых брендов
+            .col-sm-6.col-md-4
+              +b.FIGURE.advantage
+                +e.img-wrap
+                  +e.IMG.icon(src="assets/images/delivery.png" alt="delivery")
+                +e.FIGCAPTION.desc
+                  +e.heading Бесплатная доставка
+                    +e.I.tooltip.fas.fa-info(data-tippy-content="Какая-то подсказка о возврате и обмене товара")
+                  +e.SPAN.note Во все регионы республики
+      // /promo-advantages
+    
     .wrapper
-      if bodyBg
-        .body-bg
+      .body-bg
+        .body-bg__main
 
-      block header
-        +header()
-
-      if promoCarousel
-        // promo-carousel
-        .promo-carousel-wrap
-
-          .swiper-container.promo-carousel.js-promo-carousel
-
-            .swiper-wrapper
-
-              .swiper-slide
-                +b.promo-slide(style="background-image: url('assets/images/media/slide-bg-1.jpg')")
-                  .container-fluid
-                    +e.desc
-                      +e.FIGURE.product
-                        +e.A.img-wrap(href="#")
-                          +e.IMG.img.img-responsive(src="assets/images/media/product-slide-1.png" alt="")
-                        +e.FIGCAPTION.info
-                          +e.IMG.brand.img-responsive(src="assets/images/media/product-slide-logo.png" alt="")
-
-              .swiper-slide
-                +b.promo-slide(style="background-image: url('assets/images/media/slide-bg-1.jpg')")
-                  .container-fluid
-                    +e.desc
-                      +e.FIGURE.product
-                        +e.A.img-wrap(href="#")
-                          +e.IMG.img.img-responsive(src="assets/images/media/product-slide-5.png" alt="")
-                        +e.FIGCAPTION.info
-                          +e.IMG.brand.img-responsive(src="http://pianistov.net/system/0007/9108/Fender_logo_200_small.png" alt="")
-                          +e.info-heading Fender CD-60
-                          +e.SMALL.info-desc Краткое описание товара
-
-              .swiper-slide
-                +b.promo-slide(style="background-image: url('assets/images/media/slide-bg-1.jpg')")
-                  .container-fluid
-                    +e.desc
-                      +e.FIGURE.product
-                        +e.A.img-wrap(href="#")
-                          +e.IMG.img.img-responsive(src="assets/images/media/product-slide-3.png" alt="")
-                        +e.FIGCAPTION.info
-                          +e.info-heading Заголовок товара
-                          +e.SMALL.info-desc Краткое описание товара
-
-              .swiper-slide
-                +b.promo-slide(style="background-image: url('assets/images/media/slide-bg-2.jpeg')")
-                  .container-fluid
-                    +e.desc
-                      +e.FIGURE.product
-                        +e.A.img-wrap(href="#")
-                          +e.IMG.img.img-responsive(src="assets/images/media/product-slide-4.png" alt="")
-                        +e.FIGCAPTION.info
-                          +e.IMG.brand.img-responsive(src="assets/images/media/product-slide-logo.png" alt="")
-
-            .promo-carousel__pagination
-
-            .promo-carousel__prev
-              +icon('left-chevron', 'promo-carousel__prev-icon')
-            .promo-carousel__next
-              +icon('right-chevron', 'promo-carousel__next-icon')
-        // /promo-carousel
-          
-        // promo-advantages
-        .advantages-section
-          .container-fluid
-            .row.justify-content-center
-              .col-sm-6.col-md-4
-                +b.FIGURE.advantage
-                  +e.img-wrap
-                    +icon('microphone', 'advantage__icon')
-                  +e.FIGCAPTION.desc
-                    +e.heading Широкий ассортимент
-                    +e.SPAN.note 10 000+ уникальных товаров
-              .col-sm-6.col-md-4
-                +b.FIGURE.advantage
-                  +e.img-wrap
-                    +icon('treble-clef', 'advantage__icon')
-                  +e.FIGCAPTION.desc
-                    +e.heading Официальный дилер
-                    +e.SPAN.note Более 50 мировых брендов
-              .col-sm-6.col-md-4
-                +b.FIGURE.advantage
-                  +e.img-wrap
-                    +e.IMG.icon(src="assets/images/delivery.png" alt="delivery")
-                  +e.FIGCAPTION.desc
-                    +e.heading Бесплатная доставка
-                      +e.I.tooltip.fas.fa-info(data-tippy-content="Какая-то подсказка о возврате и обмене товара")
-                    +e.SPAN.note Во все регионы республики
-        // /promo-advantages
-      
       .container-fluid
 
         if breadcrumbs

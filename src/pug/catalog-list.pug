@@ -1,0 +1,147 @@
+extends templates/sub-layout
+
+include layouts/section
+include components/category
+include components/news
+include components/product-line
+include components/footer-collapse
+include components/logo
+include components/soc
+
+block variables
+  - const pageTitle = 'MIDI контроллеры';
+  - const pageClass = 'catalog-list-page';
+
+  - const headerBasketAmount = 4;
+
+  - const breadcrumbs = ["Главная", "Каталог по назначению", "Диджейское оборудование", "MIDI контроллеры"];
+
+append content
+
+  // showed-product-section
+  +section('Просмотренные товары', false, 'section--gray showed-products-section showed-products-section--horizontal-scroll')
+    .js-custom-scroll
+      .showed-products-section__row
+        .showed-products-section__col
+          +b.ARTICLE.product-preview--row
+            +e.header
+              +e.A.img-wrap(href="#")
+                +e.IMG.img(src="assets/images/media/products/product-8.png" alt="")
+            +e.main
+              +e.heading
+                +e.A.heading-link(href="#") Epiphone Slash AFD LP Performance Pack
+              +e.price 4,599 MDL
+          
+        .showed-products-section__col
+          +b.ARTICLE.product-preview--row
+            +e.header
+              +e.A.img-wrap(href="#")
+                +e.IMG.img(src="assets/images/media/products/product-7.png" alt="")
+            +e.main
+              +e.heading
+                +e.A.heading-link(href="#") Gretsch G5422T Electromatic BK
+              +e.price 13,333 MDL
+          
+        .showed-products-section__col
+          +b.ARTICLE.product-preview--row
+            +e.header
+              +e.A.img-wrap(href="#")
+                +e.IMG.img(src="assets/images/media/products/product-9.png" alt="")
+            +e.main
+              +e.heading
+                +e.A.heading-link(href="#") Adam TSV
+              +e.price 2,579 MDL
+          
+        .showed-products-section__col
+          +b.ARTICLE.product-preview--row
+            +e.header
+              +e.A.img-wrap(href="#")
+                +e.IMG.img(src="assets/images/media/products/product-10.png" alt="")
+            +e.main
+              +e.heading
+                +e.A.heading-link(href="#") Technics SL-1210 MK 7
+              +e.price 14,609 MDL
+
+        .showed-products-section__col
+          +b.ARTICLE.product-preview--row
+            +e.header
+              +e.A.img-wrap(href="#")
+                +e.IMG.img(src="assets/images/media/products/product-11.png" alt="")
+            +e.main
+              +e.heading
+                +e.A.heading-link(href="#") Rode NT1-A Complete Vocal Recording
+              +e.price 2,499 MDL
+          
+        .showed-products-section__col
+          +b.ARTICLE.product-preview--row
+            +e.header
+              +e.A.img-wrap(href="#")
+                +e.IMG.img(src="assets/images/media/products/product-12.png" alt="")
+            +e.main
+              +e.heading
+                +e.A.heading-link(href="#") pCompact Bb-trumpet red
+              +e.price 1,279 MDL
+  // /showed-product-section
+
+  // conclusion-section
+  +section("MIDI контроллеры", false, "conclude-section")
+    p Еним ессент хас еа, еа при харум маиорум. Меа ех сонет поссит минимум, при ин лаборе ириуре алияуид. Харум веритус ин сит, при но цонсул семпер промпта, ат луптатум яуаестио сцрибентур еам. Ех нец еиус муциус репудиаре, еум аудиам мандамус ехплицари но. Ест ет солум тациматес урбанитас, ад ест цорпора пертинациа.
+    p Вис одио татион иудицабит но. Ех етиам неморе меа. Еос ан виде аугуе волуптатум, иус еиус чоро малуиссет ет. Ин иуварет нусяуам еос, менандри диссентиунт ан еам. Трацтатос омиттантур ет нам, ан при доценди яуаерендум, аугуе лаборе перицула ин еос.
+    p Те яуи маиорум номинави, не цум тота суммо регионе. Ет мутат модус вис. Сит не порро дицтас. Цум ин диам утрояуе, елитр адмодум улламцорпер вел но, еам еу омнис посидониум. Унум анимал сеа ех. Сед ин нибх веритус елояуентиам, про елит дисцере сигниферумяуе ет.
+  // /conclusion-section
+
+block sidebar
+
+  include components/filter
+
+  .banner.d-none.d-md-block
+      a(href="#")
+        img.img-responsive(src="assets/images/media/banner-2.png" alt="banner")
+
+block primary
+  header.main-area__header
+    .main-heading MIDI контроллеры
+      span.main-heading__text 77 товаров
+    p.main-area__intro Лорем ипсум долор сит амет, не вел уллум лудус, цетерос форенсибус ан сит. Про ет новум принципес. Ан ерант инвидунт мел. Вел цибо луптатум ид, солет волуптуа те еам. Еа хис инермис репрехендунт, ат ерудити долорес нец, нец адхуц солум ех. Пауло оффициис цонцептам цу хис. Юсто лудус вивендо пер еи.
+
+    include layouts/catalog-header-controls
+
+  .products
+
+    +product({
+      name: "Native Instruments Traktor Kontrol Z1",
+      imgPath: "assets/images/media/products/midi-model-15.png",
+      price: "12,899 MDL",
+      rate: "90%",
+      rateAmount: 26,
+      brand: 'assets/images/media/brands/product-sm-brand-2.png'
+    })
+
+    +product({
+      name: "Roland DJ-707M",
+      imgPath: "assets/images/media/products/midi-model-7.png",
+      price: "2,899 MDL",
+      rate: "60%",
+      rateAmount: 3,
+      brand: 'assets/images/media/brands/product-sm-brand-3.png'
+    })
+
+    +product({
+      name: "Denon DJ SC5000 Prime",
+      imgPath: "assets/images/media/products/midi-model-3.png",
+      price: "9,000 MDL",
+      rate: "20%",
+      rateAmount: 7,
+      brand: 'assets/images/media/brands/product-sm-brand-3.png'
+    })
+
+    +product({
+      name: "Roland DJ-707M",
+      imgPath: "assets/images/media/products/midi-model-4.png",
+      price: "2,899 MDL",
+      rate: "60%",
+      rateAmount: 423,
+      brand: 'assets/images/media/brands/product-sm-brand-1.png'
+    })
+
+    include components/pagination

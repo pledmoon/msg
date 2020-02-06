@@ -1,0 +1,272 @@
+.user-log-data {
+  &__header {
+    text-align: center;
+    border-bottom: 1px dotted #e7e7e7;
+    padding: 2.5rem 2rem;
+  }
+
+  &__title {
+    font-size: 1.6rem;
+    position: relative;
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+
+    &::after {
+      content: "";
+      width: 5rem;
+      height: .3rem;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 100%;
+      background: $primary-color;
+    }
+  }
+
+  &__username {
+    font-weight: 500;
+    display: block;
+  }
+
+  &__logout {
+    color: $primary-color;
+    font-size: 1.2rem;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__body {
+    background: #fafafa;
+    text-align: left;
+  }
+
+  &__controls {
+    padding: 0 1.5rem;
+  }
+
+  &__control {}
+
+  &__control-link {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    color: #010101;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    padding: 1rem 0 0 1.5rem;
+    transition: all .3s;
+
+    &::before {
+      content: ".";
+      color: #ccc;
+      font-size: 1.4rem;
+      font-weight: 600;
+      left: 0;
+      position: absolute;
+      top: .6rem;
+    }
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+
+  &__note {
+    font-weight: 400;
+    color: $primary-color;
+  }
+}
+
+.no-padding {
+  padding: 0;
+}
+
+.user-auth-data {
+  &__main {
+    display: flex;
+  }
+
+  &__auth {
+    padding: 3rem;
+    flex-basis: 50%;
+    max-width: 50%;
+  }
+
+  &__reg {
+    padding: 3rem;
+    background: #fafafa;
+    flex-basis: 50%;
+    max-width: 50%;
+  }
+
+  &__heading {
+    font-size: 2.4rem;
+    text-transform: uppercase;
+    color: #131313;
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+
+    &::after {
+      content: "";
+      width: 5rem;
+      height: .3rem;
+      position: absolute;
+      top: 100%;
+      background: $primary-color;
+      transform: translateY(-.3rem);
+      left: 0;
+    }
+  }
+
+  &__desc {
+    color: #9a9a9a;
+    font-size: 1.4rem;
+    margin-bottom: 3rem;
+    line-height: 1.25;
+    min-height: 15.5rem;
+  }
+
+  &__reg-btn {
+    padding-top: .7rem;
+    padding-bottom: .7rem;
+
+    &::after {
+      background: #fafafa;
+    }
+  }
+
+  &__footer {
+    background: #303030;
+    padding: 2rem 1.5rem;
+    color: #9a9a9a;
+  }
+
+  &__social {
+    @media (min-width: $sm) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  &__social-text {
+    font-size: 1.4rem;
+    margin-right: 1.5rem;
+    margin-bottom: 1rem;
+
+    @media (min-width: $sm) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__social-icons {
+    .soc__item {
+      margin-left: 1rem;
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+
+    .soc__icon {
+      fill: #cdcdcd;
+    }
+  }
+}
+
+.auth-dropdown {
+  &__field {
+    margin-bottom: 2rem;
+    position: relative;
+
+    &:focus-within {
+      svg {
+        fill: $primary-color;
+      }
+    }
+  }
+
+  &__helper {
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 4.5rem;
+
+    &::after {
+      content: "";
+      width: 1px;
+      height: 1.5rem;
+      background: #e7e7e7;
+      position: absolute;
+      left: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &-icon {
+      width: 1.8rem;
+      height: 1.8rem;
+      fill: #cdcdcd;
+
+      @include absolute-center;
+    }
+  }
+
+  &__input {
+    font-size: 1.4rem;
+    color: #010101;
+    padding-left: 6rem;
+    transition: all .3s;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+
+    &:focus {
+      border-color: $primary-color;
+      box-shadow: 0 0 1.5rem rgba($primary-color, 0.3);
+    }
+  }
+
+  &__checkbox {
+    .checkbox-label__main {
+      color: #9a9a9a;
+      padding-left: 3.5rem;
+      font-size: 1.4rem;
+
+      span {
+        font-weight: 600;
+        position: absolute;
+        left: 2.5rem;
+        top: -.2rem;
+      }
+    }
+  }
+
+  &__footer {
+    text-align: center;
+    padding-top: 1rem;
+  }
+
+  &__submit {
+    padding-top: .7rem;
+    padding-bottom: .7rem;
+    margin-bottom: .5rem;
+    font-family: $font-base-stack;
+    font-size: 1.6rem;
+  }
+
+  &__forgot-password {
+    text-align: center;
+
+    &-link {
+      font-size: 1.2rem;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

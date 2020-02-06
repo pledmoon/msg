@@ -1,0 +1,256 @@
+.product-line {
+  $self: &;
+
+  border: 1px solid #e7e7e7;
+  transition: all .3s;
+  position: relative;
+
+  max-width: 36rem;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media (min-width: $sm) {
+    display: flex;
+
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  &:hover {
+    box-shadow: 0 0 2rem rgba($black, .15);
+    border-color: transparent;
+
+    #{$self}__img-col {
+      &::after {
+        background-color: $primary-color;
+      }
+    }
+
+    #{$self}__preview-main {
+      background: #fafafa;
+    }
+
+    #{$self}__add {
+      &::after {
+        background: #fafafa;
+      }
+    }
+  }
+  
+  &__preview {
+    align-self: center;
+    padding: 1.5rem;
+  }
+  
+  &__preview-main {
+    flex: auto;
+    padding: 2rem 2rem 2rem 3rem;
+    transition: all .3s;
+    text-align: center;
+
+    @media (min-width: $sm) {
+      text-align: left;
+    }
+
+    @media (min-width: $md) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  &__preview-inner {
+    min-width: 22rem;
+  }
+
+  &__img-wrapper {
+    height: 14rem;
+    width: 14rem;
+    display: block;
+    position: relative;
+    margin: 0 auto;
+
+    &::after {
+      content: "";
+      height: .3rem;
+      width: 6.5rem;
+      left: 50%;
+      top: 100%;
+      transform: translate(-50%, 1.5rem);
+      position: absolute;
+      background: #e7e7e7;
+      transition: all .3s;
+      z-index: 2;
+    }
+
+    @media (min-width: $sm) {
+      &::after {
+        top: 50%;
+        left: 100%;
+        transform: translate(1.5rem, -50%);
+        width: .3rem;
+        height: 6.5rem;
+      }
+    }
+  }
+
+  &__img {
+    max-height: 100%;
+    max-width: 100%;
+
+    @include absolute-center;
+  }
+
+  &__meta {
+    display: flex;
+    margin-bottom: 2rem;
+    align-items: center;
+    line-height: 1;
+    justify-content: center;
+
+    @media (min-width: $sm) {
+      justify-content: flex-start;
+    }
+  }
+
+  &__brand {
+    margin-right: 1.5rem;
+    padding-right: 1.5rem;
+    position: relative;
+
+    &::after {
+      content: "";
+      height: 1.5rem;
+      border-right: 1px solid #e6e6e6;
+      position: absolute;
+      left: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+      margin-left: -1px;
+    }
+
+    &-wrap {
+      max-width: 6.5rem;
+      display: block;
+    }
+
+    &-img {
+      max-height: 4rem;
+      transition: all .3s;
+
+      &:hover {
+        opacity: .7;
+      }
+    }
+  }
+
+  &__rate {
+    font-size: 1.2rem;
+    overflow: hidden;
+    position: relative;
+    white-space: nowrap;
+  }
+
+  &__rate-wrap {
+    position: relative;
+    display: inline-block;
+    text-align: left;
+  }
+
+  &__rate-stars-active {
+    color: #ffcb00;
+    position: relative;
+    z-index: 10;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    vertical-align: middle;
+  }
+  
+  &__rate-stars-inactive {
+    color: #d9d9d9;
+    position: absolute;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+  }
+
+  &__rate-icon {
+    margin: 0 .2rem;
+    font-size: 1.3rem;
+  }
+
+  &__rate-amount {
+    color: #d9d9d9;
+    font-size: 1.4rem;
+    vertical-align: middle;
+    display: inline-block;
+    margin-left: .5rem;
+
+    &-value {
+      color: $black;
+    }
+  }
+
+  &__heading {
+    font-size: 1.6rem;
+    line-height: 1.25;
+    max-height: 6rem;
+    overflow: hidden;
+    margin-bottom: 1rem;
+
+    @media (min-width: $sm) {
+      max-width: 22rem;
+    }
+
+    @media (min-width: $md) {
+      margin-bottom: 0;
+    }
+
+    &-link {
+      color: $black;
+      transition: all .3s;
+
+      &:hover {
+        color: $primary-color;
+      }
+    }
+  }
+
+  &__price {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: $black;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 16rem;
+    margin: 0 0 1rem;
+
+    @media (min-width: $md) {
+      margin: 0 auto 1rem;
+    }
+  }
+
+  &__add {}
+
+  &__wish {
+    position: absolute;
+    right: 2rem;
+    top: 1.5rem;
+
+    &:hover {
+      #{$self}__wish-icon {
+        fill: $primary-color;
+      }
+    }
+
+    &-icon {
+      transition: all .3s;
+      fill: #cdcdcd;
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+}

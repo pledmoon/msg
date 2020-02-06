@@ -1,0 +1,23 @@
+mixin rate(data, mod)
+  - const rate = data.rate || "50%";
+
+  +b.rate(class=mod)
+    +e.wrap
+      +e.SPAN.stars-active(style="width: " + rate)
+        +e.I.icon.fas.fa-star
+        +e.I.icon.fas.fa-star
+        +e.I.icon.fas.fa-star
+        +e.I.icon.fas.fa-star
+        +e.I.icon.fas.fa-star
+      +e.SPAN.stars-inactive
+        +e.I.icon.fa.fa-star
+        +e.I.icon.fa.fa-star
+        +e.I.icon.fa.fa-star
+        +e.I.icon.fa.fa-star
+        +e.I.icon.fa.fa-star
+    if data.amount
+        +e.SPAN.amount - #[+e.SPAN.amount-value (#{data.amount})]
+    if data.date
+        +e.SPAN.date - #[+e.SPAN.date-value #{data.date}]
+    if data.overall
+        +e.SPAN.overall= data.overall

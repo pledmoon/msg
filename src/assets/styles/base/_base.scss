@@ -53,14 +53,24 @@ body {
 
 .wrapper {
   position: relative;
+  min-height: 80rem;
 }
 
 .body-bg {
-  background: url('../images/body-bg.png') no-repeat center bottom;
   position: absolute;
   width: 100%;
   height: 100%;
   z-index: -1;
+  display: flex;
+
+  &__main {
+    background: url('../images/body-bg.png') no-repeat center top;
+    position: sticky;
+    width: 100%;
+    min-height: 80rem;
+    bottom: 0;
+    align-self: flex-end;
+  }
 }
 
 .container-fluid {
