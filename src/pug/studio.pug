@@ -1,0 +1,309 @@
+extends templates/sub-layout
+
+include layouts/section
+include components/category
+include components/news
+include components/product
+include components/footer-collapse
+include components/logo
+include components/soc
+include components/category-nav
+
+block variables
+  - const pageTitle = 'Бюджетная домашняя студия';
+  - const pageClass = 'studious-page';
+
+  - const breadcrumbs = ["Главная", "Готовые студии", "Бюджетная домашняя студия "];
+
+append content
+
+  // showed-product-section
+  +section('Просмотренные товары', false, 'section--gray showed-products-section showed-products-section--horizontal-scroll')
+    .js-custom-scroll
+      .showed-products-section__row
+        .showed-products-section__col
+          +b.ARTICLE.product-preview--row
+            +e.header
+              +e.A.img-wrap(href="#")
+                +e.IMG.img(src="assets/images/media/products/product-8.png" alt="")
+            +e.main
+              +e.heading
+                +e.A.heading-link(href="#") Epiphone Slash AFD LP Performance Pack
+              +e.price 4,599 MDL
+          
+        .showed-products-section__col
+          +b.ARTICLE.product-preview--row
+            +e.header
+              +e.A.img-wrap(href="#")
+                +e.IMG.img(src="assets/images/media/products/product-7.png" alt="")
+            +e.main
+              +e.heading
+                +e.A.heading-link(href="#") Gretsch G5422T Electromatic BK
+              +e.price 13,333 MDL
+          
+        .showed-products-section__col
+          +b.ARTICLE.product-preview--row
+            +e.header
+              +e.A.img-wrap(href="#")
+                +e.IMG.img(src="assets/images/media/products/product-9.png" alt="")
+            +e.main
+              +e.heading
+                +e.A.heading-link(href="#") Adam TSV
+              +e.price 2,579 MDL
+          
+        .showed-products-section__col
+          +b.ARTICLE.product-preview--row
+            +e.header
+              +e.A.img-wrap(href="#")
+                +e.IMG.img(src="assets/images/media/products/product-10.png" alt="")
+            +e.main
+              +e.heading
+                +e.A.heading-link(href="#") Technics SL-1210 MK 7
+              +e.price 14,609 MDL
+
+        .showed-products-section__col
+          +b.ARTICLE.product-preview--row
+            +e.header
+              +e.A.img-wrap(href="#")
+                +e.IMG.img(src="assets/images/media/products/product-11.png" alt="")
+            +e.main
+              +e.heading
+                +e.A.heading-link(href="#") Rode NT1-A Complete Vocal Recording
+              +e.price 2,499 MDL
+          
+        .showed-products-section__col
+          +b.ARTICLE.product-preview--row
+            +e.header
+              +e.A.img-wrap(href="#")
+                +e.IMG.img(src="assets/images/media/products/product-12.png" alt="")
+            +e.main
+              +e.heading
+                +e.A.heading-link(href="#") pCompact Bb-trumpet red
+              +e.price 1,279 MDL
+  // /showed-product-section
+
+block sidebar
+
+  +category-nav([
+    {
+      name: "Все студии"
+    },
+    {
+      name: "Домашние студии"
+    },
+    {
+      name: "Профессиональные студии"
+    },
+    {
+      name: "Мобильные студии"
+    },
+    {
+      name: "Студии для начинающих"
+    }
+  ])
+
+  .banner.d-none.d-md-block
+      a(href="#")
+        img.img-responsive(src="assets/images/media/banner-2.png" alt="banner")
+
+block primary
+  header.main-area__header
+    .main-heading #{pageTitle}
+
+    +b.tags.studio-tags
+      +icon('tag', 'tags__icon')
+      +e.UL.list
+        +e.LI.item
+          +e.A.link(href="#") Домашние студии
+        +e.LI.item
+          +e.A.link(href="#") Студии для начинающих
+
+  +b.ARTICLE.studio
+    +e.img-wrap
+      +e.IMG.img.img-responsive(src="assets/images/media/studio-1.jpg" alt="")
+    +e.P.desc Прежде чем мы окунемся в искусство домашних студий, я сделаю акцент на слове «домашняя». «Домашняя» студия нужна для записи и сведения демо-записей. Безусловно, работы, созданные в таких условиях, едва ли смогут потягаться с продукцией больших студий с отличным #[a(href="#") аналоговым] оборудованием и подготовленными акустическими условиями. Зачем же тогда нужны домашние студии? Чтобы композитор или звукорежиссер мог сделать демо-запись хорошего качества, не тратя при этом много денег.
+  
+  .studio-offers
+    .secondary-heading Товары для аналогичной студии
+
+    .items-carousel-wrap
+
+      .swiper-container.items-carousel.js-carousel-instance
+
+        .swiper-wrapper
+          
+          .swiper-slide
+
+            +product({
+              name: "Активный монитор Yamaha HS 7",
+              imgPath: "assets/images/media/studio-product-1.jpg",
+              price: "3,111 MDL",
+              rate: "80%",
+              rateAmount: 1,
+              wish: true,
+              brand: 'assets/images/media/product-sm-brand-7.png'
+            })
+          
+          .swiper-slide
+
+            +product({
+              name: "USB Audio Interface M-Audio AIR 192 | 6",
+              imgPath: "assets/images/media/studio-product-2.jpg",
+              price: "12,399 MDL",
+              rate: "60%",
+              rateAmount: 4,
+              wish: true,
+              brand: 'assets/images/media/product-sm-brand-7.png'
+            })
+          
+          .swiper-slide
+
+            +product({
+              name: "Hercules DJ Control Inpulse 200",
+              imgPath: "assets/images/media/studio-product-3.jpg",
+              price: "9,111 MDL",
+              rate: "100%",
+              rateAmount: 26,
+              wish: true,
+              brand: 'assets/images/media/brands/product-sm-brand-1.png'
+            })
+          
+          .swiper-slide
+
+            +product({
+              name: "Thomann SP-5600",
+              imgPath: "assets/images/media/studio-product-4.jpg",
+              price: "5,999 MDL",
+              rate: "80%",
+              rateAmount: 317,
+              wish: true,
+              brand: 'assets/images/media/brands/product-sm-brand-5.png'
+            })
+          
+          .swiper-slide
+
+            +product({
+              name: "Millenium KS-1001",
+              imgPath: "assets/images/media/studio-product-5.jpg",
+              price: "211 MDL",
+              rate: "85%",
+              rateAmount: 11,
+              wish: true,
+              brand: 'assets/images/media/brands/product-sm-brand-4.png'
+            })
+          
+          .swiper-slide
+
+            +product({
+              name: "Acoustics Perseus \"Polaris\"/Thomann Ed.",
+              imgPath: "assets/images/media/studio-product-6.jpg",
+              price: "13,899 MDL",
+              rate: "100%",
+              rateAmount: 55,
+              wish: true,
+              brand: 'assets/images/media/brands/product-sm-brand-3.png'
+            })
+
+        .default-pagination
+
+      //- .default-carousel-prev.sw-prev-1
+      //-   +icon('chevron-left', 'default-carousel-prev__icon')
+      //- .default-carousel-next.sw-next-1
+      //-   +icon('chevron-right', 'default-carousel-next__icon')
+
+  +b.ARTICLE.studio
+    +e.sub-title Рабочее место
+    +e.P.desc Зачастую люди выбирают место для домашней студии по внешнему виду, что, к сожалению, в корне неверно. Конечно, в небольших квартирах, где обычно и создают домашние студии, места крайне мало и выбирать особо не приходится, но следуя простым правилам акустики, можно добиться оптимальных результатов.
+    +e.img-wrap
+      +e.IMG.img.img-responsive(src="assets/images/media/studio-1.jpg" alt="")
+    +e.P.desc Многие, например, думают организовать студию даже на балконе. К сожалению, этот вариант плох, так как балконы в современных домах крайне малы по меркам оптимальных акустических условий. Не менее важно, что окна также наверняка плохо звукоизолированы, а это значит, что помимо вашего микса вы будете постоянно слышать проезжающие мимо машины или крики детей. Конечно, относится это не только к балкону, но и всем комнатам с окнами: постарайтесь расположить рабочее место там, где уровень постороннего шума будет минимальным. К примеру, комната прямоугольного типа с небольшим хорошо звукоизолированным окном или без него вполне подойдет.
+
+  .studio-offers
+    .secondary-heading Товары для аналогичной студии
+
+    .items-carousel-wrap
+
+      .swiper-container.items-carousel.js-carousel-instance
+
+        .swiper-wrapper
+          
+          .swiper-slide
+
+            +product({
+              name: "Thomann SP-5600",
+              imgPath: "assets/images/media/studio-product-4.jpg",
+              price: "5,999 MDL",
+              rate: "80%",
+              rateAmount: 317,
+              wish: true,
+              brand: 'assets/images/media/brands/product-sm-brand-5.png'
+            })
+          
+          .swiper-slide
+
+            +product({
+              name: "Millenium KS-1001",
+              imgPath: "assets/images/media/studio-product-5.jpg",
+              price: "211 MDL",
+              rate: "85%",
+              rateAmount: 11,
+              wish: true,
+              brand: 'assets/images/media/brands/product-sm-brand-4.png'
+            })
+          
+          .swiper-slide
+
+            +product({
+              name: "Acoustics Perseus \"Polaris\"/Thomann Ed.",
+              imgPath: "assets/images/media/studio-product-6.jpg",
+              price: "13,899 MDL",
+              rate: "100%",
+              rateAmount: 55,
+              wish: true,
+              brand: 'assets/images/media/brands/product-sm-brand-3.png'
+            })
+          
+          .swiper-slide
+
+            +product({
+              name: "Активный монитор Yamaha HS 7",
+              imgPath: "assets/images/media/studio-product-1.jpg",
+              price: "3,111 MDL",
+              rate: "80%",
+              rateAmount: 1,
+              wish: true,
+              brand: 'assets/images/media/product-sm-brand-7.png'
+            })
+          
+          .swiper-slide
+
+            +product({
+              name: "USB Audio Interface M-Audio AIR 192 | 6",
+              imgPath: "assets/images/media/studio-product-2.jpg",
+              price: "12,399 MDL",
+              rate: "60%",
+              rateAmount: 4,
+              wish: true,
+              brand: 'assets/images/media/product-sm-brand-7.png'
+            })
+          
+          .swiper-slide
+
+            +product({
+              name: "Hercules DJ Control Inpulse 200",
+              imgPath: "assets/images/media/studio-product-3.jpg",
+              price: "9,111 MDL",
+              rate: "100%",
+              rateAmount: 26,
+              wish: true,
+              brand: 'assets/images/media/brands/product-sm-brand-1.png'
+            })
+
+        .default-pagination
+
+      //- .default-carousel-prev.sw-prev-1
+      //-   +icon('chevron-left', 'default-carousel-prev__icon')
+      //- .default-carousel-next.sw-next-1
+      //-   +icon('chevron-right', 'default-carousel-next__icon')
+
+  p.summary-desc Выбор операционной системы — исключительно ваше решение. Кому-то удобнее работать на Windows, кому-то — на Mac OS. Единственный совет, который можно дать относительно выбора вашей «рабочей лошадки», — не пренебрегайте объемом оперативной памяти (RAM).

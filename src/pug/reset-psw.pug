@@ -1,0 +1,45 @@
+extends templates/main
+
+include components/footer-collapse
+include components/logo
+include components/soc
+
+block variables
+  - const pageTitle = 'Восстановление пароля';
+  - const pageClass = 'forms-page';
+  - const formsPage = true;
+
+block content
+
+  .inner-area
+    .inner-area__heading #{pageTitle}
+
+    +b.panel
+      +e.wrap
+        +e.info
+          +e.P.desc Пожалуйста, укажите #[strong e-mail], который Вы использовали для входа на сайт. Вам будет выслана ссылка для восстановления пароля.
+        +e.main
+          +e.FORM.form(action="/" method="POST" name="restore-password")
+            +e.field
+              +e.helper
+                +icon('mail', 'panel__helper-icon')
+              +e.INPUT.input(type="email" name="user-email" placeholder="Ваш e-mail")
+            +e.submit-wrap.text-center
+              +e.BUTTON.send.btn.btn--reverse(type="submit") Выслать ссылку
+
+    +b.panel(style="margin-top: 4rem;")
+      +e.wrap
+        +e.info
+          +e.P.desc Придумайте новый пароль
+        +e.main
+          +e.FORM.form(action="/" method="POST" name="restore-password")
+            +e.field
+              +e.helper
+                +icon('padlock', 'panel__helper-icon')
+              +e.INPUT.input(type="password" name="user-password" placeholder="Пароль")
+            +e.field
+              +e.helper
+                +icon('padlock', 'panel__helper-icon')
+              +e.INPUT.input(type="password" name="user-password-correct" placeholder="Повторить пароль")
+            +e.submit-wrap.text-center
+              +e.BUTTON.send.btn.btn--reverse(type="submit") Сменить пароль

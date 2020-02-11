@@ -24,6 +24,11 @@ ol {
   list-style: none;
 }
 
+::selection {
+  background: $primary-color;
+  color: $white;
+}
+
 html {
   height: 100%;
 }

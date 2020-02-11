@@ -59,7 +59,7 @@ h6,.h6 {
   font-size: 2.4rem;
   text-transform: uppercase;
   position: relative;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2.5rem;
   padding-bottom: 1.5rem;
   line-height: 1.3;
 
@@ -104,6 +104,26 @@ h6,.h6 {
   }
 }
 
+.secondary-heading {
+  padding-left: 2rem;
+  position: relative;
+  margin-bottom: 2.5rem;
+  text-transform: uppercase;
+  color: #303030;
+  font-size: 1.6rem;
+  font-weight: 500;
+
+  &::before {
+    content: "";
+    width: .3rem;
+    height: 2.5rem;
+    background: $primary-color;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+}
+
 /* ---------- Post Typography ---------- */
 .post-content {
   margin: 3rem 0 0;
@@ -112,28 +132,84 @@ h6,.h6 {
     margin: 0 0 2rem;
   }
 
-  a {}
+  a {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 
-  p {
-    margin: 0 0 2rem;
+  p {}
+
+  strong {
+    font-weight: 600;
   }
 
   ul {
-    list-style-position: inside;
-    list-style-type: disc;
+    list-style: none;
 
-    li {}
+    li {
+      padding-left: 3rem;
+      position: relative;
+
+      &:not(:first-child) {
+        margin-top: 2rem;
+      }
+
+      &::before {
+        width: 2px;
+        content: "";
+        height: 1.5rem;
+        background: $primary-color;
+        position: absolute;
+        left: 0;
+        top: .5rem;
+      }
+    }
   }
 
   ol {
     counter-reset: item-counter;
 
-    li {
+    > li {
       counter-increment: item-counter;
+    }
+
+    li {
+      padding-left: 3.5rem;
+      position: relative;
+      font-style: italic;
+      font-weight: 500;
+
+      &:not(:first-child) {
+        margin-top: 2rem;
+      }
 
       &::before {
         content: counter(item-counter) ". ";
         font-weight: 500;
+        color: #cdcdcd;
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+    }
+
+    ul {
+      color: #9a9a9a;
+      margin-top: 2rem;
+
+      li {
+        padding-left: 4rem;
+        font-weight: 400;
+
+        &::before {
+          content: "·";
+          background: transparent;
+          color: $primary-color;
+          position: absolute;
+          left: 0;
+          top: 0;
+        }
       }
     }
   }
@@ -144,9 +220,30 @@ h6,.h6 {
     dd {}
   }
 
-  blockquote {}
+  blockquote {
+    font-weight: 500;
+    font-style: italic;
+  }
+
+  q {}
 
   cite {}
+
+  figure {}
+
+  figcaption {
+    font-weight: 500;
+    color: #b8b8b8;
+    font-size: 1.2rem;
+    padding: 1.5rem 0;
+    border-bottom: 1px dotted #b8b8b8;
+  }
+
+  img {
+    max-width: 100%;
+    display: block;
+    height: auto;
+  }
 
   .float-left {
     float: left;
@@ -156,6 +253,26 @@ h6,.h6 {
   .float-right {
     float: right;
     margin: 1.5rem 0 1.5rem 1.5rem;
+  }
+
+  &__preview {
+    text-align: center;
+    max-width: 82rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &__summary {
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+    border-bottom: 1px dotted #e7e7e7;
+    margin: 0;
+
+    @media (min-width: $md) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
   }
 }
 /* ---------- Post Typography ---------- */

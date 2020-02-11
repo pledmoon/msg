@@ -7,3 +7,6 @@ mixin news(data, mod)
       +e.heading #{data.heading}
       if (data.excerpt)
         +e.P.excerpt #{data.excerpt}
+      if (data.more)
+        +e.more.btn.btn--reverse
+          +icon('chevron-right', 'news__more-icon')

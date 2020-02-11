@@ -1,0 +1,246 @@
+extends templates/sub-layout
+
+include layouts/section
+include components/category
+include components/news
+include components/product
+include components/footer-collapse
+include components/logo
+include components/soc
+include components/category-nav
+
+block variables
+  - const pageTitle = 'Все новости и обзоры';
+  - const pageClass = 'news-list-page';
+  - const breadcrumbs = ["Главная", "Новости"];
+  - const auth = true;
+  - const rightColumn = true;
+
+//- block content
+
+block sidebar
+  +category-nav([
+    {
+      name: "Все новости и обзоры"
+    },
+    {
+      name: "Мировые новости"
+    },
+    {
+      name: "Новости Line Production"
+    },
+    {
+      name: "Обзоры"
+    },
+    {
+      name: "Мероприятия"
+    },
+    {
+      name: "Фото видео отчеты"
+    },
+    {
+      name: "Прочее"
+    }
+  ])
+
+  .banner.d-none.d-md-block
+      a(href="#")
+        img.img-responsive(src="assets/images/media/banner-2.png" alt="banner")
+
+  +b.products-review.d-none.d-md-block
+    +e.heading.h3 Обзоры новинок
+
+    +b.ARTICLE.product-review
+      +e.A.img-wrap(href="#")
+        +e.IMG.img(src="assets/images/media/product-review-1.jpg" alt="")
+      +e.heading
+        +e.A.heading-link(href="#") Знакомьтесь, пластики для барабанов Aquarian!
+
+    +b.ARTICLE.product-review
+      +e.A.img-wrap(href="#")
+        +e.IMG.img(src="assets/images/media/product-review-2.jpg" alt="")
+      +e.heading
+        +e.A.heading-link(href="#") Новый профес#[wbr]сиональный медиа проигрыватель от Denon Pro
+
+    +b.ARTICLE.product-review
+      +e.A.img-wrap(href="#")
+        +e.IMG.img(src="assets/images/media/product-review-3.jpg" alt="")
+      +e.heading
+        +e.A.heading-link(href="#") KLA серия - в лучших традициях QSC
+
+    +b.ARTICLE.product-review
+      +e.A.img-wrap(href="#")
+        +e.IMG.img(src="assets/images/media/product-review-4.jpg" alt="")
+      +e.heading
+        +e.A.heading-link(href="#") Интерактивное демо возможностей QSC K и GX серий
+
+    +b.ARTICLE.product-review
+      +e.A.img-wrap(href="#")
+        +e.IMG.img(src="assets/images/media/product-review-5.jpg" alt="")
+      +e.heading
+        +e.A.heading-link(href="#") Pearl E-Pro-Live - новый взгляд на электро барабаны
+
+  +b.products-preview.d-none.d-md-block
+    +e.heading.h3 Рекомендуемые товары
+
+    +b.ARTICLE.product-preview
+      +e.header
+        +e.A.img-wrap(href="#")
+          +e.IMG.img(src="assets/images/media/products/product-1.png" alt="")
+      +e.main
+        +e.heading
+          +e.A.heading-link(href="#") Gretsch G5422T Electromatic BK
+        +e.price 1,599 MDL
+
+    +b.ARTICLE.product-preview
+      +e.header
+        +e.A.img-wrap(href="#")
+          +e.IMG.img(src="assets/images/media/products/product-3.png" alt="")
+      +e.main
+        +e.heading
+          +e.A.heading-link(href="#") Native Instruments Komplete Kontrol A49
+        +e.price 2,745 MDL
+
+    +b.ARTICLE.product-preview
+      +e.header
+        +e.A.img-wrap(href="#")
+          +e.IMG.img(src="assets/images/media/products/product-6.png" alt="")
+      +e.main
+        +e.heading
+          +e.A.heading-link(href="#") Technics SL-1210 MK 7
+        +e.price 1,899 MDL
+
+    +b.ARTICLE.product-preview
+      +e.header
+        +e.A.img-wrap(href="#")
+          +e.IMG.img(src="assets/images/media/products/product-4.png" alt="")
+      +e.main
+        +e.heading
+          +e.A.heading-link(href="#") Numark Party Mix
+        +e.price 1,279 MDL
+
+block primary
+
+  .main-heading #{pageTitle}
+
+  .news-promo.d-none.d-md-block
+    +news({
+      heading: "Презентация технологии иммерсионного звука L-Acoustics L-ISA в Киеве!",
+      date:    "28 декабря 2019",
+      imgPath: "assets/images/media/news-promo.jpg",
+      excerpt: "Природне звучання поглинає слухача, охоплюючи його з усіх боків. Підсилений і записаний звук практично позбавлений цих просторових ознак. Принаймні, так було дотепер. ТехнологіяL-ISA дозволяє артистам створювати до слухачавиступів.",
+      more: true
+    })
+
+  .news-list
+
+    .row
+      .col-sm-6.col-md-4
+        +news({
+          heading: "Житловий комплекс 19 Dutch в Нью-Йорку оснащується мережевою аудіо-відео екосистемою Q-SYS",
+          date:    "19 декабря 2019",
+          imgPath: "assets/images/media/news-2.jpg"
+        })
+      .col-sm-6.col-md-4
+        +news({
+          heading: "Компанія L-Acoustics оновлює свій бестселер – лінійний масив Kara, додавши змінну спрямованість",
+          date:    "9 декабря 2019",
+          imgPath: "assets/images/media/news-3.jpg"
+        })
+      .col-sm-6.col-md-4
+        +news({
+          heading: "Технології Mogami",
+          date:    "26 ноября 2019",
+          imgPath: "assets/images/media/news-4.jpg",
+          excerpt: "Природне звучання поглинає слухача, охоплюючи його з усіх боків."
+        })
+      .col-sm-6.col-md-4
+        +news({
+          heading: "Dynaudio представляє програму Unheard: студія для невідомих гуртів",
+          date:    "12 ноября 2019",
+          imgPath: "assets/images/media/news-5.jpg"
+        })
+      .col-sm-6.col-md-4
+        +news({
+          heading: "Новинки про аудіо на NAMM Show 2020",
+          date:    "7 ноября 2019",
+          imgPath: "assets/images/media/news-6.jpg",
+          excerpt: "В каліфорнійському Анагаймі в ці дні на виставці The NAMM Show"
+        })
+      .col-sm-6.col-md-4
+        +news({
+          heading: "Нові надходження DPA Microphones",
+          date:    "23 октября 2019",
+          imgPath: "assets/images/media/news-7.jpg",
+          excerpt: "Природне звучання поглинає слухача, охоплюючи його з усіх боків."
+        })
+
+  .banner.products__banner
+    a(href="#").products__banner-link
+      img.products__banner-img.img-responsive(src="assets/images/media/banner-1.png" alt="banner")
+
+  .news-cols
+    .row
+      .col-sm-6.col-md-12
+        +news({
+          heading: "MIPRO TA-80 – ключ до налаштування масштабної звукової системи для святкування Дня незалежності Мексики",
+          date:    "14 октября 2019",
+          imgPath: "assets/images/media/news-8.jpg",
+          excerpt: "Цифровий безпровідний plug-on передавач UHF діапазону ",
+        }, 'news--list')
+
+      .col-sm-6.col-md-12
+        +news({
+          heading: "Концертний тур Aerosmith 'Deuces Are Wild' в Лас-Вегасі за технологією L-ISA Immersive Hyperreal Sound",
+          date:    "21 сентября 2019",
+          imgPath: "assets/images/media/news-9.jpg",
+          excerpt: "Aerosmith об'єднались з THX і L-Acoustics для грандіозної серії ",
+        }, 'news--list')
+
+      .col-sm-6.col-md-12
+        +news({
+          heading: "L-ISA с Енніо Морріконе в Мілані",
+          date:    "4 сентября 2019",
+          imgPath: "assets/images/media/news-10.jpg",
+          excerpt: "Aerosmith об'Один із найвідоміших композиторів та диригентів у світі, Енніо Морріконе, написав понад 500 кіно- і телевізійних партитур, за кар'єру, що триває сім десятиліть.",
+        }, 'news--list')
+
+      .col-sm-6.col-md-12
+        +news({
+          heading: "Легендарний туровий звукоінженер Ян “Кальмар” Уолш мікшує вушні монітори для Ghost за допомогою KLANG:fabrik",
+          date:    "29 августа 2019",
+          imgPath: "assets/images/media/news-11.jpg",
+          excerpt: "Імерсивне рішення для мікшування персональних вушних",
+        }, 'news--list')
+
+      .col-sm-6.col-md-12
+        +news({
+          heading: "Мікшерна система Allen & Heath dLive працювала на музичному фестивалі SonRise",
+          date:    "17 августа 2019",
+          imgPath: "assets/images/media/news-12.jpg",
+          excerpt: "Компанія S&S Production Services виконує жорсткий графік виступів артистів на релігійному музичному фестивалі завдяки",
+        }, 'news--list')
+  
+  .pagination
+    a.pagination__prev(href="#")
+      +icon('arrow-left', 'pagination__icon')
+    ul.pagination__list
+      li.pagination__item
+        a.pagination__link(href="#") 1
+      li.pagination__item
+        a.pagination__link(href="#") 2
+      li.pagination__item
+        a.pagination__link(href="#") 3
+      li.pagination__item
+        a.pagination__link.active(href="#") 4
+      li.pagination__item &hellip;
+      li.pagination__item
+        a.pagination__link(href="#") 12
+      li.pagination__item
+        a.pagination__link(href="#") 13
+      li.pagination__item
+        a.pagination__link(href="#") 14
+      li.pagination__item
+        a.pagination__link(href="#") 15
+    a.pagination__next(href="#")
+      +icon('arrow-right', 'pagination__icon')

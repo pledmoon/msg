@@ -20,6 +20,12 @@
   }
 }
 
+.reverse-order > .col-md-9 {
+  @media (min-width: $md) {
+    order: -1;
+  }
+}
+
 .main-area {
   padding: 2rem 0 0;
 
@@ -41,6 +47,14 @@
     display: block;
     margin-bottom: 2rem;
   }
+
+  &__date {
+    font-size: 1.4rem;
+    display: block;
+    font-weight: 500;
+    margin-bottom: 2rem;
+    color: #b8b8b8;
+  }
 }
 
 .products {
@@ -50,10 +64,6 @@
 
   .product-line {
     margin-bottom: 2.5rem;
-  }
-
-  .pagination {
-    margin-bottom: 3rem;
   }
 }
 

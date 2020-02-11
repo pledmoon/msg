@@ -75,3 +75,53 @@
     @include absolute-center;
   }
 }
+
+.soc-share {
+  margin-top: 1.5rem;
+
+  @media (min-width: $md) {
+    margin-top: 0;
+  }
+
+  &__heading {
+    font-size: 1.4rem;
+    color: #9a9a9a;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 1rem;
+  }
+
+  &__soc {
+    display: inline-block;
+    vertical-align: middle;
+
+    .soc__item {
+      margin: 0;
+      padding: 0;
+
+      &:not(:last-child) {
+        margin-right: 1rem;
+      }
+
+      &::before {
+        display: none;
+      }
+    }
+
+    .soc__link {
+      border-color: #cdcdcd;
+
+      &:hover {
+        border-color: transparent;
+      }
+    }
+
+    .soc__icon {
+      fill: #cdcdcd;
+    }
+  }
+
+  .soc .soc__item {
+    margin-top: 0;
+  }
+}

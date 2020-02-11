@@ -7,4 +7,5 @@ mixin category-nav(data)
         each item in data
           +e.LI.item
             +e.A.link(href="#") #{item.name}
-              +e.SPAN.amount (#{item.value})
+              if item.value
+                +e.SPAN.amount (#{item.value})

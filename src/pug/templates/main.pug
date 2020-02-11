@@ -108,17 +108,21 @@ html(lang="ru-RU")
                   +e.SPAN.note Во все регионы республики
       // /promo-advantages
     
-    .wrapper
-      .body-bg
-        .body-bg__main
+    if !formsPage
+      .wrapper
+        .body-bg
+          .body-bg__main
 
-      .container-fluid
+        .container-fluid
 
-        if breadcrumbs
-          +breadcrumbs(breadcrumbs)
+          if breadcrumbs
+            +breadcrumbs(breadcrumbs)
 
-        block content
-          p No content provided!
+          block content
+            p No content provided!
+
+    else
+      block content
 
     block footer
       +footer()

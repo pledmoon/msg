@@ -1,0 +1,214 @@
+extends templates/sub-layout
+
+include layouts/section
+include components/category
+include components/news
+include components/product
+include components/footer-collapse
+include components/logo
+include components/soc
+include components/category-nav
+
+block variables
+  - const pageTitle = 'Готовые студии';
+  - const pageClass = 'studio-page';
+
+  - const headerWishesAmount = 4;
+
+  - const breadcrumbs = ["Главная", "Готовые студии"];
+
+append content
+
+  // showed-product-section
+  +section('Просмотренные товары', false, 'section--gray showed-products-section showed-products-section--horizontal-scroll')
+    .js-custom-scroll
+      .showed-products-section__row
+        .showed-products-section__col
+          +b.ARTICLE.product-preview--row
+            +e.header
+              +e.A.img-wrap(href="#")
+                +e.IMG.img(src="assets/images/media/products/product-8.png" alt="")
+            +e.main
+              +e.heading
+                +e.A.heading-link(href="#") Epiphone Slash AFD LP Performance Pack
+              +e.price 4,599 MDL
+          
+        .showed-products-section__col
+          +b.ARTICLE.product-preview--row
+            +e.header
+              +e.A.img-wrap(href="#")
+                +e.IMG.img(src="assets/images/media/products/product-7.png" alt="")
+            +e.main
+              +e.heading
+                +e.A.heading-link(href="#") Gretsch G5422T Electromatic BK
+              +e.price 13,333 MDL
+          
+        .showed-products-section__col
+          +b.ARTICLE.product-preview--row
+            +e.header
+              +e.A.img-wrap(href="#")
+                +e.IMG.img(src="assets/images/media/products/product-9.png" alt="")
+            +e.main
+              +e.heading
+                +e.A.heading-link(href="#") Adam TSV
+              +e.price 2,579 MDL
+          
+        .showed-products-section__col
+          +b.ARTICLE.product-preview--row
+            +e.header
+              +e.A.img-wrap(href="#")
+                +e.IMG.img(src="assets/images/media/products/product-10.png" alt="")
+            +e.main
+              +e.heading
+                +e.A.heading-link(href="#") Technics SL-1210 MK 7
+              +e.price 14,609 MDL
+
+        .showed-products-section__col
+          +b.ARTICLE.product-preview--row
+            +e.header
+              +e.A.img-wrap(href="#")
+                +e.IMG.img(src="assets/images/media/products/product-11.png" alt="")
+            +e.main
+              +e.heading
+                +e.A.heading-link(href="#") Rode NT1-A Complete Vocal Recording
+              +e.price 2,499 MDL
+          
+        .showed-products-section__col
+          +b.ARTICLE.product-preview--row
+            +e.header
+              +e.A.img-wrap(href="#")
+                +e.IMG.img(src="assets/images/media/products/product-12.png" alt="")
+            +e.main
+              +e.heading
+                +e.A.heading-link(href="#") pCompact Bb-trumpet red
+              +e.price 1,279 MDL
+  // /showed-product-section
+
+block sidebar
+
+  +category-nav([
+    {
+      name: "Все студии"
+    },
+    {
+      name: "Домашние студии"
+    },
+    {
+      name: "Профессиональные студии"
+    },
+    {
+      name: "Мобильные студии"
+    },
+    {
+      name: "Студии для начинающих"
+    }
+  ])
+
+  .banner.d-none.d-md-block
+      a(href="#")
+        img.img-responsive(src="assets/images/media/banner-2.png" alt="banner")
+
+block primary
+  header.main-area__header
+    .main-heading #{pageTitle}
+
+  .studios-section
+
+    +b.ARTICLE.studio
+      +e.heading.secondary-heading Бюджетная домашняя студия
+      +e.img-wrap
+        +e.IMG.img.img-responsive(src="assets/images/media/studio-1.jpg" alt="")
+      +e.FOOTER.summary
+        +b.tags
+          +icon('tag', 'tags__icon')
+          +e.UL.list
+            +e.LI.item
+              +e.A.link(href="#") Домашние студии
+            +e.LI.item
+              +e.A.link(href="#") Студии для начинающих
+        +e.more.btn.btn--reverse
+          +icon('chevron-right', 'studio__more-icon')
+
+    +b.ARTICLE.studio
+      +e.heading.secondary-heading Бюджетная домашняя студия
+      +e.img-wrap
+        +e.IMG.img.img-responsive(src="assets/images/media/studio-2.jpg" alt="")
+      +e.FOOTER.summary
+        +b.tags
+          +icon('tag', 'tags__icon')
+          +e.UL.list
+            +e.LI.item
+              +e.A.link(href="#") Домашние студии
+            +e.LI.item
+              +e.A.link(href="#") Студии для начинающих
+        +e.more.btn.btn--reverse
+          +icon('chevron-right', 'studio__more-icon')
+
+    +b.ARTICLE.studio
+      +e.heading.secondary-heading Бюджетная домашняя студия
+      +e.img-wrap
+        +e.IMG.img.img-responsive(src="assets/images/media/studio-3.jpg" alt="")
+      +e.FOOTER.summary
+        +b.tags
+          +icon('tag', 'tags__icon')
+          +e.UL.list
+            +e.LI.item
+              +e.A.link(href="#") Домашние студии
+            +e.LI.item
+              +e.A.link(href="#") Студии для начинающих
+        +e.more.btn.btn--reverse
+          +icon('chevron-right', 'studio__more-icon')
+
+    +b.ARTICLE.studio
+      +e.heading.secondary-heading Бюджетная домашняя студия
+      +e.img-wrap
+        +e.IMG.img.img-responsive(src="assets/images/media/studio-4.jpg" alt="")
+      +e.FOOTER.summary
+        +b.tags
+          +icon('tag', 'tags__icon')
+          +e.UL.list
+            +e.LI.item
+              +e.A.link(href="#") Домашние студии
+            +e.LI.item
+              +e.A.link(href="#") Студии для начинающих
+        +e.more.btn.btn--reverse
+          +icon('chevron-right', 'studio__more-icon')
+
+    +b.ARTICLE.studio
+      +e.heading.secondary-heading Бюджетная домашняя студия
+      +e.img-wrap
+        +e.IMG.img.img-responsive(src="assets/images/media/studio-5.jpg" alt="")
+      +e.FOOTER.summary
+        +b.tags
+          +icon('tag', 'tags__icon')
+          +e.UL.list
+            +e.LI.item
+              +e.A.link(href="#") Домашние студии
+            +e.LI.item
+              +e.A.link(href="#") Студии для начинающих
+        +e.more.btn.btn--reverse
+          +icon('chevron-right', 'studio__more-icon')
+
+  .pagination
+    a.pagination__prev(href="#")
+      +icon('arrow-left', 'pagination__icon')
+    ul.pagination__list
+      li.pagination__item
+        a.pagination__link(href="#") 1
+      li.pagination__item
+        a.pagination__link(href="#") 2
+      li.pagination__item
+        a.pagination__link(href="#") 3
+      li.pagination__item
+        a.pagination__link.active(href="#") 4
+      li.pagination__item &hellip;
+      li.pagination__item
+        a.pagination__link(href="#") 12
+      li.pagination__item
+        a.pagination__link(href="#") 13
+      li.pagination__item
+        a.pagination__link(href="#") 14
+      li.pagination__item
+        a.pagination__link(href="#") 15
+    a.pagination__next(href="#")
+      +icon('arrow-right', 'pagination__icon')

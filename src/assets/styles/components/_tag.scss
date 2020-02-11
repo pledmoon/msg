@@ -1,0 +1,50 @@
+.tags {
+  &__icon {
+    fill: #ccc;
+    width: 1.4rem;
+    height: 1.4rem;
+  }
+
+  &__list {
+    font-size: 1.2rem;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  &__item {
+    display: inline-block;
+    vertical-align: middle;
+
+    &::before {
+      display: none;
+    }
+
+    &:last-child {
+      a::after {
+        display: none;
+      }
+    }
+  }
+
+  &__link {
+    transition: all .3s;
+    color: #9a9a9a;
+
+    &::after {
+      content: ",";
+    }
+
+    &:hover {
+      color: #212121;
+    }
+  }
+
+  .tags__list .tags__item {
+    margin: 0 0 0 .5rem;
+    padding: 0;
+
+    a:hover {
+      text-decoration: none;
+    }
+  }
+}

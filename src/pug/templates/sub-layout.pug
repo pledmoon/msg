@@ -2,7 +2,12 @@ extends main
 
 block content
 
-  .row
+  - let rightColumnClass = '';
+
+  if rightColumn
+    - rightColumnClass = 'reverse-order';
+
+  .row(class=rightColumnClass)
     .col-md-3
       aside.sidebar-area
         block sidebar

@@ -1,0 +1,83 @@
+.files-list {
+  &__file {
+    padding: 2rem 0;
+    border-bottom: 1px dotted #e6e6e6;
+
+    &:first-child {
+      border-top: 1px dotted #e6e6e6;
+    }
+
+    @media (min-width: $sm) {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  &__heading {
+    max-width: 28rem;
+    line-height: 1.3;
+    margin-bottom: 1rem;
+
+    @media (min-width: $sm) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__meta {
+    @media (min-width: $sm) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      min-width: 24rem;
+    }
+
+    @media (min-width: $md) {
+      min-width: 26rem;
+    }
+  }
+
+  &__format {
+    font-weight: 500;
+    color: #9a9a9a;
+    font-size: 1.4rem;
+    display: block;
+    margin-bottom: 1rem;
+
+    @media (min-width: $sm) {
+      display: inline;
+      margin-bottom: 0;
+    }
+
+    i {
+      font-size: 1.6rem;
+      margin-right: .5rem;
+    }
+  }
+
+  &__download {
+    line-height: 1;
+    padding-top: .8rem;
+    padding-bottom: .8rem;
+
+    @media (min-width: $sm) {
+      margin-left: 10rem;
+    }
+  }
+
+  .fa-file-word {
+    color: #008ddf;
+  }
+
+  .fa-file-excel {
+    color: #00b147;
+  }
+
+  .fa-file-pdf {
+    color: #ff533d;
+  }
+
+  .fa-cog {
+    color: #2dd7e0;
+  }
+}

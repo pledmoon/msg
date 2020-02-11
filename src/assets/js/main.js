@@ -878,7 +878,49 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
   });
-  /* ------------ Counter ------------ */  
+  /* ------------ Counter ------------ */
+  /* ------------ Carousel Instances ------------ */
+  let carouselInstances = [];
+
+  document.querySelectorAll('.js-carousel-instance').forEach(function(instance) {
+    let loopInstance = false;
+    let prev = instance.parentNode.querySelector('.default-carousel-prev');
+    let next = instance.parentNode.querySelector('.default-carousel-next');
+
+    if ( instance.querySelectorAll('.swiper-slide').length > 3 ) {
+      loopInstance = true
+    } else {
+      instance.classList.add('disabled');
+    }
+
+    let opts = {
+      loop: loopInstance,
+      slidesPerView: 1,
+      spaceBetween: 30,
+
+      pagination: {
+        el: '.default-pagination',
+        clickable: true
+      },
+
+      navigation: {
+        prevEl: prev,
+        nextEl: next
+      },
+
+      breakpoints: {
+        480: {
+          slidesPerView: 2
+        },
+        820: {
+          slidesPerView: 3
+        }
+      }
+    };
+
+    carouselInstances.push( new Swiper(instance, opts) );
+  });
+  /* ------------ Carousel Instances ------------ */
 });
 
 svg4everybody({});

@@ -1,0 +1,204 @@
+extends templates/sub-layout
+
+include layouts/section
+include components/category
+include components/news
+include components/product
+include components/footer-collapse
+include components/logo
+include components/soc
+include components/category-nav
+
+block variables
+  - const pageTitle = 'Мікшерна система Allen & Heath dLive працювала на музичному фестивалі SonRise';
+  - const pageClass = 'news-page';
+  - const breadcrumbs = ["Главная", "Новости"];
+  - const auth = true;
+  - const rightColumn = true;
+
+//- block content
+
+block sidebar
+  +category-nav([
+    {
+      name: "Все новости и обзоры"
+    },
+    {
+      name: "Мировые новости"
+    },
+    {
+      name: "Новости Line Production"
+    },
+    {
+      name: "Обзоры"
+    },
+    {
+      name: "Мероприятия"
+    },
+    {
+      name: "Фото видео отчеты"
+    },
+    {
+      name: "Прочее"
+    }
+  ])
+
+  .banner.d-none.d-md-block
+      a(href="#")
+        img.img-responsive(src="assets/images/media/banner-2.png" alt="banner")
+
+  +b.products-review.d-none.d-md-block
+    +e.heading.h3 Обзоры новинок
+
+    +b.ARTICLE.product-review
+      +e.A.img-wrap(href="#")
+        +e.IMG.img(src="assets/images/media/product-review-1.jpg" alt="")
+      +e.heading
+        +e.A.heading-link(href="#") Знакомьтесь, пластики для барабанов Aquarian!
+
+    +b.ARTICLE.product-review
+      +e.A.img-wrap(href="#")
+        +e.IMG.img(src="assets/images/media/product-review-2.jpg" alt="")
+      +e.heading
+        +e.A.heading-link(href="#") Новый профес#[wbr]сиональный медиа проигрыватель от Denon Pro
+
+    +b.ARTICLE.product-review
+      +e.A.img-wrap(href="#")
+        +e.IMG.img(src="assets/images/media/product-review-3.jpg" alt="")
+      +e.heading
+        +e.A.heading-link(href="#") KLA серия - в лучших традициях QSC
+
+    +b.ARTICLE.product-review
+      +e.A.img-wrap(href="#")
+        +e.IMG.img(src="assets/images/media/product-review-4.jpg" alt="")
+      +e.heading
+        +e.A.heading-link(href="#") Интерактивное демо возможностей QSC K и GX серий
+
+    +b.ARTICLE.product-review
+      +e.A.img-wrap(href="#")
+        +e.IMG.img(src="assets/images/media/product-review-5.jpg" alt="")
+      +e.heading
+        +e.A.heading-link(href="#") Pearl E-Pro-Live - новый взгляд на электро барабаны
+
+  +b.products-preview.d-none.d-md-block
+    +e.heading.h3 Рекомендуемые товары
+
+    +b.ARTICLE.product-preview
+      +e.header
+        +e.A.img-wrap(href="#")
+          +e.IMG.img(src="assets/images/media/products/product-1.png" alt="")
+      +e.main
+        +e.heading
+          +e.A.heading-link(href="#") Gretsch G5422T Electromatic BK
+        +e.price 1,599 MDL
+
+    +b.ARTICLE.product-preview
+      +e.header
+        +e.A.img-wrap(href="#")
+          +e.IMG.img(src="assets/images/media/products/product-3.png" alt="")
+      +e.main
+        +e.heading
+          +e.A.heading-link(href="#") Native Instruments Komplete Kontrol A49
+        +e.price 2,745 MDL
+
+    +b.ARTICLE.product-preview
+      +e.header
+        +e.A.img-wrap(href="#")
+          +e.IMG.img(src="assets/images/media/products/product-6.png" alt="")
+      +e.main
+        +e.heading
+          +e.A.heading-link(href="#") Technics SL-1210 MK 7
+        +e.price 1,899 MDL
+
+    +b.ARTICLE.product-preview
+      +e.header
+        +e.A.img-wrap(href="#")
+          +e.IMG.img(src="assets/images/media/products/product-4.png" alt="")
+      +e.main
+        +e.heading
+          +e.A.heading-link(href="#") Numark Party Mix
+        +e.price 1,279 MDL
+
+block primary
+
+  .main-heading #{pageTitle}
+  time.main-area__result(datetime="2019-08-08") 08 августа 2019
+
+  .post-content
+
+    figure
+      img(src="assets/images/media/post-img-1.jpg" alt="")
+      figcaption Гурт Disciple виступає на фестивалі SonRise (світлина: MelissaDawnPhoto.com)
+
+    p Шостий щорічний музичний фестиваль SonRise цієї осені повернувся на берег океану до Вірджинія Біч разом зі своїми талантами, такими як фіналіст шоу American Idol Колтон Діксон (Colton Dixon) та рок-гуртами Disciple та Anthem Lights.
+
+    p Аби впоратись з божевільними темпами підготовки події, саундчеками та виступами 20 колективів на одній сцені протягом двох днів, цей релігійний фестиваль довірився гнучкості та швидкості роботи мікшерних систем dLive C3500 та SQ-7 від #[a(href="#") Allen &amp; Heath]. 
+
+    blockquote &laquo;Ми працювали з десятьма артистами щодня, &ndash; розповідає FOH звукорежисер Сонні Сміт з компанії S&amp;S Production Services, яка постачала звукове та світлове обладнання для фестивалю. &ndash; Навіть починаючи роботу о сьомій ранку, ми все ще мали сумніви щодо того, чи у нас буде час для саундчеків гуртів, які виступатимуть дохедлайнерів. Ми хотіли дати можливість провести саундчеки для всіх гуртів, але час явно грав не на нашому боці&raquo;.
+
+    p Обравши консолі #[a(href="#") Allen &amp; Heath dLive C3500] для моніторів та #[a(href="#") SQ-7] у якості основного FOH мікшера, Сміт та моніторний інженер Джейкоб Портер (Jacob Porter) розробили стратегію, яка змогла забезпечити високу швидкість роботи, необхідну для здійснення блискавичних змін артистів як під час саундчеків, так і під час їхніх виступів. За цим планом обидві консолі ділили між собою сценічний рек CDM32 MixRack через мережеве з&rsquo;єднання gigaACE. Оснащений картою Dante, dLive C3500 використовувався з додатковим сценічним реком розширення Dante, попередньо підготовленим продакшном S&amp;S для шоу Колтона Діксона та деяких інших артистів, які хотіли користуватися своїм власним комплектом персональних вушних моніторів.
+
+    figure
+      img(src="assets/images/media/post-img-2.jpg" alt="")
+      figcaption Джейкоб Портер (ліворуч) та Сонні Сміт (праворуч) з компанії S&amp;S Production Services готуються до фестивалю з пультом Allen &amp; Heath dLive C3500
+
+    blockquote &laquo;Цей сетап впорядкував нашу роботу, &ndash; пояснює Сміт, &ndash; всі могли просто підключитися прямо до нашої системи, і вони були миттєво готові до виступу. Навіть з такою кількістю артистів, з якими ми мали працювати, у нас не виникало потреби у встановленні дублюючих мікрофонів чи у зміні наших патчів. Зі швидкістю, яку ми підвищували з кожною зміною артистів, ми мали достатньо часу, щоб провести повноцінні саундчеки для всіх учасників. Коли всі мають саундчеки в таких фестивальних умовах, можна бути впевненим, що загалом шоу звучатиме краще&raquo;.
+
+    p Всього на сцені використовувалось 10 міксів для сценічних моніторів та ще 10 для вушних систем персонального моніторингу (IEM). Тому для інженерів S&amp;S цілком логічним вибором стало поєднання консолі dLive C3500 з реком CDM32, яке забезпечує велику кількість вводів/виводів та високу процесорну потужність для такої кількості міксів. А в FOH мікшері SQ-7 були налаштовані користувацькі розкладки фейдерів, завдяки чому використання цієї консолі сторонніми звукорежисерами, які приходили мікшувати своїх артистів, стало значно зручнішим.
+
+    .post-content__summary
+      +b.tags
+        +icon('tag', 'tags__icon')
+        +e.UL.list
+          +e.LI.item
+            +e.A.link(href="#") Мировые новости
+          +e.LI.item
+            +e.A.link(href="#") Обзоры
+          +e.LI.item
+            +e.A.link(href="#") Фото видео отчеты
+      
+      .soc-share
+        .soc-share__heading Поделиться
+        +soc('soc-share__soc')
+
+  +section('Все новости', '', 'section--secondary')
+    .row
+      .col-sm-6.col-md-4
+        +news({
+          heading: "Житловий комплекс 19 Dutch в Нью-Йорку оснащується мережевою аудіо-відео екосистемою Q-SYS",
+          date:    "19 декабря 2019",
+          imgPath: "assets/images/media/news-2.jpg"
+        })
+      .col-sm-6.col-md-4
+        +news({
+          heading: "Компанія L-Acoustics оновлює свій бестселер – лінійний масив Kara, додавши змінну спрямованість",
+          date:    "9 декабря 2019",
+          imgPath: "assets/images/media/news-3.jpg"
+        })
+      .col-sm-6.col-md-4
+        +news({
+          heading: "Технології Mogami",
+          date:    "26 ноября 2019",
+          imgPath: "assets/images/media/news-4.jpg",
+          excerpt: "Природне звучання поглинає слухача, охоплюючи його з усіх боків."
+        })
+      .col-sm-6.col-md-4
+        +news({
+          heading: "Dynaudio представляє програму Unheard: студія для невідомих гуртів",
+          date:    "12 ноября 2019",
+          imgPath: "assets/images/media/news-5.jpg"
+        })
+      .col-sm-6.col-md-4
+        +news({
+          heading: "Новинки про аудіо на NAMM Show 2020",
+          date:    "7 ноября 2019",
+          imgPath: "assets/images/media/news-6.jpg",
+          excerpt: "В каліфорнійському Анагаймі в ці дні на виставці The NAMM Show"
+        })
+      .col-sm-6.col-md-4
+        +news({
+          heading: "Нові надходження DPA Microphones",
+          date:    "23 октября 2019",
+          imgPath: "assets/images/media/news-7.jpg",
+          excerpt: "Природне звучання поглинає слухача, охоплюючи його з усіх боків."
+        })

@@ -1,0 +1,64 @@
+extends templates/main
+
+include components/footer-collapse
+include components/logo
+include components/soc
+
+block variables
+  - const pageTitle = 'Регистрация';
+  - const pageClass = 'forms-page';
+  - const formsPage = true;
+
+block content
+
+  .inner-area
+    .inner-area__heading #{pageTitle}
+
+    +b.panel--wide
+      +e.wrap
+        +e.fields
+          +e.FORM.form(action="/" method="POST" name="user-reg")
+            .row
+              .col-sm-6
+                +e.field
+                  +e.label(for="u-name") Ваше имя #[span *]
+                  +e.INPUT.input(type="text" name="user-name" id="u-name")
+              .col-sm-6
+                +e.field
+                  +e.label(for="u-lastname") Фамилия
+                  +e.INPUT.input(type="text" name="user-lastname" id="u-lastname")
+              .col-sm-6
+                +e.field
+                  +e.label(for="u-phone") Номер мобильного #[span *]
+                  +e.INPUT.input(type="tel" name="user-phone" id="u-phone")
+              .col-sm-6
+                +e.field
+                  +e.label(for="u-email") E-mail #[span *] #[small используется как логин]
+                  +e.INPUT.input(type="email" name="user-email" id="u-email")
+              .col-sm-6
+                +e.field
+                  +e.label(for="u-password") Пароль #[span *]
+                  +e.INPUT.input(type="password" name="user-password" id="u-password")
+              .col-sm-6
+                +e.field.err
+                  +e.label(for="u-password-correct") Еще раз пароль #[span *]
+                  +e.INPUT.input(type="password" name="user-password-correct" id="u-password-correct")
+                  span.err-msg 
+                    i.fas.fa-info-circle
+                    |Пароли не совпадают
+              +e.controls
+                +e.option.checkbox-label
+                  input.checkbox-label__input(type="checkbox" name="privacy" checked id="privacy")
+                  label.checkbox-label__main(for="privacy") Я ознакомлен и согласен с #[a(href="#") пользовательским соглашением] и #[a(href="#") политикой конфиденциальности]
+                +e.option.checkbox-label
+                  input.checkbox-label__input(type="checkbox" name="subscribe" id="subscribe")
+                  label.checkbox-label__main(for="subscribe") Я хочу получать информацию, о новинках, скидках и акциях
+            +e.submit-wrap.text-center
+              +e.BUTTON.reg-submit.btn.btn--main(type="submit") Зарегистрироваться
+        +e.footer
+          +e.social
+            +e.social-text Есть аккаунт? #[a(href="#") Войти] #[span /] или войти через
+            +e.social-icons
+              +soc
+
+
