@@ -1,0 +1,27 @@
+/* Items Carousel */
+.items-carousel-wrap {
+  position: relative;
+}
+
+.items-carousel {
+  visibility: hidden;
+  opacity: 0;
+  transition: all .3s;
+
+  &.swiper-container-initialized {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .default-pagination {
+    text-align: center;
+    margin-top: 2rem;
+  }
+}
+
+.disabled .swiper-pagination-bullets,
+.swiper-button-disabled,
+.swiper-button-disabled {
+  display: none;
+}
+/* Items Carousel */

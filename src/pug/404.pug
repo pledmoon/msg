@@ -1,0 +1,19 @@
+extends templates/main
+
+include layouts/section
+include components/footer-collapse
+include components/logo
+
+block variables
+  - const pageTitle = '404: Страница не найдена';
+  - const pageClass = 'error-page';
+  - const userState = 'logout';
+  - const breadcrumbs = ["Главная", "Каталог по назначению", "Диджейское оборудование", "MIDI контроллеры"];
+
+block content
+
+  +section('Ой, Ошибка 404', false)
+    .error-area
+      img.error-area__img.img-responsive(src="assets/images/404.png" alt="")
+      p.error-area__desc Такой страницы нет или она больше не существует. #[br] Предлагаем вернуться на главную.
+      a.error-area__btn.btn.btn--main(href="#") Перейти на главную

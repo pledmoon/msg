@@ -1,5 +1,6 @@
 .advantages-section {
   padding: 0 0 2rem;
+  background: #303030;
 
   .container-fluid {
     background: inherit;
@@ -49,6 +50,10 @@
   &__heading {
     color: $white;
     font-weight: 600;
+
+    @media (min-width: $xlg) {
+      white-space: nowrap;
+    }
   }
 
   &__note {

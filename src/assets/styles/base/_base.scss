@@ -58,7 +58,10 @@ body {
 
 .wrapper {
   position: relative;
-  min-height: 80rem;
+
+  @media (min-width: $xlg) {
+    min-height: 80rem;
+  }
 }
 
 .body-bg {
@@ -72,9 +75,12 @@ body {
     background: url('../images/body-bg.png') no-repeat center top;
     position: sticky;
     width: 100%;
-    min-height: 80rem;
     bottom: 0;
     align-self: flex-end;
+
+    @media (min-width: $xlg) {
+      min-height: 80rem;
+    }
   }
 }
 

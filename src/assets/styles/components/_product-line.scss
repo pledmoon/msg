@@ -226,7 +226,11 @@
     overflow: hidden;
     text-overflow: ellipsis;
     max-width: 16rem;
-    margin: 0 0 1rem;
+    margin: 0 auto 1rem;
+
+    @media (min-width: $sm) {
+      margin: 0 0 1rem;
+    }
 
     @media (min-width: $md) {
       margin: 0 auto 1rem;

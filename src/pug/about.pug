@@ -1,0 +1,69 @@
+extends templates/main
+
+include layouts/section
+include components/footer-collapse
+include components/logo
+
+block variables
+  - const pageTitle = 'О компании Line Production';
+  - const pageClass = 'about-page';
+  - const userState = 'login';
+  - const formsPage = true;
+
+block content
+
+  .about-section-area
+    .company-promo
+      .company-promo__brand-wrap
+        img.company-promo__brand(src="assets/images/line-production.png" width="220" height="110" alt="")
+      .company-promo__heading О компании Line Production
+
+    .container-fluid
+      +section
+        .section-max-width
+          p Компания Line Production – официальный представитель и эксклюзивный дистрибьютор L-Acoustics (Франция) в Украине и Молдове.
+          p Line Production – это крупнейший в Молдове импортер профессионального звукового и светового оборудования для шоу-индустрии. Его основное подразделение – Media Show Group, обеспечивает системное и динамическое развитие инсталляционного и прокатного рынка профессиональных звуковых систем. Тесное взаимодействие с инженерами прокатных компаний и концертных залов, слаженная команда единомышленников, крепкие связи и маркетинговая поддержка производителей – залог успеха компании, более 20 лет работающей на рынке Украины.
+          p L-Acoustics – это проаудио бренд премиум-класса, изобретатель линейных массивов, пионер в создании принципиально новых тенденций в звуке.
+          p L-Acoustics – это профессиональное и наиболее востребованные звуковое оборудование, заслуженно располагающееся в первых строках райдеров лучших исполнителей, вокалистов и музыкантов, работающих в различных жанрах современной и классической музыки.
+          p L-Acoustics – это тысячи инсталляций в тысячах концертных залах, театрах, ночных клубах, спортивных площадках и церквях по всему миру.
+          p На сегодняшний день L-Acoustics – глобальный лидер звукового рынка с самым стремительным и динамичным развитием, заслуженно признанным во всём мире.
+
+    // promo-advantages
+    .advantages-section
+      .container-fluid
+        .row.justify-content-center
+          .col-sm-6.col-md-4
+            +b.FIGURE.advantage
+              +e.img-wrap
+                +icon('treble-clef', 'advantage__icon')
+              +e.FIGCAPTION.desc
+                +e.heading Официальный диллер
+                +e.SPAN.note Более 50 мировых брендов
+          .col-sm-6.col-md-4
+            +b.FIGURE.advantage
+              +e.img-wrap
+                +icon('microphone', 'advantage__icon')
+              +e.FIGCAPTION.desc
+                +e.heading Более 10 лет на рынке
+                +e.SPAN.note +10 000 довольных клиентов
+          .col-sm-6.col-md-4
+            +b.FIGURE.advantage
+              +e.img-wrap
+                +icon('earth-globe', 'advantage__icon')
+              +e.FIGCAPTION.desc
+                +e.heading Обладатель сертификата ISO
+                +e.SPAN.note Признан 95 странами мира
+    // /promo-advantages
+
+  .wrapper
+    .body-bg
+      .body-bg__main
+
+    .container-fluid
+
+      +section
+        .section-max-width
+          p Line Production – это крупнейший в Молдове импортер профессионального звукового и светового оборудования для шоу-индустрии. Его основное подразделение – Media Show Group, обеспечивает системное и динамическое развитие инсталляционного и прокатного рынка профессиональных звуковых систем. Тесное взаимодействие с инженерами прокатных компаний и концертных залов, слаженная команда единомышленников, крепкие связи и маркетинговая поддержка производителей – залог успеха компании, более 20 лет работающей на рынке Украины.
+          .iframe-wrap
+            .iframe-main
+              iframe(src="about:blank" data-src="https://www.youtube.com/embed/N6zm52tRF0c" allowfullscreen="")
